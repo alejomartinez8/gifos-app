@@ -13,13 +13,50 @@ body {
 	color: $primary;
 }
 
-.topnav {
+.topnav-container {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	height: 95px;
 	padding-left: 22px;
 	padding-right: 26px;
+	color: white;
+}
+
+#nav-menu {
+	// display: none;
+	background: $primary-transparent;
+
+	position: absolute;
+	width: 100%;
+	height: calc(100% - 95px);
+	z-index: 1;
+
+	ul {
+		padding: 0;
+		margin: 0;
+		padding-top: 32px;
+		list-style-type: none;
+	}
+
+	a {
+		display: block;
+		text-decoration: none;
+
+		@include monserrat-bold;
+		font-size: 15px;
+		color: $white;
+		text-align: center;
+		line-height: 60px;
+	}
+
+	span {
+		display: block;
+		border-bottom: 1px solid $white;
+		width: 40px;
+		margin: 0 auto;
+		opacity: 0.5;
+	}
 }
 
 #section-header {
@@ -87,9 +124,8 @@ body {
 	}
 
 	p {
-		font-family: "Montserrat", sans-serif;
+		@include monserrat-meidum;
 		font-size: 0.875rem;
-		font-weight: 500;
 		margin: 0 75px;
 		line-height: 25px;
 	}
