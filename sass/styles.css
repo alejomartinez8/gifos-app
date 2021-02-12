@@ -1,0 +1,156 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+.bg-primary {
+  background-color: #572ee5;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+}
+
+*,
+*:before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 16px;
+}
+
+body {
+  margin: 0;
+  color: #572ee5;
+}
+
+.topnav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 95px;
+  padding-left: 22px;
+  padding-right: 26px;
+}
+
+#section-header h1 {
+  margin: 0;
+  padding: 0 45px;
+  font-size: 25px;
+  line-height: 33px;
+  text-align: center;
+}
+
+#section-header span {
+  color: #5ed7c6;
+}
+
+#section-searcher {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  max-width: 551px;
+  margin: 0 auto;
+}
+
+#section-searcher img.img-header {
+  padding: 31px 51px 0px 51px;
+  width: 100%;
+}
+
+#section-searcher div.search-container {
+  display: flex;
+  align-items: center;
+  padding-left: 55px;
+  border: 1px solid #572ee5;
+  border-radius: 27px;
+  margin: 0 20px;
+}
+
+#section-searcher div.search-container input.input-search {
+  margin: 0;
+  padding: 0;
+  height: 50px;
+  width: 100%;
+  border: 0;
+}
+
+#section-searcher div.search-container input.input-search::placeholder {
+  font-size: 1rem;
+  color: #6b7989;
+  font-family: "Roboto", sans-serif;
+}
+
+#section-searcher div.search-container img.search-icon {
+  cursor: pointer;
+  margin-right: 20px;
+}
+
+#section-keywords {
+  text-align: center;
+  padding-top: 31px;
+  padding-bottom: 45px;
+}
+
+#section-keywords h3 {
+  font-size: 1rem;
+}
+
+#section-keywords p {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin: 0 75px;
+  line-height: 25px;
+}
+
+#section-gifos {
+  background-color: #f3f5f8;
+  padding: 46px 0px 82px 22px;
+  text-align: center;
+}
+
+#section-gifos p {
+  color: #000000;
+  margin-bottom: 32px;
+}
+
+#section-gifos div.gifos-images img {
+  max-height: 187px;
+  margin-left: 22px;
+}
+
+#footer {
+  text-align: center;
+  color: #000000;
+  padding-top: 47px;
+  padding-bottom: 23px;
+}
+
+#footer div {
+  margin-top: 22px;
+  margin-bottom: 46px;
+}
+
+#footer img#icon-twitter {
+  margin: 0 20px;
+}
+
+.h-5 {
+  height: 5px;
+}
+
+.m-0 {
+  margin: 0px;
+}
+
+.p-0 {
+  padding: 0px;
+}
+/*# sourceMappingURL=styles.css.map */
