@@ -12,11 +12,9 @@ body.dark {
 		}
 	}
 
-	#section-gifos-result {
-		button {
-			border: 1px solid $white;
-			color: $white;
-		}
+	button.btn-primary-ghost {
+		border: 1px solid $white;
+		color: $white;
 	}
 
 	#section-trending-gifos {

@@ -26,6 +26,10 @@ function toggleMenu() {
 	);
 }
 
+function setAttribute(elm, att, val) {
+	if (elm) elm.setAttribute(att, val);
+}
+
 function setTheme(e) {
 	if (e) e.preventDefault();
 	document.body.classList.toggle("dark");
@@ -33,20 +37,21 @@ function setTheme(e) {
 	console.log(theme);
 	if (theme === "dark") {
 		localStorage.setItem("theme", "dark");
-		if (menuOpen) mainMenuButton.setAttribute("src", "./img/close-modo-noct.svg");
+		if (menuOpen)
+			setAttribute(mainMenuButton, "src", "./img/close-modo-noct.svg");
 		else mainMenuButton.setAttribute("src", "./img/burger-modo-noct.svg");
 		toggleTheme.innerHTML = "Modo Diurno";
-		searchIcon.setAttribute("src", "./img/icon-search-mod-noc.svg");
+		setAttribute(searchIcon, "src", "./img/icon-search-mod-noc.svg");
 		// TODO - when be desktop
-		logoImg.setAttribute("src", "./img/logo-mobile-modo-noct.svg");
+		setAttribute(logoImg, "src", "./img/logo-mobile-modo-noct.svg");
 	} else {
 		localStorage.setItem("theme", "");
-		if (menuOpen) mainMenuButton.setAttribute("src", "./img/close.svg");
-		else mainMenuButton.setAttributeNS("src", "./img/burger.svg");
+		if (menuOpen) setAttribute(mainMenuButton, "src", "./img/close.svg");
+		else setAttributeNS(mainMenuButton, "src", "./img/burger.svg");
 		toggleTheme.innerHTML = "Modo Nocturno";
-		searchIcon.setAttribute("src", "./img/icon-search.svg");
+		setAttribute(searchIcon, "src", "./img/icon-search.svg");
 		// TODO - when be desktop
-		logoImg.setAttribute("src", "./img/logo-mobile.svg");
+		setAttribute(logoImg, "src", "./img/logo-mobile.svg");
 	}
 }
 

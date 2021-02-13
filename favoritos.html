@@ -4,7 +4,7 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>GIFOS</title>
+		<title>GIFOS - Favoritos</title>
 		<link rel="stylesheet" href="./sass/styles.css" />
 	</head>
 	<body>
@@ -21,31 +21,16 @@
 					<li>
 						<a id="toggle-theme-button" href="#">Modo Nocturno</a><span></span>
 					</li>
-					<li><a href="/favoritos.html">Favoritos</a><span></span></li>
+					<li><a href="/favoritos">Favoritos</a><span></span></li>
 					<li><a href="/misGIFOS">Mis GIFOS</a><span></span></li>
 				</ul>
 			</nav>
 		</header>
 		<main>
-			<section id="section-header">
-				<h1>Inspírate, busca, guarda, y crea los mejores <span>GIFOS</span></h1>
-			</section>
-			<section id="section-searcher">
-				<img class="img-header" src="./img/ilustra_header.svg" alt="" />
-				<div id="search-container">
-					<input class="input-search" type="text" placeholder="Busca GIFOS y más" />
-					<img id="search-icon" src="./img/icon-search.svg" alt="search" />
-				</div>
-			</section>
-			<section id="section-keywords">
-				<h3>Trending:</h3>
-				<p>Reactions, Entertainment, Sports, Stickers, Artists</p>
-			</section>
-			<section id="section-gifos-result">
-				<span></span>
-				<h2 id="heading-gifos-result">Mascotas</h2>
-
-				<div id="container-gifos-result">
+			<section id="section-favorites">
+				<img class="icon-fav" src='./img/icon-favoritos.svg'></img>
+				<h2 id="heading-favorites">Favoritos</h2>
+				<div id="container-favorites">
 					<img
 						src="./img/images/2b53c755fcd0fca65cbcc2f85f28453e525574e5.png"
 						alt=""
@@ -142,7 +127,6 @@
 			</div>
 		</div>
 
-		<script src="./js/app.js"></script>
 		<script src="./js/menu.js"></script>
 		<script src="./js/modal.js"></script>
 	</body>
