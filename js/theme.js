@@ -13,7 +13,7 @@ function setTheme(e) {
 	console.log(theme);
 	if (theme === "dark") {
 		if (menuOpen) {
-			toggleThemeButton.setAttribute("src", "./img/close-modo-noct.svg");
+			mainMenu.setAttribute("src", "./img/close-modo-noct.svg");
 		}
 	}
 }
