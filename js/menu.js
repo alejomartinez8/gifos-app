@@ -37,7 +37,7 @@ function setTheme(e) {
 		else mainMenuButton.setAttribute("src", "./img/burger-modo-noct.svg");
 		toggleTheme.innerHTML = "Modo Diurno";
 		searchIcon.setAttribute("src", "./img/icon-search-mod-noc.svg");
-		// TODO - if when be desktop
+		// TODO - when be desktop
 		logoImg.setAttribute("src", "./img/logo-mobile-modo-noct.svg");
 	} else {
 		localStorage.setItem("theme", "");
@@ -45,6 +45,7 @@ function setTheme(e) {
 		else mainMenuButton.setAttributeNS("src", "./img/burger.svg");
 		toggleTheme.innerHTML = "Modo Nocturno";
 		searchIcon.setAttribute("src", "./img/icon-search.svg");
+		// TODO - when be desktop
 		logoImg.setAttribute("src", "./img/logo-mobile.svg");
 	}
 }

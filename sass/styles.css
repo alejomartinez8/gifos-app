@@ -120,10 +120,14 @@ nav#nav-menu span {
   background-color: transparent;
 }
 
-#section-searcher div#search-container input.input-search::placeholder {
+#section-searcher div#search-container input.input-search::placeholder, #section-searcher div#search-container input.input-search:focus {
   font-size: 1rem;
   color: #6b7989;
   font-family: "Roboto", sans-serif;
+}
+
+#section-searcher div#search-container input.input-search:focus {
+  outline: none;
 }
 
 #section-searcher div#search-container img#search-icon {
