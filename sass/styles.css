@@ -41,6 +41,10 @@ body {
 }
 
 #nav-menu {
+<<<<<<< Updated upstream
+=======
+  display: none;
+>>>>>>> Stashed changes
   background: rgba(87, 46, 229, 0.9);
   position: absolute;
   width: 100%;
@@ -75,7 +79,10 @@ body {
 }
 
 #section-header h1 {
+<<<<<<< Updated upstream
   margin: 0;
+=======
+>>>>>>> Stashed changes
   padding: 0 45px;
   font-size: 25px;
   line-height: 33px;
@@ -130,7 +137,11 @@ body {
 #section-keywords {
   text-align: center;
   padding-top: 31px;
+<<<<<<< Updated upstream
   padding-bottom: 45px;
+=======
+  padding-bottom: 35px;
+>>>>>>> Stashed changes
 }
 
 #section-keywords h3 {
@@ -145,6 +156,7 @@ body {
   line-height: 25px;
 }
 
+<<<<<<< Updated upstream
 #section-gifos {
   background-color: #f3f5f8;
   padding: 46px 0px 82px 22px;
@@ -159,6 +171,57 @@ body {
 #section-gifos div.gifos-images img {
   max-height: 187px;
   margin-left: 22px;
+=======
+#section-gifos-result span {
+  display: block;
+  border-bottom: 1px solid #6b7989;
+  width: 157px;
+  margin: 0 auto;
+  opacity: 0.5;
+}
+
+#section-gifos-result h2#heading-gifos-result {
+  font-size: 25px;
+  text-align: center;
+  margin-top: 43px;
+}
+
+#section-gifos-result div#container-gifos-result {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 11.5px;
+}
+
+#section-gifos-result div#container-gifos-result img {
+  width: 50%;
+  padding: 12.5px 11.5px;
+}
+
+#section-trending-gifos {
+  background-color: #f3f5f8;
+  padding: 46px 0px 82px 22px;
+  text-align: center;
+}
+
+#section-trending-gifos p {
+  color: #000000;
+  margin-bottom: 32px;
+}
+
+#section-trending-gifos div.gifos-images {
+  overflow: hidden;
+  overflow-x: auto;
+  display: flex;
+}
+
+#section-trending-gifos div.gifos-images img {
+  max-height: 187px;
+  margin: 0 11px;
+}
+
+#section-trending-gifos div.gifos-images img:last-child {
+  margin-right: 22px;
+>>>>>>> Stashed changes
 }
 
 #footer {
