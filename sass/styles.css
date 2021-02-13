@@ -126,7 +126,7 @@ nav#nav-menu span {
   font-family: "Roboto", sans-serif;
 }
 
-#section-searcher div#search-container img.search-icon {
+#section-searcher div#search-container img#search-icon {
   cursor: pointer;
   margin-right: 20px;
 }
