@@ -236,7 +236,7 @@ body {
 }
 
 div.modal {
-  display: none;
+  display: flex;
   position: fixed;
   width: 100%;
   height: 100%;
@@ -245,6 +245,7 @@ div.modal {
   align-items: center;
   padding: 0 28px;
   background: rgba(255, 255, 255, 0.9);
+  overflow-y: hidden;
 }
 
 div.modal div.img-container img.close-icon {
