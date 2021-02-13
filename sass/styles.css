@@ -1,148 +1,151 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 .bg-primary {
-	background-color: #572ee5;
+  background-color: #572ee5;
 }
 
 body {
-	font-family: "Roboto", sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 h1,
 h2,
 h3 {
-	font-family: "Montserrat", sans-serif;
-	font-weight: 700;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
 }
 
 *,
 *:before,
 *::after {
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 :root {
-	font-size: 16px;
+  font-size: 16px;
 }
 
 body {
-	margin: 0;
-	color: #572ee5;
+  margin: 0;
+  color: #572ee5;
 }
 
 .topnav-container {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	height: 95px;
-	padding-left: 22px;
-	padding-right: 26px;
-	color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 95px;
+  padding-left: 22px;
+  color: white;
 }
 
-#nav-menu {
-	display: none;
-	background: rgba(87, 46, 229, 0.9);
-	position: absolute;
-	width: 100%;
-	height: calc(100% - 95px);
-	z-index: 1;
+.topnav-container img#main-menu-button {
+  padding: 26px;
 }
 
-#nav-menu ul {
-	padding: 0;
-	margin: 0;
-	padding-top: 32px;
-	list-style-type: none;
+nav#nav-menu {
+  display: none;
+  background: rgba(87, 46, 229, 0.9);
+  position: absolute;
+  width: 100%;
+  height: calc(100% - 95px);
+  z-index: 1;
 }
 
-#nav-menu a {
-	display: block;
-	text-decoration: none;
-	font-family: "Montserrat", sans-serif;
-	font-weight: 700;
-	font-size: 15px;
-	color: #ffffff;
-	text-align: center;
-	line-height: 60px;
+nav#nav-menu ul {
+  padding: 0;
+  margin: 0;
+  padding-top: 32px;
+  list-style-type: none;
 }
 
-#nav-menu span {
-	display: block;
-	border-bottom: 1px solid #ffffff;
-	width: 40px;
-	margin: 0 auto;
-	opacity: 0.5;
+nav#nav-menu a {
+  display: block;
+  text-decoration: none;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  color: #ffffff;
+  text-align: center;
+  line-height: 60px;
+}
+
+nav#nav-menu span {
+  display: block;
+  border-bottom: 1px solid #ffffff;
+  width: 40px;
+  margin: 0 auto;
+  opacity: 0.5;
 }
 
 #section-header h1 {
-	padding: 0 45px;
-	font-size: 25px;
-	line-height: 33px;
-	text-align: center;
+  padding: 0 45px;
+  font-size: 25px;
+  line-height: 33px;
+  text-align: center;
 }
 
 #section-header span {
-	color: #5ed7c6;
+  color: #5ed7c6;
 }
 
 #section-searcher {
-	display: flex;
-	flex-direction: column;
-	position: relative;
-	max-width: 551px;
-	margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  max-width: 551px;
+  margin: 0 auto;
 }
 
 #section-searcher img.img-header {
-	padding: 31px 51px 0px 51px;
-	width: 100%;
+  padding: 31px 51px 0px 51px;
+  width: 100%;
 }
 
 #section-searcher div.search-container {
-	display: flex;
-	align-items: center;
-	padding-left: 55px;
-	border: 1px solid #572ee5;
-	border-radius: 27px;
-	margin: 0 20px;
+  display: flex;
+  align-items: center;
+  padding-left: 55px;
+  border: 1px solid #572ee5;
+  border-radius: 27px;
+  margin: 0 20px;
 }
 
 #section-searcher div.search-container input.input-search {
-	margin: 0;
-	padding: 0;
-	height: 50px;
-	width: 100%;
-	border: 0;
+  margin: 0;
+  padding: 0;
+  height: 50px;
+  width: 100%;
+  border: 0;
 }
 
 #section-searcher div.search-container input.input-search::placeholder {
-	font-size: 1rem;
-	color: #6b7989;
-	font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  color: #6b7989;
+  font-family: "Roboto", sans-serif;
 }
 
 #section-searcher div.search-container img.search-icon {
-	cursor: pointer;
-	margin-right: 20px;
+  cursor: pointer;
+  margin-right: 20px;
 }
 
 #section-keywords {
-	text-align: center;
-	padding-top: 31px;
-	padding-bottom: 35px;
+  text-align: center;
+  padding-top: 31px;
+  padding-bottom: 35px;
 }
 
 #section-keywords h3 {
-	font-size: 1rem;
+  font-size: 1rem;
 }
 
 #section-keywords p {
-	font-family: "Montserrat", sans-serif;
-	font-weight: 500;
-	font-size: 0.875rem;
-	margin: 0 75px;
-	line-height: 25px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 0.875rem;
+  margin: 0 75px;
+  line-height: 25px;
 }
 
 #section-gifos-result {
@@ -150,21 +153,20 @@ body {
 }
 
 #section-gifos-result span {
-	display: block;
-	border-bottom: 1px solid #6b7989;
-	width: 157px;
-	margin: 0 auto;
-	opacity: 0.5;
+  display: block;
+  border-bottom: 1px solid #6b7989;
+  width: 157px;
+  margin: 0 auto;
+  opacity: 0.5;
 }
 
 #section-gifos-result h2#heading-gifos-result {
-	font-size: 25px;
-	text-align: center;
-	margin-top: 43px;
+  font-size: 25px;
+  text-align: center;
+  margin-top: 43px;
 }
 
 #section-gifos-result div#container-gifos-result {
-
   display: flex;
   flex-wrap: wrap;
   padding: 0 11.5px;
@@ -174,7 +176,6 @@ body {
   width: 50%;
   height: auto;
   padding: 12.5px 11.5px;
-
 }
 
 #section-gifos-result div#container-gifos-result img:nth-last-child(-n + 2) {
@@ -196,49 +197,49 @@ body {
 }
 
 #section-trending-gifos {
-	background-color: #f3f5f8;
-	padding: 46px 0px 82px 22px;
-	text-align: center;
+  background-color: #f3f5f8;
+  padding: 46px 0px 82px 22px;
+  text-align: center;
 }
 
 #section-trending-gifos p {
-	color: #000000;
-	margin-bottom: 32px;
+  color: #000000;
+  margin-bottom: 32px;
 }
 
 #section-trending-gifos div.gifos-images {
-	overflow: hidden;
-	overflow-x: auto;
-	display: flex;
+  overflow: hidden;
+  overflow-x: auto;
+  display: flex;
 }
 
 #section-trending-gifos div.gifos-images img {
-	max-height: 187px;
-	margin: 0 11px;
+  max-height: 187px;
+  margin: 0 11px;
 }
 
 #section-trending-gifos div.gifos-images img:last-child {
-	margin-right: 22px;
+  margin-right: 22px;
 }
 
 #footer {
-	text-align: center;
-	color: #000000;
-	padding-top: 47px;
-	padding-bottom: 23px;
+  text-align: center;
+  color: #000000;
+  padding-top: 47px;
+  padding-bottom: 23px;
 }
 
 #footer div {
-	margin-top: 22px;
-	margin-bottom: 46px;
+  margin-top: 22px;
+  margin-bottom: 46px;
 }
 
 #footer img#icon-twitter {
-	margin: 0 20px;
+  margin: 0 20px;
 }
 
 div.modal {
-  display: flex;
+  display: none;
   position: fixed;
   width: 100%;
   height: 100%;
@@ -297,14 +298,14 @@ div.modal div.img-container div.footer-img div.icons *:last-child {
 }
 
 .h-5 {
-	height: 5px;
+  height: 5px;
 }
 
 .m-0 {
-	margin: 0px;
+  margin: 0px;
 }
 
 .p-0 {
-	padding: 0px;
+  padding: 0px;
 }
 /*# sourceMappingURL=styles.css.map */

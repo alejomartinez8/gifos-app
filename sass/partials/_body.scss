@@ -19,14 +19,15 @@ body {
 	align-items: center;
 	height: 95px;
 	padding-left: 22px;
-	padding-right: 26px;
 	color: white;
+	img#main-menu-button {
+		padding: 26px;
+	}
 }
 
-#nav-menu {
+nav#nav-menu {
 	display: none;
 	background: $primary-transparent;
-
 	position: absolute;
 	width: 100%;
 	height: calc(100% - 95px);
@@ -212,7 +213,7 @@ body {
 }
 
 div.modal {
-	display: flex;
+	display: none;
 	position: fixed;
 	width: 100%;
 	height: 100%;
