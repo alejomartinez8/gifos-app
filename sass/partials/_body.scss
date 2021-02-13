@@ -24,7 +24,7 @@ body {
 }
 
 #nav-menu {
-	// display: none;
+	display: none;
 	background: $primary-transparent;
 
 	position: absolute;
@@ -61,7 +61,6 @@ body {
 
 #section-header {
 	h1 {
-		margin: 0;
 		padding: 0 45px;
 		font-size: 25px;
 		line-height: 33px;
@@ -117,7 +116,7 @@ body {
 #section-keywords {
 	text-align: center;
 	padding-top: 31px;
-	padding-bottom: 45px;
+	padding-bottom: 35px;
 
 	h3 {
 		font-size: 1rem;
@@ -131,7 +130,32 @@ body {
 	}
 }
 
-#section-gifos {
+#section-gifos-result {
+	span {
+		display: block;
+		border-bottom: 1px solid $gray;
+		width: 157px;
+		margin: 0 auto;
+		opacity: 0.5;
+	}
+
+	h2#heading-gifos-result {
+		font-size: 25px;
+		text-align: center;
+		margin-top: 43px;
+	}
+	div#container-gifos-result {
+		display: flex;
+		flex-wrap: wrap;
+		padding: 11.5px;
+		img {
+			width: 50%;
+			padding: 12.5px 11.5px;
+		}
+	}
+}
+
+#section-trending-gifos {
 	background-color: $light;
 	padding: 46px 0px 82px 22px;
 	text-align: center;
@@ -141,9 +165,15 @@ body {
 	}
 
 	div.gifos-images {
+		overflow: hidden;
+		overflow-x: auto;
+		display: flex;
 		img {
 			max-height: 187px;
-			margin-left: 22px;
+			margin: 0 11px;
+			&:last-child {
+				margin-right: 22px;
+			}
 		}
 	}
 }
