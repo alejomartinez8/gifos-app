@@ -1,0 +1,35 @@
+body.dark {
+	background-color: $dark;
+	color: $white;
+
+	nav#nav-menu {
+		background-color: $black;
+	}
+
+	#section-searcher {
+		div#search-container {
+			border: 1px solid $white;
+		}
+	}
+
+	#section-gifos-result {
+		button {
+			border: 1px solid $white;
+			color: $white;
+		}
+	}
+
+	#section-trending-gifos {
+		background-color: $dark-trending;
+		p {
+			color: $white;
+		}
+	}
+
+	#footer {
+		color: $white;
+		a {
+			color: $white;
+		}
+	}
+}

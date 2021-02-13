@@ -85,7 +85,7 @@ nav#nav-menu {
 		width: 100%;
 	}
 
-	div.search-container {
+	div#search-container {
 		display: flex;
 		align-items: center;
 		padding-left: 55px;
@@ -99,6 +99,7 @@ nav#nav-menu {
 			height: 50px;
 			width: 100%;
 			border: 0;
+			background-color: transparent;
 
 			&::placeholder {
 				font-size: 1rem;
@@ -175,8 +176,12 @@ nav#nav-menu {
 
 #section-trending-gifos {
 	background-color: $light;
-	padding: 46px 0px 82px 22px;
+	padding: 46px 0px 82px 0px;
 	text-align: center;
+	h2,
+	p {
+		margin: 0 22px;
+	}
 	p {
 		color: $black;
 		margin-bottom: 32px;

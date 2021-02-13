@@ -102,7 +102,7 @@ nav#nav-menu span {
   width: 100%;
 }
 
-#section-searcher div.search-container {
+#section-searcher div#search-container {
   display: flex;
   align-items: center;
   padding-left: 55px;
@@ -111,21 +111,22 @@ nav#nav-menu span {
   margin: 0 20px;
 }
 
-#section-searcher div.search-container input.input-search {
+#section-searcher div#search-container input.input-search {
   margin: 0;
   padding: 0;
   height: 50px;
   width: 100%;
   border: 0;
+  background-color: transparent;
 }
 
-#section-searcher div.search-container input.input-search::placeholder {
+#section-searcher div#search-container input.input-search::placeholder {
   font-size: 1rem;
   color: #6b7989;
   font-family: "Roboto", sans-serif;
 }
 
-#section-searcher div.search-container img.search-icon {
+#section-searcher div#search-container img.search-icon {
   cursor: pointer;
   margin-right: 20px;
 }
@@ -198,8 +199,13 @@ nav#nav-menu span {
 
 #section-trending-gifos {
   background-color: #f3f5f8;
-  padding: 46px 0px 82px 22px;
+  padding: 46px 0px 82px 0px;
   text-align: center;
+}
+
+#section-trending-gifos h2,
+#section-trending-gifos p {
+  margin: 0 22px;
 }
 
 #section-trending-gifos p {
@@ -307,5 +313,39 @@ div.modal div.img-container div.footer-img div.icons *:last-child {
 
 .p-0 {
   padding: 0px;
+}
+
+body.dark {
+  background-color: #37383c;
+  color: #ffffff;
+}
+
+body.dark nav#nav-menu {
+  background-color: #000000;
+}
+
+body.dark #section-searcher div#search-container {
+  border: 1px solid #ffffff;
+}
+
+body.dark #section-gifos-result button {
+  border: 1px solid #ffffff;
+  color: #ffffff;
+}
+
+body.dark #section-trending-gifos {
+  background-color: #222326;
+}
+
+body.dark #section-trending-gifos p {
+  color: #ffffff;
+}
+
+body.dark #footer {
+  color: #ffffff;
+}
+
+body.dark #footer a {
+  color: #ffffff;
 }
 /*# sourceMappingURL=styles.css.map */
