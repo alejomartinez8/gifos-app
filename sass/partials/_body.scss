@@ -19,25 +19,36 @@ body {
 	align-items: center;
 	height: 95px;
 	padding-left: 22px;
-	color: white;
+	color: $white;
+
 	img#main-menu-button {
 		padding: 26px;
 	}
-}
-
-nav#nav-menu {
-	display: none;
-	background: $primary-transparent;
-	position: absolute;
-	width: 100%;
-	height: calc(100% - 95px);
-	z-index: 1;
 
 	ul {
+		background: $primary-transparent;
+		position: absolute;
+		left: 0;
+		top: 95px;
+		width: 100%;
+		height: calc(100% - 95px);
+		z-index: 1;
 		padding: 0;
 		margin: 0;
 		padding-top: 32px;
 		list-style-type: none;
+		&.close {
+			display: none;
+		}
+	}
+
+	li:after {
+		content: "";
+		display: block;
+		border-bottom: 1px solid $white;
+		width: 40px;
+		margin: 0 auto;
+		opacity: 0.5;
 	}
 
 	a {
@@ -49,14 +60,6 @@ nav#nav-menu {
 		color: $white;
 		text-align: center;
 		line-height: 60px;
-	}
-
-	span {
-		display: block;
-		border-bottom: 1px solid $white;
-		width: 40px;
-		margin: 0 auto;
-		opacity: 0.5;
 	}
 }
 

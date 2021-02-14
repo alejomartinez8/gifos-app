@@ -1,8 +1,8 @@
-body.dark {
+.dark {
 	background-color: $dark;
 	color: $white;
 
-	nav#nav-menu {
+	ul#menu-container {
 		background-color: $black;
 	}
 

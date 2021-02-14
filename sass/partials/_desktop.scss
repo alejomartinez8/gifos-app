@@ -1,0 +1,53 @@
+@media screen and (min-width: 768px) {
+	.topnav-container {
+		height: 90px;
+		padding: 0 156px;
+
+		img#main-menu-button {
+			display: none;
+		}
+
+		ul {
+			display: block;
+			position: unset;
+			background-color: transparent;
+			padding: 0;
+			width: auto;
+			height: auto;
+
+			&.close {
+				display: block;
+			}
+		}
+
+		li {
+			display: inline-block;
+			margin: 0 25px;
+			&::after {
+				display: none;
+			}
+		}
+
+		a {
+			color: $primary;
+			text-transform: uppercase;
+		}
+	}
+
+	#section-header {
+		h1 {
+			font-size: 40px;
+			line-height: 50px;
+			padding: 0 253px;
+		}
+	}
+
+	.dark {
+		ul#menu-container {
+			background-color: $dark;
+			a {
+				color: $white;
+			}
+		}
+	}
+}

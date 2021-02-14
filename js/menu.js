@@ -1,11 +1,11 @@
 const mainMenuButton = document.getElementById("main-menu-button");
-const navMenu = document.getElementById("nav-menu");
+const menuContainer = document.getElementById("menu-container");
 const toggleTheme = document.getElementById("toggle-theme-button");
 const searchIcon = document.getElementById("search-icon");
 const logoImg = document.getElementById("img-logo");
 
 let theme = "";
-let menuOpen = navMenu.style.display === "block";
+let menuOpen = menuContainer.style.display === "block";
 
 if (localStorage.getItem("theme") === "dark") {
 	setTheme();
@@ -13,7 +13,7 @@ if (localStorage.getItem("theme") === "dark") {
 
 function toggleMenu() {
 	menuOpen = !menuOpen;
-	navMenu.style.display = menuOpen ? "block" : "none";
+	menuContainer.classList.toggle("close");
 	mainMenuButton.setAttribute(
 		"src",
 		theme === "dark"
