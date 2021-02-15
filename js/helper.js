@@ -1,13 +1,40 @@
+// Slider
+const buttonsSliderLeft = document.querySelectorAll(
+	'img[alt = "button-slider-left"]'
+);
+
+const buttonsSliderRight = document.querySelectorAll(
+	'img[alt = "button-slider-right"]'
+);
+
+buttonsSliderLeft.forEach((button) => {
+	imgHover(
+		button,
+		"./img/button-slider-left-hover.svg",
+		"./img/button-slider-left.svg"
+	);
+});
+
+buttonsSliderRight.forEach((button) => {
+	imgHover(
+		button,
+		"./img/Button-Slider-right-hover.svg",
+		"./img/Button-Slider-right.svg"
+	);
+});
+
+// Functions
+
 function setAttribute(elm, att, val) {
 	if (elm) elm.setAttribute(att, val);
 }
 
 function imgHover(elm, hover, unhover) {
-	elm.addEventListener("mouseover", () => {
+	elm.addEventListener("mouseenter", () => {
 		setAttribute(elm, "src", hover);
 	});
 
-	elm.addEventListener("mouseout", () => {
+	elm.addEventListener("mouseleave", () => {
 		setAttribute(elm, "src", unhover);
 	});
 }
@@ -31,13 +58,21 @@ function gifoHover(elm) {
 
 		elm.insertBefore(divHover, img);
 
-		const icons = divHover.children[0].children;
+		const iconFav = divHover.children[0].children[0];
+		const iconDownload = divHover.children[0].children[1];
+		const iconExpand = divHover.children[0].children[2];
 
-		for (let i = 0; i < icons.length; i++) {
-			icons[i].addEventListener("click", () => {
-				console.log(i, img); // TODO - call function
-			});
-		}
+		iconFav.addEventListener("click", () => {
+			console.log("fav", img); // TODO - call function
+		});
+
+		iconDownload.addEventListener("click", () => {
+			console.log("download", img); // TODO - call function
+		});
+
+		iconExpand.addEventListener("click", () => {
+			console.log("expand", img); // TODO - call function
+		});
 	});
 
 	elm.addEventListener("mouseleave", () => {

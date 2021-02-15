@@ -203,10 +203,6 @@ div.hover-img {
 	}
 
 	div.slider-trending-content {
-		img.slider-arrow {
-			display: none;
-		}
-
 		div.gifos-images {
 			overflow: hidden;
 			overflow-x: auto;
@@ -270,7 +266,7 @@ div.hover-img {
 }
 
 div.modal {
-	display: none;
+	display: flex; // display:flex;
 	position: fixed;
 	width: 100%;
 	height: 100%;
@@ -283,13 +279,15 @@ div.modal {
 
 	div.img-container {
 		img.close-icon {
+			display: block;
 			width: 14px;
 			position: relative;
 			bottom: 78px;
 			right: calc(-100% + 14px);
+			cursor: pointer;
 		}
 
-		img {
+		img#image-modal {
 			width: 100%;
 		}
 
@@ -314,14 +312,19 @@ div.modal {
 			div.icons {
 				max-height: 36px;
 				display: flex;
-				*:last-child {
+				img {
+					border: 1px solid $gray;
+					border-radius: 6px;
 					opacity: 0.5;
-					border: 1px solid #9cafc3;
-					border-radius: 6px;
-					border-radius: 6px;
+				}
+				img:last-child {
 					margin-left: 29px;
 				}
 			}
 		}
 	}
+}
+
+img.slider-arrow {
+	display: none;
 }

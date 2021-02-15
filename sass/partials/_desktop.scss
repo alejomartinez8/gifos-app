@@ -1,3 +1,4 @@
+// Desktop Version
 @media screen and (min-width: 768px) {
 	.topnav-container {
 		height: 90px;
@@ -114,10 +115,6 @@
 			justify-content: center;
 			align-items: center;
 
-			img.slider-arrow {
-				display: unset;
-			}
-
 			div.gifos-images {
 				overflow: unset;
 				overflow-x: unset;
@@ -137,12 +134,36 @@
 		}
 	}
 
-	.dark {
-		ul#menu-container {
-			background-color: $dark;
-			a {
-				color: $white;
+	div.modal {
+		background-color: $white;
+
+		div.img-container {
+			img.close-icon {
+				right: calc(-100% + 14px - 96px);
+			}
+
+			img#image-modal {
+				width: 695px;
+				height: 385px;
+				object-fit: cover;
+			}
+
+			div.footer-img {
+				div.icons {
+					img {
+						cursor: pointer;
+					}
+					img:last-child {
+						margin-left: 21px;
+					}
+				}
 			}
 		}
+	}
+
+	img.slider-arrow {
+		display: unset;
+		margin: 25px;
+		cursor: pointer;
 	}
 }
