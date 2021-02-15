@@ -15,6 +15,18 @@ h3 {
   font-weight: 700;
 }
 
+.h-5 {
+  height: 5px;
+}
+
+.m-0 {
+  margin: 0px;
+}
+
+.p-0 {
+  padding: 0px;
+}
+
 *,
 *:before,
 *::after {
@@ -225,10 +237,6 @@ div.hover-img {
   margin-bottom: 32px;
 }
 
-#section-trending-gifos div.slider-trending-content img.slider-arrow {
-  display: none;
-}
-
 #section-trending-gifos div.slider-trending-content div.gifos-images {
   overflow: hidden;
   overflow-x: auto;
@@ -295,7 +303,7 @@ div.hover-img {
 }
 
 div.modal {
-  display: none;
+  display: flex;
   position: fixed;
   width: 100%;
   height: 100%;
@@ -308,13 +316,15 @@ div.modal {
 }
 
 div.modal div.img-container img.close-icon {
+  display: block;
   width: 14px;
   position: relative;
   bottom: 78px;
   right: calc(-100% + 14px);
+  cursor: pointer;
 }
 
-div.modal div.img-container img {
+div.modal div.img-container img#image-modal {
   width: 100%;
 }
 
@@ -345,24 +355,18 @@ div.modal div.img-container div.footer-img div.icons {
   display: flex;
 }
 
-div.modal div.img-container div.footer-img div.icons *:last-child {
+div.modal div.img-container div.footer-img div.icons img {
+  border: 1px solid #6b7989;
+  border-radius: 6px;
   opacity: 0.5;
-  border: 1px solid #9cafc3;
-  border-radius: 6px;
-  border-radius: 6px;
+}
+
+div.modal div.img-container div.footer-img div.icons img:last-child {
   margin-left: 29px;
 }
 
-.h-5 {
-  height: 5px;
-}
-
-.m-0 {
-  margin: 0px;
-}
-
-.p-0 {
-  padding: 0px;
+img.slider-arrow {
+  display: none;
 }
 
 .dark {
@@ -397,6 +401,15 @@ div.modal div.img-container div.footer-img div.icons *:last-child {
 
 .dark #footer a {
   color: #ffffff;
+}
+
+@media screen and (min-width: 768px) {
+  .dark ul#menu-container {
+    background-color: #37383c;
+  }
+  .dark ul#menu-container a {
+    color: #ffffff;
+  }
 }
 
 @media screen and (min-width: 768px) {
@@ -500,9 +513,6 @@ div.modal div.img-container div.footer-img div.icons *:last-child {
     justify-content: center;
     align-items: center;
   }
-  #section-trending-gifos div.slider-trending-content img.slider-arrow {
-    display: unset;
-  }
   #section-trending-gifos div.slider-trending-content div.gifos-images {
     overflow: unset;
     overflow-x: unset;
@@ -516,11 +526,27 @@ div.modal div.img-container div.footer-img div.icons *:last-child {
     width: 357px;
     height: 275px;
   }
-  .dark ul#menu-container {
-    background-color: #37383c;
+  div.modal {
+    background-color: #ffffff;
   }
-  .dark ul#menu-container a {
-    color: #ffffff;
+  div.modal div.img-container img.close-icon {
+    right: calc(-100% + 14px - 96px);
+  }
+  div.modal div.img-container img#image-modal {
+    width: 695px;
+    height: 385px;
+    object-fit: cover;
+  }
+  div.modal div.img-container div.footer-img div.icons img {
+    cursor: pointer;
+  }
+  div.modal div.img-container div.footer-img div.icons img:last-child {
+    margin-left: 21px;
+  }
+  img.slider-arrow {
+    display: unset;
+    margin: 25px;
+    cursor: pointer;
   }
 }
 /*# sourceMappingURL=styles.css.map */
