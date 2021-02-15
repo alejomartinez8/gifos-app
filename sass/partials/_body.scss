@@ -196,15 +196,22 @@ button.btn-primary-ghost {
 		margin-bottom: 32px;
 	}
 
-	div.gifos-images {
-		overflow: hidden;
-		overflow-x: auto;
-		display: flex;
-		img {
-			max-height: 187px;
-			margin: 0 11px;
-			&:last-child {
-				margin-right: 22px;
+	> div {
+		> img {
+			display: none;
+		}
+
+		> div.gifos-images {
+			overflow: hidden;
+			overflow-x: auto;
+			display: flex;
+			img {
+				height: 187px;
+				width: auto;
+				margin: 0 11px;
+				&:last-child {
+					margin-right: 22px;
+				}
 			}
 		}
 	}

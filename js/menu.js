@@ -26,10 +26,6 @@ function toggleMenu() {
 	);
 }
 
-function setAttribute(elm, att, val) {
-	if (elm) elm.setAttribute(att, val);
-}
-
 function setTheme(e) {
 	if (e) e.preventDefault();
 	document.body.classList.toggle("dark");
