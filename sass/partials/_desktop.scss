@@ -26,11 +26,23 @@
 			&::after {
 				display: none;
 			}
-		}
 
-		a {
-			color: $primary;
-			text-transform: uppercase;
+			a {
+				color: $primary;
+				text-transform: uppercase;
+				line-height: 1rem;
+				height: 1.2rem;
+
+				&:hover {
+					display: block;
+					border-bottom: 2px solid $secondary;
+				}
+
+				&:active {
+					color: $gray;
+					border-bottom: 0;
+				}
+			}
 		}
 	}
 
@@ -39,6 +51,33 @@
 			font-size: 40px;
 			line-height: 50px;
 			padding: 0 253px;
+		}
+	}
+
+	#section-trending-gifos {
+		> div {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			> img {
+				display: unset;
+			}
+
+			div.gifos-images {
+				overflow: unset;
+				overflow-x: unset;
+				display: flex;
+
+				img {
+					height: 275px;
+					width: 375px;
+					margin: 0 11px;
+					&:last-child {
+						margin-right: 11px;
+					}
+				}
+			}
 		}
 	}
 
