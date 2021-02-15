@@ -454,15 +454,6 @@ div.modal div.img-container div.footer-img div.icons *:last-child {
     display: flex;
   }
   #section-trending-gifos div.slider-trending-content div.gifos-images div.img-container > img {
-<<<<<<< HEAD
-    height: 275px;
-    width: auto;
-  }
-  #section-trending-gifos div.slider-trending-content div.hover-img {
-    display: block;
-    height: 275px;
-    width: auto;
-=======
     height: 275px;
     width: auto;
   }
@@ -470,7 +461,6 @@ div.modal div.img-container div.footer-img div.icons *:last-child {
     display: block;
     height: 275px;
     width: 357px;
->>>>>>> feat/desktop
     position: absolute;
     background-color: #572ee5;
     opacity: 0.8;
