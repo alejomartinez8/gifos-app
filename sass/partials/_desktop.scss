@@ -54,6 +54,59 @@
 		}
 	}
 
+	div.hover-img {
+		display: block;
+		position: absolute;
+		background-color: $primary;
+		opacity: 0.8;
+
+		div.icon-container {
+			position: absolute;
+			right: 0;
+			margin: 10px 5px;
+			img {
+				margin: 0 5px;
+				cursor: pointer;
+			}
+		}
+		div.text-container {
+			position: absolute;
+			left: 18px;
+			bottom: 51px;
+			text-align: left;
+			p {
+				margin: 0;
+				color: white;
+				&:first-child {
+					font-size: 0.9375rem;
+					margin-bottom: 6px;
+				}
+				&:last-child {
+					@include robot-bold;
+				}
+			}
+		}
+	}
+
+	#section-gifos-result {
+		div#container-gifos-result {
+			justify-content: center;
+			div.img-container {
+				padding: 14px 14.5px;
+				flex-basis: auto;
+
+				div.hover-img {
+					width: 260px;
+					height: 200px;
+				}
+				> img {
+					width: 260px;
+					height: 200px;
+				}
+			}
+		}
+	}
+
 	#section-trending-gifos {
 		padding: 46px 22px 82px 22px; // TODO
 		div.slider-trending-content {
@@ -71,45 +124,13 @@
 				display: flex;
 
 				div.img-container {
-					> img {
+					div.hover-img {
+						width: 357px;
 						height: 275px;
-						width: auto;
 					}
-				}
-			}
-
-			div.hover-img {
-				display: block;
-				height: 275px;
-				width: 357px;
-				position: absolute;
-				background-color: $primary;
-				opacity: 0.8;
-				margin: 0 11px;
-				div.icon-container {
-					position: absolute;
-					right: 0;
-					margin: 10px 5px;
-					img {
-						margin: 0 5px;
-						cursor: pointer;
-					}
-				}
-				div.text-container {
-					position: absolute;
-					left: 18px;
-					bottom: 51px;
-					text-align: left;
-					p {
-						margin: 0;
-						color: white;
-						&:first-child {
-							font-size: 0.9375rem;
-							margin-bottom: 6px;
-						}
-						&:last-child {
-							@include robot-bold;
-						}
+					> img {
+						width: 357px;
+						height: 275px;
 					}
 				}
 			}

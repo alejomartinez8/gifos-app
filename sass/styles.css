@@ -174,19 +174,23 @@ body {
   margin-top: 43px;
 }
 
-#section-gifos-result > div {
+#section-gifos-result div#container-gifos-result {
   display: flex;
   flex-wrap: wrap;
   padding: 0 11.5px;
 }
 
-#section-gifos-result > div img {
-  width: 50%;
-  height: auto;
+#section-gifos-result div#container-gifos-result div.img-container {
+  flex-basis: 50%;
   padding: 12.5px 11.5px;
 }
 
-#section-gifos-result > div img:nth-last-child(-n + 2) {
+#section-gifos-result div#container-gifos-result div.img-container > img {
+  width: 100%;
+  height: auto;
+}
+
+#section-gifos-result div#container-gifos-result div.img-container:nth-last-child(-n + 2) {
   padding-bottom: 0px;
 }
 
@@ -202,6 +206,10 @@ button.btn-primary-ghost {
   font-weight: 700;
   color: #572ee5;
   cursor: pointer;
+}
+
+div.hover-img {
+  display: none;
 }
 
 #section-trending-gifos {
@@ -227,14 +235,13 @@ button.btn-primary-ghost {
   display: flex;
 }
 
-#section-trending-gifos div.slider-trending-content div.gifos-images div.img-container > img {
-  height: 187px;
-  width: auto;
+#section-trending-gifos div.slider-trending-content div.gifos-images div.img-container {
   margin: 0 11px;
 }
 
-#section-trending-gifos div.slider-trending-content div.hover-img {
-  display: none;
+#section-trending-gifos div.slider-trending-content div.gifos-images div.img-container > img {
+  height: 187px;
+  width: 243px;
 }
 
 #footer {
@@ -437,6 +444,54 @@ div.modal div.img-container div.footer-img div.icons *:last-child {
     line-height: 50px;
     padding: 0 253px;
   }
+  div.hover-img {
+    display: block;
+    position: absolute;
+    background-color: #572ee5;
+    opacity: 0.8;
+  }
+  div.hover-img div.icon-container {
+    position: absolute;
+    right: 0;
+    margin: 10px 5px;
+  }
+  div.hover-img div.icon-container img {
+    margin: 0 5px;
+    cursor: pointer;
+  }
+  div.hover-img div.text-container {
+    position: absolute;
+    left: 18px;
+    bottom: 51px;
+    text-align: left;
+  }
+  div.hover-img div.text-container p {
+    margin: 0;
+    color: white;
+  }
+  div.hover-img div.text-container p:first-child {
+    font-size: 0.9375rem;
+    margin-bottom: 6px;
+  }
+  div.hover-img div.text-container p:last-child {
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+  }
+  #section-gifos-result div#container-gifos-result {
+    justify-content: center;
+  }
+  #section-gifos-result div#container-gifos-result div.img-container {
+    padding: 14px 14.5px;
+    flex-basis: auto;
+  }
+  #section-gifos-result div#container-gifos-result div.img-container div.hover-img {
+    width: 260px;
+    height: 200px;
+  }
+  #section-gifos-result div#container-gifos-result div.img-container > img {
+    width: 260px;
+    height: 200px;
+  }
   #section-trending-gifos {
     padding: 46px 22px 82px 22px;
   }
@@ -453,45 +508,13 @@ div.modal div.img-container div.footer-img div.icons *:last-child {
     overflow-x: unset;
     display: flex;
   }
-  #section-trending-gifos div.slider-trending-content div.gifos-images div.img-container > img {
-    height: 275px;
-    width: auto;
-  }
-  #section-trending-gifos div.slider-trending-content div.hover-img {
-    display: block;
-    height: 275px;
+  #section-trending-gifos div.slider-trending-content div.gifos-images div.img-container div.hover-img {
     width: 357px;
-    position: absolute;
-    background-color: #572ee5;
-    opacity: 0.8;
-    margin: 0 11px;
+    height: 275px;
   }
-  #section-trending-gifos div.slider-trending-content div.hover-img div.icon-container {
-    position: absolute;
-    right: 0;
-    margin: 10px 5px;
-  }
-  #section-trending-gifos div.slider-trending-content div.hover-img div.icon-container img {
-    margin: 0 5px;
-    cursor: pointer;
-  }
-  #section-trending-gifos div.slider-trending-content div.hover-img div.text-container {
-    position: absolute;
-    left: 18px;
-    bottom: 51px;
-    text-align: left;
-  }
-  #section-trending-gifos div.slider-trending-content div.hover-img div.text-container p {
-    margin: 0;
-    color: white;
-  }
-  #section-trending-gifos div.slider-trending-content div.hover-img div.text-container p:first-child {
-    font-size: 0.9375rem;
-    margin-bottom: 6px;
-  }
-  #section-trending-gifos div.slider-trending-content div.hover-img div.text-container p:last-child {
-    font-family: "Roboto", sans-serif;
-    font-weight: 700;
+  #section-trending-gifos div.slider-trending-content div.gifos-images div.img-container > img {
+    width: 357px;
+    height: 275px;
   }
   .dark ul#menu-container {
     background-color: #37383c;

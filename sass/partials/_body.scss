@@ -155,14 +155,18 @@ body {
 		text-align: center;
 		margin-top: 43px;
 	}
-	> div {
+	div#container-gifos-result {
 		display: flex;
 		flex-wrap: wrap;
 		padding: 0 11.5px;
-		img {
-			width: 50%;
-			height: auto;
+
+		div.img-container {
+			flex-basis: 50%;
 			padding: 12.5px 11.5px;
+			> img {
+				width: 100%;
+				height: auto;
+			}
 			&:nth-last-child(-n + 2) {
 				padding-bottom: 0px;
 			}
@@ -181,6 +185,10 @@ button.btn-primary-ghost {
 	@include monserrat-bold;
 	color: $primary;
 	cursor: pointer;
+}
+
+div.hover-img {
+	display: none;
 }
 
 #section-trending-gifos {
@@ -205,16 +213,12 @@ button.btn-primary-ghost {
 			display: flex;
 
 			div.img-container {
+				margin: 0 11px;
 				> img {
 					height: 187px;
-					width: auto;
-					margin: 0 11px;
+					width: 243px;
 				}
 			}
-		}
-
-		div.hover-img {
-			display: none;
 		}
 	}
 }
