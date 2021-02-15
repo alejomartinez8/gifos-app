@@ -211,33 +211,30 @@ button.btn-primary-ghost {
 }
 
 #section-trending-gifos h2,
-#section-trending-gifos p {
+#section-trending-gifos > p {
   margin: 0 22px;
-}
-
-#section-trending-gifos p {
   color: #000000;
   margin-bottom: 32px;
 }
 
-#section-trending-gifos > div > img {
+#section-trending-gifos div.slider-trending-content img.slider-arrow {
   display: none;
 }
 
-#section-trending-gifos > div > div.gifos-images {
+#section-trending-gifos div.slider-trending-content div.gifos-images {
   overflow: hidden;
   overflow-x: auto;
   display: flex;
 }
 
-#section-trending-gifos > div > div.gifos-images img {
+#section-trending-gifos div.slider-trending-content div.gifos-images div.img-container > img {
   height: 187px;
   width: auto;
   margin: 0 11px;
 }
 
-#section-trending-gifos > div > div.gifos-images img:last-child {
-  margin-right: 22px;
+#section-trending-gifos div.slider-trending-content div.hover-img {
+  display: none;
 }
 
 #footer {
@@ -440,26 +437,61 @@ div.modal div.img-container div.footer-img div.icons *:last-child {
     line-height: 50px;
     padding: 0 253px;
   }
-  #section-trending-gifos > div {
+  #section-trending-gifos {
+    padding: 46px 22px 82px 22px;
+  }
+  #section-trending-gifos div.slider-trending-content {
     display: flex;
     justify-content: center;
     align-items: center;
   }
-  #section-trending-gifos > div > img {
+  #section-trending-gifos div.slider-trending-content img.slider-arrow {
     display: unset;
   }
-  #section-trending-gifos > div div.gifos-images {
+  #section-trending-gifos div.slider-trending-content div.gifos-images {
     overflow: unset;
     overflow-x: unset;
     display: flex;
   }
-  #section-trending-gifos > div div.gifos-images img {
+  #section-trending-gifos div.slider-trending-content div.gifos-images div.img-container > img {
     height: 275px;
-    width: 375px;
+    width: auto;
+  }
+  #section-trending-gifos div.slider-trending-content div.hover-img {
+    display: block;
+    height: 275px;
+    width: auto;
+    position: absolute;
+    background-color: #572ee5;
+    opacity: 0.8;
     margin: 0 11px;
   }
-  #section-trending-gifos > div div.gifos-images img:last-child {
-    margin-right: 11px;
+  #section-trending-gifos div.slider-trending-content div.hover-img div.icon-container {
+    position: absolute;
+    right: 0;
+    margin: 10px 5px;
+  }
+  #section-trending-gifos div.slider-trending-content div.hover-img div.icon-container img {
+    margin: 0 5px;
+    cursor: pointer;
+  }
+  #section-trending-gifos div.slider-trending-content div.hover-img div.text-container {
+    position: absolute;
+    left: 18px;
+    bottom: 51px;
+    text-align: left;
+  }
+  #section-trending-gifos div.slider-trending-content div.hover-img div.text-container p {
+    margin: 0;
+    color: white;
+  }
+  #section-trending-gifos div.slider-trending-content div.hover-img div.text-container p:first-child {
+    font-size: 0.9375rem;
+    margin-bottom: 6px;
+  }
+  #section-trending-gifos div.slider-trending-content div.hover-img div.text-container p:last-child {
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
   }
   .dark ul#menu-container {
     background-color: #37383c;

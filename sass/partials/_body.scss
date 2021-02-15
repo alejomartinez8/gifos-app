@@ -188,31 +188,33 @@ button.btn-primary-ghost {
 	padding: 46px 0px 82px 0px;
 	text-align: center;
 	h2,
-	p {
+	> p {
 		margin: 0 22px;
-	}
-	p {
 		color: $black;
 		margin-bottom: 32px;
 	}
 
-	> div {
-		> img {
+	div.slider-trending-content {
+		img.slider-arrow {
 			display: none;
 		}
 
-		> div.gifos-images {
+		div.gifos-images {
 			overflow: hidden;
 			overflow-x: auto;
 			display: flex;
-			img {
-				height: 187px;
-				width: auto;
-				margin: 0 11px;
-				&:last-child {
-					margin-right: 22px;
+
+			div.img-container {
+				> img {
+					height: 187px;
+					width: auto;
+					margin: 0 11px;
 				}
 			}
+		}
+
+		div.hover-img {
+			display: none;
 		}
 	}
 }

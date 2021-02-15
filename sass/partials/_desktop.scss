@@ -55,12 +55,13 @@
 	}
 
 	#section-trending-gifos {
-		> div {
+		padding: 46px 22px 82px 22px; // TODO
+		div.slider-trending-content {
 			display: flex;
 			justify-content: center;
 			align-items: center;
 
-			> img {
+			img.slider-arrow {
 				display: unset;
 			}
 
@@ -69,12 +70,46 @@
 				overflow-x: unset;
 				display: flex;
 
-				img {
-					height: 275px;
-					width: 375px;
-					margin: 0 11px;
-					&:last-child {
-						margin-right: 11px;
+				div.img-container {
+					> img {
+						height: 275px;
+						width: auto;
+					}
+				}
+			}
+
+			div.hover-img {
+				display: block;
+				height: 275px;
+				width: auto;
+				position: absolute;
+				background-color: $primary;
+				opacity: 0.8;
+				margin: 0 11px;
+				div.icon-container {
+					position: absolute;
+					right: 0;
+					margin: 10px 5px;
+					img {
+						margin: 0 5px;
+						cursor: pointer;
+					}
+				}
+				div.text-container {
+					position: absolute;
+					left: 18px;
+					bottom: 51px;
+					text-align: left;
+					p {
+						margin: 0;
+						color: white;
+						&:first-child {
+							font-size: 0.9375rem;
+							margin-bottom: 6px;
+						}
+						&:last-child {
+							@include robot-bold;
+						}
 					}
 				}
 			}
