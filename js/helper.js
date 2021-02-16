@@ -56,6 +56,9 @@ function gifoHover(elm) {
         </div>
         `;
 
+		divHover.style.width = `${img.offsetWidth}px`;
+		divHover.style.height = `${img.offsetHeight}px`
+
 		elm.insertBefore(divHover, img);
 
 		const iconFav = divHover.children[0].children[0];

@@ -95,10 +95,6 @@
 			padding: 14px 14.5px;
 			flex-basis: auto;
 
-			div.hover-img {
-				width: 260px;
-				height: 200px;
-			}
 			> img {
 				width: 260px;
 				height: 200px;
@@ -119,13 +115,9 @@
 				display: flex;
 
 				div.img-container {
-					div.hover-img {
-						width: 357px;
-						height: 275px;
-					}
 					> img {
-						width: 357px;
-						height: 275px;
+						width: 100%;
+						height: auto;
 					}
 				}
 			}
