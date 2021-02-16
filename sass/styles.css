@@ -30,7 +30,8 @@ h3 {
 *,
 *:before,
 *::after {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 :root {
@@ -43,9 +44,15 @@ body {
 }
 
 .topnav-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   height: 95px;
   padding-left: 22px;
   color: #ffffff;
@@ -105,8 +112,13 @@ body {
 }
 
 #section-searcher {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   position: relative;
   max-width: 551px;
   margin: 0 auto;
@@ -118,8 +130,12 @@ body {
 }
 
 #section-searcher div#search-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding-left: 55px;
   border: 1px solid #572ee5;
   border-radius: 27px;
@@ -133,6 +149,24 @@ body {
   width: 100%;
   border: 0;
   background-color: transparent;
+}
+
+#section-searcher div#search-container input.input-search::-webkit-input-placeholder, #section-searcher div#search-container input.input-search:focus {
+  font-size: 1rem;
+  color: #6b7989;
+  font-family: "Roboto", sans-serif;
+}
+
+#section-searcher div#search-container input.input-search:-ms-input-placeholder, #section-searcher div#search-container input.input-search:focus {
+  font-size: 1rem;
+  color: #6b7989;
+  font-family: "Roboto", sans-serif;
+}
+
+#section-searcher div#search-container input.input-search::-ms-input-placeholder, #section-searcher div#search-container input.input-search:focus {
+  font-size: 1rem;
+  color: #6b7989;
+  font-family: "Roboto", sans-serif;
 }
 
 #section-searcher div#search-container input.input-search::placeholder, #section-searcher div#search-container input.input-search:focus {
@@ -204,13 +238,17 @@ body {
 }
 
 .images-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   padding: 0 11.5px;
 }
 
 .images-container div.img-container {
-  flex-basis: 50%;
+  -ms-flex-preferred-size: 50%;
+      flex-basis: 50%;
   padding: 12.5px 11.5px;
 }
 
@@ -257,6 +295,8 @@ div.hover-img {
 #section-trending-gifos div.slider-trending-content div.gifos-images {
   overflow: hidden;
   overflow-x: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 
@@ -291,8 +331,12 @@ div.modal {
   width: 100%;
   height: 100%;
   top: 0;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding: 0 28px;
   background: rgba(255, 255, 255, 0.9);
   overflow-y: hidden;
@@ -312,9 +356,15 @@ div.modal div.img-container img#image-modal {
 }
 
 div.modal div.img-container div.footer-img {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   color: #000000;
   font-size: 15px;
 }
@@ -335,6 +385,8 @@ div.modal div.img-container div.footer-img div.text *:last-child {
 
 div.modal div.img-container div.footer-img div.icons {
   max-height: 36px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 
@@ -475,15 +527,14 @@ img.slider-arrow {
     font-weight: 700;
   }
   .images-container {
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
   .images-container div.img-container {
     padding: 14px 14.5px;
-    flex-basis: auto;
-  }
-  .images-container div.img-container div.hover-img {
-    width: 260px;
-    height: 200px;
+    -ms-flex-preferred-size: auto;
+        flex-basis: auto;
   }
   .images-container div.img-container > img {
     width: 260px;
@@ -493,22 +544,26 @@ img.slider-arrow {
     padding: 46px 22px 82px 22px;
   }
   #section-trending-gifos div.slider-trending-content {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
   #section-trending-gifos div.slider-trending-content div.gifos-images {
     overflow: unset;
     overflow-x: unset;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
   }
-  #section-trending-gifos div.slider-trending-content div.gifos-images div.img-container div.hover-img {
-    width: 357px;
-    height: 275px;
-  }
   #section-trending-gifos div.slider-trending-content div.gifos-images div.img-container > img {
-    width: 357px;
-    height: 275px;
+    width: 100%;
+    height: auto;
   }
   div.modal {
     background-color: #ffffff;
@@ -518,7 +573,8 @@ img.slider-arrow {
   }
   div.modal div.img-container img#image-modal {
     width: 695px;
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
   }
   div.modal div.img-container div.footer-img div.icons img {
     cursor: pointer;
