@@ -71,8 +71,19 @@ function gifoHover(elm) {
 		});
 
 		iconExpand.addEventListener("click", () => {
-			console.log("expand", img); // TODO - call function
+			modalContainer.style.display = "flex";
+			const imageModal = document.getElementById("image-modal");
+			setAttribute(imageModal, "src", img.getAttribute("src"));
 		});
+
+		if (window.matchMedia("(max-width:768px")) {
+			img.addEventListener("click", () => {
+				modalContainer.style.display = "flex";
+				const imageModal = document.getElementById("image-modal");
+				setAttribute(imageModal, "src", img.getAttribute("src"));
+				console.log("expand");
+			});
+		}
 	});
 
 	elm.addEventListener("mouseleave", () => {
