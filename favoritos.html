@@ -29,33 +29,44 @@
 			<section id="section-favorites">
 				<img class="icon-fav" src='./img/icon-favoritos.svg'></img>
 				<h2 id="heading-favorites">Favoritos</h2>
-				<div id="container-favorites">
-					<img
-						src="./img/images/2b53c755fcd0fca65cbcc2f85f28453e525574e5.png"
-						alt=""
-					/>
-					<img
-						src="./img/images/d44faf44becb6f2820b9f6009d619581a91fdf7c.png"
-						alt=""
-					/>
-					<img
-						src="./img/images/d44faf44becb6f2820b9f6009d619581a91fdf7c.png"
-						alt=""
-					/>
-					<img
-						src="./img/images/82557e14fba9407abf25ffade61a60c814294554.png"
-						alt=""
-					/>
-					<img
-						src="./img/images/03d5f83a7024b035e2450b4816426cd11a56c34d.png"
-						alt=""
-					/>
-					<img
-						src="./img/images/64da32bcc6808f07f3dda14fc45605426ec0bd3c.png"
-						alt=""
-					/>
-				</div>
-
+					<div id="container-gifos-favorites" class="images-container">
+						<div class="img-container">
+							<img
+								src="./img/images/2b53c755fcd0fca65cbcc2f85f28453e525574e5.png"
+								alt=""
+							/>
+						</div>
+						<div class="img-container">
+							<img
+								src="./img/images/d44faf44becb6f2820b9f6009d619581a91fdf7c.png"
+								alt=""
+							/>
+						</div>
+						<div class="img-container">
+							<img
+								src="./img/images/d44faf44becb6f2820b9f6009d619581a91fdf7c.png"
+								alt=""
+							/>
+						</div>
+						<div class="img-container">
+							<img
+								src="./img/images/82557e14fba9407abf25ffade61a60c814294554.png"
+								alt=""
+							/>
+						</div>
+						<div class="img-container">
+							<img
+								src="./img/images/03d5f83a7024b035e2450b4816426cd11a56c34d.png"
+								alt=""
+							/>
+						</div>
+						<div class="img-container">
+							<img
+								src="./img/images/64da32bcc6808f07f3dda14fc45605426ec0bd3c.png"
+								alt=""
+							/>
+						</div>
+					</div>
 				<button class="btn-primary-ghost">VER MÁS</button>
 			</section>
 			<section id="section-trending-gifos">
@@ -102,6 +113,11 @@
 		<div class="bg-primary h-5"></div>
 
 		<div id="modal" class="modal">
+			<img
+				class="slider-arrow"
+				src="./img/button-slider-left.svg"
+				alt="button-slider-left"
+			/>
 			<div class="img-container">
 				<img
 					id="close-modal"
@@ -110,6 +126,7 @@
 					alt="close"
 				/>
 				<img
+					id="image-modal"
 					src="./img/images/a89ac104638d206029569a1653bfcfcd8fe1c709.png"
 					alt="kitten"
 				/>
@@ -124,10 +141,16 @@
 					</div>
 				</div>
 			</div>
+			<img
+				class="slider-arrow"
+				src="./img/Button-Slider-right.svg"
+				alt="button-slider-right"
+			/>
 		</div>
 
 		<script src="./js/helper.js"></script>
 		<script src="./js/menu.js"></script>
 		<script src="./js/modal.js"></script>
+		<script src="./js/favorites.js"></script>
 	</body>
 </html>
