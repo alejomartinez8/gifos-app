@@ -275,6 +275,11 @@ button.btn-primary-ghost {
   cursor: pointer;
 }
 
+button.btn-primary-ghost:hover {
+  background-color: #572ee5;
+  color: #ffffff;
+}
+
 div.hover-img {
   display: none;
 }

@@ -201,6 +201,11 @@ button.btn-primary-ghost {
 	@include monserrat-bold;
 	color: $primary;
 	cursor: pointer;
+
+	&:hover{
+		background-color: $primary;
+		color: $white;
+	}
 }
 
 div.hover-img {
