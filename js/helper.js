@@ -81,7 +81,6 @@ function gifoHover(elm) {
 				modalContainer.style.display = "flex";
 				const imageModal = document.getElementById("image-modal");
 				setAttribute(imageModal, "src", img.getAttribute("src"));
-				console.log("expand");
 			});
 		}
 	});

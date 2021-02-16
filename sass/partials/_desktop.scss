@@ -89,21 +89,19 @@
 		}
 	}
 
-	#section-gifos-result {
-		div#container-gifos-result {
-			justify-content: center;
-			div.img-container {
-				padding: 14px 14.5px;
-				flex-basis: auto;
+	.images-container {
+		justify-content: center;
+		div.img-container {
+			padding: 14px 14.5px;
+			flex-basis: auto;
 
-				div.hover-img {
-					width: 260px;
-					height: 200px;
-				}
-				> img {
-					width: 260px;
-					height: 200px;
-				}
+			div.hover-img {
+				width: 260px;
+				height: 200px;
+			}
+			> img {
+				width: 260px;
+				height: 200px;
 			}
 		}
 	}
