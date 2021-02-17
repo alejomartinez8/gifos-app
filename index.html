@@ -1,195 +1,204 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>GIFOS</title>
-		<link rel="stylesheet" href="./sass/styles.css" />
-	</head>
-	<body>
-		<header>
-			<div class="bg-primary h-5"></div>
-			<nav class="topnav-container">
-				<a href="./index.html"
-					><img id="img-logo" src="./img/logo-mobile.svg" alt="GIFOS-logo"
-				/></a>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GIFOS</title>
+    <link rel="stylesheet" href="./sass/styles.css" />
+  </head>
+  <body>
+    <header>
+      <div class="bg-primary h-5"></div>
+      <nav class="topnav-container">
+        <a href="./index.html"
+          ><img id="img-logo" src="./img/logo-mobile.svg" alt="GIFOS-logo"
+        /></a>
 
-				<img id="main-menu-button" src="./img/burger.svg" alt="main-menu-icon" />
-				<ul id="menu-container" class="close">
-					<li>
-						<a id="toggle-theme-button" href="#">Modo Nocturno</a>
-					</li>
-					<li><a href="./favoritos.html">Favoritos</a></li>
-					<li><a href="./misGIFOS.html">Mis GIFOS</a></li>
-				</ul>
-			</nav>
-		</header>
-		<main>
-			<section id="section-header">
-				<h1>Inspírate, busca, guarda, y crea los mejores <span>GIFOS</span></h1>
-			</section>
-			<section id="section-searcher">
-				<img class="img-header" src="./img/ilustra_header.svg" alt="" />
-				<div class="search-container">
-					<div class="input-container">
-						<input class="input-search" type="text" placeholder="Busca GIFOS y más" />
-						<img id="search-icon" src="./img/icon-search.svg" alt="search" />
-					</div>
-					<ul>
-						<li>Sugerencia 1</li>
-						<li>Sugerencia 2</li>
-						<li>Sugerencia 3</li>
-						<li>Sugerencia 4</li>
-					</ul>
-					
-				</div>
-			</section>
-			<section id="section-keywords">
-				<h3>Trending:</h3>
-				<p>Reactions, Entertainment, Sports, Stickers, Artists</p>
-			</section>
-			<section id="section-gifos-result">
-				<span></span>
-				<h2 id="heading-gifos-result">Mascotas</h2>
+        <img
+          id="main-menu-button"
+          src="./img/burger.svg"
+          alt="main-menu-icon"
+        />
+        <ul id="menu-container" class="close">
+          <li>
+            <a id="toggle-theme-button" href="#">Modo Nocturno</a>
+          </li>
+          <li><a href="./favoritos.html">Favoritos</a></li>
+          <li><a href="./misGIFOS.html">Mis GIFOS</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section id="section-header">
+        <h1>Inspírate, busca, guarda, y crea los mejores <span>GIFOS</span></h1>
+      </section>
+      <section id="section-searcher">
+        <img class="img-header" src="./img/ilustra_header.svg" alt="" />
+        <div id="search-container" class="search-container">
+          <div class="input-container">
+            <input
+              id="input-search"
+              class="input-search"
+              type="text"
+              placeholder="Busca GIFOS y más"
+            />
+            <img id="search-icon" src="./img/icon-search.svg" alt="search" />
+          </div>
+          <ul id="suggested-container" class="suggested-container">
+            <li>Sugerencia 1</li>
+            <li>Sugerencia 2</li>
+            <li>Sugerencia 3</li>
+            <li>Sugerencia 4</li>
+          </ul>
+        </div>
+      </section>
+      <section id="section-keywords">
+        <h3>Trending:</h3>
+        <p>Reactions, Entertainment, Sports, Stickers, Artists</p>
+      </section>
+      <section id="section-gifos-result">
+        <span></span>
+        <h2 id="heading-gifos-result">Mascotas</h2>
 
-				<div id="container-gifos-result" class="images-container">
-					<div class="img-container">
-						<img
-							src="./img/images/2b53c755fcd0fca65cbcc2f85f28453e525574e5.png"
-							alt=""
-						/>
-					</div>
-					<div class="img-container">
-						<img
-							src="./img/images/d44faf44becb6f2820b9f6009d619581a91fdf7c.png"
-							alt=""
-						/>
-					</div>
-					<div class="img-container">
-						<img
-							src="./img/images/d44faf44becb6f2820b9f6009d619581a91fdf7c.png"
-							alt=""
-						/>
-					</div>
-					<div class="img-container">
-						<img
-							src="./img/images/82557e14fba9407abf25ffade61a60c814294554.png"
-							alt=""
-						/>
-					</div>
-					<div class="img-container">
-						<img
-							src="./img/images/03d5f83a7024b035e2450b4816426cd11a56c34d.png"
-							alt=""
-						/>
-					</div>
-					<div class="img-container">
-						<img
-							src="./img/images/64da32bcc6808f07f3dda14fc45605426ec0bd3c.png"
-							alt=""
-						/>
-					</div>
-				</div>
+        <div id="container-gifos-result" class="images-container">
+          <div class="img-container">
+            <img
+              src="./img/images/2b53c755fcd0fca65cbcc2f85f28453e525574e5.png"
+              alt=""
+            />
+          </div>
+          <div class="img-container">
+            <img
+              src="./img/images/d44faf44becb6f2820b9f6009d619581a91fdf7c.png"
+              alt=""
+            />
+          </div>
+          <div class="img-container">
+            <img
+              src="./img/images/d44faf44becb6f2820b9f6009d619581a91fdf7c.png"
+              alt=""
+            />
+          </div>
+          <div class="img-container">
+            <img
+              src="./img/images/82557e14fba9407abf25ffade61a60c814294554.png"
+              alt=""
+            />
+          </div>
+          <div class="img-container">
+            <img
+              src="./img/images/03d5f83a7024b035e2450b4816426cd11a56c34d.png"
+              alt=""
+            />
+          </div>
+          <div class="img-container">
+            <img
+              src="./img/images/64da32bcc6808f07f3dda14fc45605426ec0bd3c.png"
+              alt=""
+            />
+          </div>
+        </div>
 
-				<button class="btn-primary-ghost">VER MÁS</button>
-			</section>
-			<section id="section-trending-gifos">
-				<h2>Trending GIFOS</h2>
-				<p>Mira los últimos GIFOS de nuestra comunidad.</p>
-				<div class="slider-trending-content">
-					<img
-						class="slider-arrow"
-						src="./img/button-slider-left.svg"
-						alt="button-slider-left"
-					/>
-					<div class="gifos-images">
-						<div class="img-container">
-							<img
-								src="./img/images/a89ac104638d206029569a1653bfcfcd8fe1c709.png"
-								alt="kitten"
-							/>
-						</div>
-						<div class="img-container">
-							<img
-								src="./img/images/c92adcd934648f8932a7589ce881ae68b67ad56a.png"
-								alt="kitten"
-							/>
-						</div>
-						<div class="img-container">
-							<img
-								src="./img/images/64da32bcc6808f07f3dda14fc45605426ec0bd3c.png"
-								alt=""
-							/>
-						</div>
-					</div>
-					<img
-						class="slider-arrow"
-						src="./img/Button-Slider-right.svg"
-						alt="button-slider-right"
-					/>
-				</div>
-			</section>
-		</main>
+        <button class="btn-primary-ghost">VER MÁS</button>
+      </section>
+      <section id="section-trending-gifos">
+        <h2>Trending GIFOS</h2>
+        <p>Mira los últimos GIFOS de nuestra comunidad.</p>
+        <div class="slider-trending-content">
+          <img
+            class="slider-arrow"
+            src="./img/button-slider-left.svg"
+            alt="button-slider-left"
+          />
+          <div class="gifos-images">
+            <div class="img-container">
+              <img
+                src="./img/images/a89ac104638d206029569a1653bfcfcd8fe1c709.png"
+                alt="kitten"
+              />
+            </div>
+            <div class="img-container">
+              <img
+                src="./img/images/c92adcd934648f8932a7589ce881ae68b67ad56a.png"
+                alt="kitten"
+              />
+            </div>
+            <div class="img-container">
+              <img
+                src="./img/images/64da32bcc6808f07f3dda14fc45605426ec0bd3c.png"
+                alt=""
+              />
+            </div>
+          </div>
+          <img
+            class="slider-arrow"
+            src="./img/Button-Slider-right.svg"
+            alt="button-slider-right"
+          />
+        </div>
+      </section>
+    </main>
 
-		<footer id="footer">
-			<p>Compartir en:</p>
-			<div class="social-icons">
-				<img id="icon-facebook" src="./img/icon_facebook.svg" alt="" />
-				<img id="icon-twitter" src="./img/icon-twitter.svg" alt="" />
-				<img id="icon-instagram" src="./img/icon_instagram.svg" alt="" />
-			</div>
-			<p>© GIFOS 2020 All Rights Reserved.</p>
-			<p>
-				Github:
-				<a
-					href="https://github.com/alejomartinez8/project-gifos-acamica"
-					target="_blank"
-					>alejomartinez8/project-gifos-acamica</a
-				>
-			</p>
-		</footer>
-		<div class="bg-primary h-5"></div>
+    <footer id="footer">
+      <p>Compartir en:</p>
+      <div class="social-icons">
+        <img id="icon-facebook" src="./img/icon_facebook.svg" alt="" />
+        <img id="icon-twitter" src="./img/icon-twitter.svg" alt="" />
+        <img id="icon-instagram" src="./img/icon_instagram.svg" alt="" />
+      </div>
+      <p>© GIFOS 2020 All Rights Reserved.</p>
+      <p>
+        Github:
+        <a
+          href="https://github.com/alejomartinez8/project-gifos-acamica"
+          target="_blank"
+          >alejomartinez8/project-gifos-acamica</a
+        >
+      </p>
+    </footer>
+    <div class="bg-primary h-5"></div>
 
-		<div id="modal" class="modal">
-			<img
-				class="slider-arrow"
-				src="./img/button-slider-left.svg"
-				alt="button-slider-left"
-			/>
-			<div class="img-container">
-				<img
-					id="close-modal"
-					class="close-icon"
-					src="./img/close.svg"
-					alt="close"
-				/>
-				<img
-					id="image-modal"
-					src="./img/images/a89ac104638d206029569a1653bfcfcd8fe1c709.png"
-					alt="kitten"
-				/>
-				<div class="footer-img">
-					<div class="text">
-						<p>User</p>
-						<p>Titulo GIFO</p>
-					</div>
-					<div class="icons">
-						<img src="./img/icon-fav.svg" alt="icon-fav" />
-						<img src="./img/icon-download.svg" alt="icon-download" />
-					</div>
-				</div>
-			</div>
-			<img
-				class="slider-arrow"
-				src="./img/Button-Slider-right.svg"
-				alt="button-slider-right"
-			/>
-		</div>
+    <div id="modal" class="modal">
+      <img
+        class="slider-arrow"
+        src="./img/button-slider-left.svg"
+        alt="button-slider-left"
+      />
+      <div class="img-container">
+        <img
+          id="close-modal"
+          class="close-icon"
+          src="./img/close.svg"
+          alt="close"
+        />
+        <img
+          id="image-modal"
+          src="./img/images/a89ac104638d206029569a1653bfcfcd8fe1c709.png"
+          alt="kitten"
+        />
+        <div class="footer-img">
+          <div class="text">
+            <p>User</p>
+            <p>Titulo GIFO</p>
+          </div>
+          <div class="icons">
+            <img src="./img/icon-fav.svg" alt="icon-fav" />
+            <img src="./img/icon-download.svg" alt="icon-download" />
+          </div>
+        </div>
+      </div>
+      <img
+        class="slider-arrow"
+        src="./img/Button-Slider-right.svg"
+        alt="button-slider-right"
+      />
+    </div>
 
-		<script src="./js/helper.js"></script>
-		<script src="./js/menu.js"></script>
-		<script src="./js/modal.js"></script>
-		<script src="./js/trending.js"></script>
-	</body>
+    <script src="./js/search.js"></script>
+    <script src="./js/helper.js"></script>
+    <script src="./js/menu.js"></script>
+    <script src="./js/modal.js"></script>
+    <script src="./js/trending.js"></script>
+  </body>
 </html>

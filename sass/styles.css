@@ -129,13 +129,13 @@ body {
   width: 100%;
 }
 
-#section-searcher div.search-container {
+#section-searcher .search-container {
   border: 1px solid #572ee5;
   border-radius: 27px;
   margin: 0 20px;
 }
 
-#section-searcher div.search-container .input-container {
+#section-searcher .search-container .input-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -145,7 +145,7 @@ body {
   padding-left: 55px;
 }
 
-#section-searcher div.search-container .input-container input.input-search {
+#section-searcher .search-container .input-container input.input-search {
   margin: 0;
   padding: 0;
   height: 50px;
@@ -154,49 +154,92 @@ body {
   background-color: transparent;
 }
 
-#section-searcher div.search-container .input-container input.input-search::-webkit-input-placeholder, #section-searcher div.search-container .input-container input.input-search:focus {
+#section-searcher .search-container .input-container input.input-search::-webkit-input-placeholder, #section-searcher .search-container .input-container input.input-search:focus {
   font-size: 1rem;
-  color: #6b7989;
+  color: #000000;
   font-family: "Roboto", sans-serif;
 }
 
-#section-searcher div.search-container .input-container input.input-search:-ms-input-placeholder, #section-searcher div.search-container .input-container input.input-search:focus {
+#section-searcher .search-container .input-container input.input-search:-ms-input-placeholder, #section-searcher .search-container .input-container input.input-search:focus {
   font-size: 1rem;
-  color: #6b7989;
+  color: #000000;
   font-family: "Roboto", sans-serif;
 }
 
-#section-searcher div.search-container .input-container input.input-search::-ms-input-placeholder, #section-searcher div.search-container .input-container input.input-search:focus {
+#section-searcher .search-container .input-container input.input-search::-ms-input-placeholder, #section-searcher .search-container .input-container input.input-search:focus {
   font-size: 1rem;
-  color: #6b7989;
+  color: #000000;
   font-family: "Roboto", sans-serif;
 }
 
-#section-searcher div.search-container .input-container input.input-search::placeholder, #section-searcher div.search-container .input-container input.input-search:focus {
+#section-searcher .search-container .input-container input.input-search::placeholder, #section-searcher .search-container .input-container input.input-search:focus {
   font-size: 1rem;
-  color: #6b7989;
+  color: #000000;
   font-family: "Roboto", sans-serif;
 }
 
-#section-searcher div.search-container .input-container input.input-search:focus {
+#section-searcher .search-container .input-container input.input-search::-webkit-input-placeholder {
+  color: #9cafc3;
+}
+
+#section-searcher .search-container .input-container input.input-search:-ms-input-placeholder {
+  color: #9cafc3;
+}
+
+#section-searcher .search-container .input-container input.input-search::-ms-input-placeholder {
+  color: #9cafc3;
+}
+
+#section-searcher .search-container .input-container input.input-search::placeholder {
+  color: #9cafc3;
+}
+
+#section-searcher .search-container .input-container input.input-search:focus {
   outline: none;
 }
 
-#section-searcher div.search-container .input-container img#search-icon {
+#section-searcher .search-container .input-container img#search-icon {
   cursor: pointer;
   margin-right: 20px;
 }
 
-#section-searcher div.search-container ul {
-  border-top: 1px solid #6b7989;
-  color: #6b7989;
-  margin: 0;
-  padding: 9px 18px 18px 54px;
+#section-searcher .search-container > ul {
+  display: none;
+  color: #9cafc3;
+  -webkit-margin-before: 0;
+          margin-block-start: 0;
+  -webkit-padding-start: 0;
+          padding-inline-start: 0;
+  margin: 0px 23px 18px 23px;
 }
 
-#section-searcher div.search-container ul li {
+#section-searcher .search-container > ul li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding: 5px 0;
-  list-style-image: url("../../img/icon-search-mod-noc.svg");
+  list-style: none;
+  opacity: 0.5;
+}
+
+#section-searcher .search-container > ul li::before {
+  content: url("../../img/icon-search-grey.svg");
+  display: inline-block;
+  width: 1.1875rem;
+  margin-right: 0.9125rem;
+}
+
+#section-searcher .search-container > ul::before {
+  content: "";
+  display: block;
+  border-bottom: 1px solid #9cafc3;
+  width: 100%;
+  margin: 0 auto;
+  margin-bottom: 9px;
+  opacity: 0.5;
 }
 
 #section-keywords {

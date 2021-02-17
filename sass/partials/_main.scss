@@ -88,7 +88,7 @@ body {
     width: 100%;
   }
 
-  div.search-container {
+  .search-container {
     border: 1px solid $primary;
     border-radius: 27px;
     margin: 0 20px;
@@ -109,8 +109,12 @@ body {
         &::placeholder,
         &:focus {
           font-size: 1rem;
-          color: $gray;
+          color: $black;
           font-family: "Roboto", sans-serif;
+        }
+
+        &::placeholder {
+          color: #9cafc3;
         }
 
         &:focus {
@@ -124,15 +128,36 @@ body {
       }
     }
 
-    ul {
-      // display: none;
-      border-top: 1px solid $gray;
-      color: $gray;
-      margin: 0;
-      padding: 9px 18px 18px 54px;
+    > ul {
+      display: none;
+      color: #9cafc3;
+      margin-block-start: 0;
+      padding-inline-start: 0;
+      margin: 0px 23px 18px 23px;
+
       li {
+        display: flex;
+        align-items: center;
         padding: 5px 0;
-        list-style-image: url("../../img/icon-search-mod-noc.svg");
+        list-style: none;
+        opacity: 0.5;
+
+        &::before {
+          content: url("../../img/icon-search-grey.svg");
+          display: inline-block;
+          width: 1.1875rem;
+          margin-right: 0.9125rem;
+        }
+      }
+
+      &::before {
+        content: "";
+        display: block;
+        border-bottom: 1px solid #9cafc3;
+        width: 100%;
+        margin: 0 auto;
+        margin-bottom: 9px;
+        opacity: 0.5;
       }
     }
   }
