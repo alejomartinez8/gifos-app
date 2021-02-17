@@ -223,6 +223,7 @@ body {
   padding: 5px 0;
   list-style: none;
   opacity: 0.5;
+  cursor: pointer;
 }
 
 #section-searcher .search-container > ul li::before {

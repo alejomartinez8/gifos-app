@@ -141,6 +141,7 @@ body {
         padding: 5px 0;
         list-style: none;
         opacity: 0.5;
+        cursor: pointer;
 
         &::before {
           content: url("../../img/icon-search-grey.svg");
