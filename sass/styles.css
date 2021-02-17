@@ -129,7 +129,13 @@ body {
   width: 100%;
 }
 
-#section-searcher div#search-container {
+#section-searcher div.search-container {
+  border: 1px solid #572ee5;
+  border-radius: 27px;
+  margin: 0 20px;
+}
+
+#section-searcher div.search-container .input-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -137,12 +143,9 @@ body {
       -ms-flex-align: center;
           align-items: center;
   padding-left: 55px;
-  border: 1px solid #572ee5;
-  border-radius: 27px;
-  margin: 0 20px;
 }
 
-#section-searcher div#search-container input.input-search {
+#section-searcher div.search-container .input-container input.input-search {
   margin: 0;
   padding: 0;
   height: 50px;
@@ -151,37 +154,49 @@ body {
   background-color: transparent;
 }
 
-#section-searcher div#search-container input.input-search::-webkit-input-placeholder, #section-searcher div#search-container input.input-search:focus {
+#section-searcher div.search-container .input-container input.input-search::-webkit-input-placeholder, #section-searcher div.search-container .input-container input.input-search:focus {
   font-size: 1rem;
   color: #6b7989;
   font-family: "Roboto", sans-serif;
 }
 
-#section-searcher div#search-container input.input-search:-ms-input-placeholder, #section-searcher div#search-container input.input-search:focus {
+#section-searcher div.search-container .input-container input.input-search:-ms-input-placeholder, #section-searcher div.search-container .input-container input.input-search:focus {
   font-size: 1rem;
   color: #6b7989;
   font-family: "Roboto", sans-serif;
 }
 
-#section-searcher div#search-container input.input-search::-ms-input-placeholder, #section-searcher div#search-container input.input-search:focus {
+#section-searcher div.search-container .input-container input.input-search::-ms-input-placeholder, #section-searcher div.search-container .input-container input.input-search:focus {
   font-size: 1rem;
   color: #6b7989;
   font-family: "Roboto", sans-serif;
 }
 
-#section-searcher div#search-container input.input-search::placeholder, #section-searcher div#search-container input.input-search:focus {
+#section-searcher div.search-container .input-container input.input-search::placeholder, #section-searcher div.search-container .input-container input.input-search:focus {
   font-size: 1rem;
   color: #6b7989;
   font-family: "Roboto", sans-serif;
 }
 
-#section-searcher div#search-container input.input-search:focus {
+#section-searcher div.search-container .input-container input.input-search:focus {
   outline: none;
 }
 
-#section-searcher div#search-container img#search-icon {
+#section-searcher div.search-container .input-container img#search-icon {
   cursor: pointer;
   margin-right: 20px;
+}
+
+#section-searcher div.search-container ul {
+  border-top: 1px solid #6b7989;
+  color: #6b7989;
+  margin: 0;
+  padding: 9px 18px 18px 54px;
+}
+
+#section-searcher div.search-container ul li {
+  padding: 5px 0;
+  list-style-image: url("../../img/icon-search-mod-noc.svg");
 }
 
 #section-keywords {
@@ -273,11 +288,6 @@ button.btn-primary-ghost {
   font-weight: 700;
   color: #572ee5;
   cursor: pointer;
-}
-
-button.btn-primary-ghost:hover {
-  background-color: #572ee5;
-  color: #ffffff;
 }
 
 div.hover-img {
