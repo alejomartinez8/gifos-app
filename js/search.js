@@ -7,7 +7,7 @@ const API_KEY = "4SBXaLwgUjTtP0BLoT3mnAk5FL86H0qQ";
 async function getSuggestedWords(term) {
   return await (
     await fetch(
-      `http://api.giphy.com/v1/tags/related/${term}?api_key=${API_KEY}`
+      `https://api.giphy.com/v1/tags/related/${term}?api_key=${API_KEY}`
     )
   ).json();
 }
