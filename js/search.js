@@ -13,14 +13,11 @@ async function getSuggestedWords(term) {
 }
 
 inputSearch.addEventListener("input", async (e) => {
-  console.log(e.target.value);
-
   if (e.target.value.length > 1) {
     const suggestedWords = await getSuggestedWords(e.target.value);
     if (suggestedWords.data.length) {
       suggestedContainer.style.display = "block";
       suggestedContainer.innerHTML = "";
-      console.log(suggestedWords);
       for (let i = 0; (i < 4) & (i < suggestedWords.data.length); i++) {
         const term = document.createElement("li");
         term.innerText = suggestedWords.data[i]?.name;
