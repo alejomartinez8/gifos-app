@@ -13,15 +13,20 @@ async function getSuggestedWords(term) {
 }
 
 inputSearch.addEventListener("input", async (e) => {
-  const suggestedWords = await getSuggestedWords(e.target.value);
-  if (suggestedWords.data.length) {
-    suggestedContainer.style.display = "block";
-    suggestedContainer.innerHTML = "";
-    for (let i = 0; (i < 4) & (i < suggestedWords.data.length); i++) {
-      const term = document.createElement("li");
-      term.innerText = suggestedWords.data[i]?.name;
-      term.tabIndex = 0;
-      suggestedContainer.appendChild(term);
+  if (e.target.value.length > 1) {
+    const suggestedWords = await getSuggestedWords(e.target.value);
+    if (suggestedWords.data.length) {
+      suggestedContainer.style.display = "block";
+      suggestedContainer.innerHTML = "";
+      for (let i = 0; (i < 4) & (i < suggestedWords.data.length); i++) {
+        const term = document.createElement("li");
+        term.innerText = suggestedWords.data[i]?.name;
+        term.tabIndex = 0;
+        suggestedContainer.appendChild(term);
+      }
+    } else {
+      suggestedContainer.style.display = "none";
+      suggestedContainer.innerHTML = "";
     }
   } else {
     suggestedContainer.style.display = "none";
