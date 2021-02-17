@@ -630,7 +630,7 @@ img.slider-arrow {
     right: calc(-100% + 14px - 96px);
   }
   div.modal div.img-container img#image-modal {
-    width: 695px;
+    max-width: 695px;
     -o-object-fit: cover;
        object-fit: cover;
   }
