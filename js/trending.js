@@ -3,9 +3,11 @@ const buttonRight = document.getElementById("button-trending-right");
 const buttonLeft = document.getElementById("button-trending-left");
 let offsetTrending = 0;
 
-async function addGifosTrending(offset) {
+async function addGifosTrending(limit, offset) {
+  console.log(limit, offset);
+
   try {
-    const trendingGifos = await getTrendingGifos(3, offset * 3);
+    const trendingGifos = await getTrendingGifos(limit, offset * 3);
     // console.log(trendingGifos);
 
     containerGifosTrending.innerHTML = "";
@@ -38,14 +40,22 @@ async function addGifosTrending(offset) {
   }
 }
 
-addGifosTrending();
+function loadGifos() {
+  if (window.matchMedia("(min-width:767px)").matches) {
+    addGifosTrending(3, 0);
+  } else {
+    addGifosTrending(10, 0);
+  }
+}
+
+window.onresize = loadGifos;
 
 buttonLeft.addEventListener("click", () => {
   if (offsetTrending) offsetTrending--;
-  addGifosTrending(offsetTrending);
+  addGifosTrending(3, offsetTrending);
 });
 
 buttonRight.addEventListener("click", () => {
   offsetTrending++;
-  addGifosTrending(offsetTrending);
+  addGifosTrending(3, offsetTrending);
 });

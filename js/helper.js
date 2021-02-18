@@ -85,22 +85,12 @@ function gifoHover(
       console.log("download", img); // TODO - call function
     });
 
-    iconExpand.addEventListener("click", () => {
-      modalContainer.style.display = "flex";
-      const modalImage = document.getElementById("image-modal");
-      const modalUser = document.getElementById("modal-user");
-      const modalTitle = document.getElementById("modal-title");
-      setAttribute(modalImage, "src", image);
-      modalUser.innerText = username;
-      modalTitle.innerText = title;
-    });
+    iconExpand.addEventListener("click", () =>
+      setModalData(image, username, title)
+    );
 
     if (window.matchMedia("(max-width:768px")) {
-      img.addEventListener("click", () => {
-        modalContainer.style.display = "flex";
-        const modalImage = document.getElementById("image-modal");
-        setAttribute(modalImage, "src", img.getAttribute("src"));
-      });
+      img.addEventListener("click", () => setModalData(image, username, title));
     }
   });
 
@@ -108,4 +98,14 @@ function gifoHover(
     const divHover = imgContainer.firstElementChild;
     imgContainer.removeChild(divHover);
   });
+}
+
+function setModalData(image, username, title) {
+  modalContainer.style.display = "flex";
+  const modalImage = document.getElementById("image-modal");
+  const modalUser = document.getElementById("modal-user");
+  const modalTitle = document.getElementById("modal-title");
+  setAttribute(modalImage, "src", image);
+  modalUser.innerText = username;
+  modalTitle.innerText = title;
 }

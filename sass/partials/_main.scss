@@ -277,15 +277,16 @@ div.hover-img {
 
   div.slider-trending-content {
     div.container-trending {
+      overflow: hidden;
       overflow-x: auto;
       display: flex;
 
       div.img-container {
         margin: 0 11px;
-        max-height: 187px;
+
         > img {
-          width: 100%;
-          height: 100%;
+          height: 187px;
+          width: 243px;
         }
       }
     }
@@ -327,6 +328,9 @@ div.modal {
   div.img-container {
     display: flex;
     flex-direction: column;
+    max-height: 90%;
+    max-width: 90%;
+
     img.close-icon {
       display: block;
       width: 14px;
@@ -344,6 +348,7 @@ div.modal {
       font-size: 15px;
 
       div.text {
+        margin: 1rem;
         *:first-child {
           margin: 6px;
         }
