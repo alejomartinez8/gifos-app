@@ -1,162 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>GIFOS - Favoritos</title>
-		<link rel="stylesheet" href="./sass/styles.css" />
-	</head>
-	<body>
-		<header>
-			<div class="bg-primary h-5"></div>
-			<nav class="topnav-container">
-				<a href="./index.html"
-					><img id="img-logo" src="./img/logo-mobile.svg" alt="GIFOS-logo"
-				/></a>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GIFOS - Favoritos</title>
+    <link rel="stylesheet" href="./sass/styles.css" />
+  </head>
+  <body>
+    <header>
+      <div class="bg-primary h-5"></div>
+      <nav class="topnav-container">
+        <a href="./index.html"
+          ><img id="img-logo" src="./img/logo-mobile.svg" alt="GIFOS-logo"
+        /></a>
 
-				<img id="main-menu-button" src="./img/burger.svg" alt="main-menu-icon" />
-				<ul id="menu-container" class="close">
-					<li>
-						<a id="toggle-theme-button" href="#">Modo Nocturno</a><span></span>
-					</li>
-					<li><a href="./favoritos.html">Favoritos</a><span></span></li>
-					<li><a href="./misGIFOS.html">Mis GIFOS</a><span></span></li>
-				</ul>
-			</nav>
-		</header>
-		<main>
-			<section id="section-favorites">
-				<img class="icon-fav" src='./img/icon-favoritos.svg'></img>
-				<h2 id="heading-favorites">Favoritos</h2>
-					<div id="container-gifos-favorites" class="images-container">
-						<div class="img-container">
-							<img
-								src="./img/images/2b53c755fcd0fca65cbcc2f85f28453e525574e5.png"
-								alt=""
-							/>
-						</div>
-						<div class="img-container">
-							<img
-								src="./img/images/d44faf44becb6f2820b9f6009d619581a91fdf7c.png"
-								alt=""
-							/>
-						</div>
-						<div class="img-container">
-							<img
-								src="./img/images/d44faf44becb6f2820b9f6009d619581a91fdf7c.png"
-								alt=""
-							/>
-						</div>
-						<div class="img-container">
-							<img
-								src="./img/images/82557e14fba9407abf25ffade61a60c814294554.png"
-								alt=""
-							/>
-						</div>
-						<div class="img-container">
-							<img
-								src="./img/images/03d5f83a7024b035e2450b4816426cd11a56c34d.png"
-								alt=""
-							/>
-						</div>
-						<div class="img-container">
-							<img
-								src="./img/images/64da32bcc6808f07f3dda14fc45605426ec0bd3c.png"
-								alt=""
-							/>
-						</div>
-					</div>
-				<button class="btn-primary-ghost">VER MÁS</button>
-			</section>
-<!-- Trending -->
-			<section id="section-trending-gifos">
-				<h2>Trending GIFOS</h2>
-				<p>Mira los últimos GIFOS de nuestra comunidad.</p>
-				<div class="slider-trending-content">
-				  <img
-					class="slider-arrow"
-					src="./img/button-slider-left.svg"
-					alt="button-slider-left"
-				  />
-				  <div id="container-trending" class="container-trending">
-					<!-- <div class="img-container">
-					  <img
-						src="./img/images/a89ac104638d206029569a1653bfcfcd8fe1c709.png"
-						alt="kitten"
-					  />
-					</div> -->
-				  </div>
-				  <img
-					class="slider-arrow"
-					src="./img/Button-Slider-right.svg"
-					alt="button-slider-right"
-				  />
-				</div>
-			  </section>
-		</main>
-<!-- Footer -->
-		<footer id="footer">
-			<p>Compartir en:</p>
-			<div class="social-icons">
-				<img id="icon-facebook" src="./img/icon_facebook.svg" alt="" />
-				<img id="icon-twitter" src="./img/icon-twitter.svg" alt="" />
-				<img id="icon-instagram" src="./img/icon_instagram.svg" alt="" />
-			</div>
-			<p>© GIFOS 2020 All Rights Reserved.</p>
-			<p>
-				Github:
-				<a
-					href="https://github.com/alejomartinez8/project-gifos-acamica"
-					target="_blank"
-					>alejomartinez8/project-gifos-acamica</a
-				>
-			</p>
-		</footer>
-		<div class="bg-primary h-5"></div>
-<!-- Modal -->
-		<div id="modal" class="modal">
-			<img
-				class="slider-arrow"
-				src="./img/button-slider-left.svg"
-				alt="button-slider-left"
-			/>
-			<div class="img-container">
-				<img
-					id="close-modal"
-					class="close-icon"
-					src="./img/close.svg"
-					alt="close"
-				/>
-				<img
-					id="image-modal"
-					src="./img/images/a89ac104638d206029569a1653bfcfcd8fe1c709.png"
-					alt="kitten"
-				/>
-				<div class="footer-img">
-					<div class="text">
-						<p>User</p>
-						<p>Titulo GIFO</p>
-					</div>
-					<div class="icons">
-						<img src="./img/icon-fav.svg" alt="icon-fav" />
-						<img src="./img/icon-download.svg" alt="icon-download" />
-					</div>
-				</div>
-			</div>
-			<img
-				class="slider-arrow"
-				src="./img/Button-Slider-right.svg"
-				alt="button-slider-right"
-			/>
-		</div>
+        <img
+          id="main-menu-button"
+          src="./img/burger.svg"
+          alt="main-menu-icon"
+        />
+        <ul id="menu-container" class="close">
+          <li>
+            <a id="toggle-theme-button" href="#">Modo Nocturno</a><span></span>
+          </li>
+          <li><a href="./favoritos.html">Favoritos</a><span></span></li>
+          <li><a href="./misGIFOS.html">Mis GIFOS</a><span></span></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section id="section-favorites">
+        <img class="icon-fav" src="./img/icon-favoritos.svg" />
+        <h2 id="heading-favorites">Favoritos</h2>
+        <div id="container-favorites" class="images-container"></div>
+        <button id="btn-view-more" class="btn-primary-ghost">VER MÁS</button>
+      </section>
+      <!-- Section Gifos Treding -->
+      <section id="section-trending-gifos">
+        <h2>Trending GIFOS</h2>
+        <p>Mira los últimos GIFOS de nuestra comunidad.</p>
+        <div class="slider-trending-content">
+          <div id="button-trending-left" class="slider-arrow-left"></div>
+          <div id="container-trending" class="container-trending"></div>
+          <div id="button-trending-right" class="slider-arrow-right"></div>
+        </div>
+      </section>
+    </main>
+    <!-- Footer -->
+    <footer id="footer">
+      <p>Compartir en:</p>
+      <div class="social-icons">
+        <img id="icon-facebook" src="./img/icon_facebook.svg" alt="" />
+        <img id="icon-twitter" src="./img/icon-twitter.svg" alt="" />
+        <img id="icon-instagram" src="./img/icon_instagram.svg" alt="" />
+      </div>
+      <p>© GIFOS 2020 All Rights Reserved.</p>
+      <p>
+        Github:
+        <a
+          href="https://github.com/alejomartinez8/project-gifos-acamica"
+          target="_blank"
+          >alejomartinez8/project-gifos-acamica</a
+        >
+      </p>
+    </footer>
+    <div class="bg-primary h-5"></div>
+    <!-- Modal -->
+    <div id="modal" class="modal">
+      <div id="button-modal-left" class="slider-arrow-left"></div>
+      <div class="img-container">
+        <img
+          id="close-modal"
+          class="close-icon"
+          src="./img/close.svg"
+          alt="close"
+        />
+        <img
+          id="image-modal"
+          src="./img/images/a89ac104638d206029569a1653bfcfcd8fe1c709.png"
+          alt="kitten"
+        />
+        <div class="footer-img">
+          <div class="text">
+            <p id="modal-user">User</p>
+            <p id="modal-title">Titulo GIFO</p>
+          </div>
+          <div class="icons">
+            <div class="icon-fav"></div>
+            <div class="icon-download"></div>
+          </div>
+        </div>
+      </div>
+      <div id="button-modal-right" class="slider-arrow-right"></div>
+    </div>
 
-
-		<script src="./js/api.js"></script>
-		<script src="./js/helper.js"></script>
-		<script src="./js/menu.js"></script>
-		<script src="./js/modal.js"></script>
-		<script src="./js/trending.js"></script>
-		<script src="./js/favorites.js"></script>
-	</body>
+    <!-- Scritps -->
+    <script src="./js/api.js"></script>
+    <script src="./js/helper.js"></script>
+    <script src="./js/menu.js"></script>
+    <script src="./js/modal.js"></script>
+    <script src="./js/card.js"></script>
+    <script src="./js/trending.js"></script>
+    <script src="./js/favorites.js"></script>
+  </body>
 </html>

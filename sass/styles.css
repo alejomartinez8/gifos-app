@@ -307,6 +307,9 @@ body {
   margin-bottom: 45px;
 }
 
+/**********************
+/* Images containers
+***********************/
 .images-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -726,10 +729,12 @@ div.modal div.img-container div.footer-img div.icons > div {
     padding: 14px 14.5px;
     -ms-flex-preferred-size: auto;
         flex-basis: auto;
-  }
-  .images-container div.img-container > img {
     width: 260px;
     height: 200px;
+  }
+  .images-container div.img-container > img {
+    width: 100%;
+    height: 100%;
   }
   #section-trending-gifos {
     padding: 46px 22px 82px 22px;
@@ -746,11 +751,11 @@ div.modal div.img-container div.footer-img div.icons > div {
             align-items: center;
   }
   #section-trending-gifos div.slider-trending-content div.container-trending {
-    overflow-x: unset;
+    max-width: 80%;
   }
   #section-trending-gifos div.slider-trending-content div.container-trending div.img-container {
-    max-width: 357px;
-    max-height: 275px;
+    width: 357px;
+    height: 275px;
   }
   #section-trending-gifos div.slider-trending-content div.container-trending div.img-container > img {
     width: 100%;
