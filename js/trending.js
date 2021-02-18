@@ -28,12 +28,7 @@ async function addGifosTrending(limit, offset) {
       img.setAttribute("alt", gifo.title);
 
       imageContainer.appendChild(img);
-      gifoHover(
-        imageContainer,
-        gifo.title,
-        gifo.username,
-        gifo.images?.original?.url
-      );
+      gifoHover(imageContainer, gifo);
       containerGifosTrending.appendChild(imageContainer);
     });
   } catch (error) {

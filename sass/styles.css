@@ -486,6 +486,13 @@ div.icon-fav:hover {
   background: url("../../img/icon-fav-hover.svg") no-repeat;
 }
 
+div.icon-fav.saved {
+  background: url("../../img/icon-fav-active.svg") no-repeat;
+  background-position: center;
+  background-color: #ffffff;
+  border-radius: 6px;
+}
+
 div.icon-download {
   background: url("../../img/icon-download.svg") no-repeat;
 }

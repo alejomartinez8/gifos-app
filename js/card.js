@@ -1,13 +1,10 @@
-function gifoHover(
-  imgContainer,
-  title = "Titulo GIFO",
-  username = "User",
-  image = ""
-) {
+function gifoHover(imgContainer, gifo) {
   const img = imgContainer.firstElementChild;
 
+  const { title, username, images } = gifo;
+
   if (window.matchMedia("(max-width:768px").matches) {
-    img.addEventListener("click", () => setModalData(image, username, title));
+    img.addEventListener("click", () => setModalData(gifo));
   } else {
     imgContainer.addEventListener("mouseenter", () => {
       let divHover = document.createElement("div");
@@ -33,17 +30,24 @@ function gifoHover(
       const iconDownload = divHover.children[0].children[1];
       const iconExpand = divHover.children[0].children[2];
 
+      if (getFavorite(gifo)) {
+        iconFav.classList.add("saved");
+      }
+
       iconFav.addEventListener("click", () => {
-        console.log("fav", img); // TODO - call function
+        if (getFavorite(gifo)) {
+          iconFav.classList.remove("saved");
+        } else {
+          iconFav.classList.add("saved");
+        }
+        toggleFavoriteGifo(gifo);
       });
 
       iconDownload.addEventListener("click", () => {
-        downloadURI(img.src);
+        downloadURI(images?.original?.url);
       });
 
-      iconExpand.addEventListener("click", () =>
-        setModalData(image, username, title)
-      );
+      iconExpand.addEventListener("click", () => setModalData(gifo));
     });
 
     imgContainer.addEventListener("mouseleave", () => {
