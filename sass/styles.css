@@ -145,7 +145,7 @@ body {
           align-items: center;
 }
 
-#section-searcher .search-container .input-container input.input-search {
+#section-searcher .search-container .input-container input {
   margin: 0;
   padding: 0;
   height: 50px;
@@ -155,47 +155,47 @@ body {
   margin-left: 55px;
 }
 
-#section-searcher .search-container .input-container input.input-search, #section-searcher .search-container .input-container input.input-search::-webkit-input-placeholder, #section-searcher .search-container .input-container input.input-search:focus {
+#section-searcher .search-container .input-container input, #section-searcher .search-container .input-container input::-webkit-input-placeholder, #section-searcher .search-container .input-container input:focus {
   font-size: 1rem;
   color: #000000;
   font-family: "Roboto", sans-serif;
 }
 
-#section-searcher .search-container .input-container input.input-search, #section-searcher .search-container .input-container input.input-search:-ms-input-placeholder, #section-searcher .search-container .input-container input.input-search:focus {
+#section-searcher .search-container .input-container input, #section-searcher .search-container .input-container input:-ms-input-placeholder, #section-searcher .search-container .input-container input:focus {
   font-size: 1rem;
   color: #000000;
   font-family: "Roboto", sans-serif;
 }
 
-#section-searcher .search-container .input-container input.input-search, #section-searcher .search-container .input-container input.input-search::-ms-input-placeholder, #section-searcher .search-container .input-container input.input-search:focus {
+#section-searcher .search-container .input-container input, #section-searcher .search-container .input-container input::-ms-input-placeholder, #section-searcher .search-container .input-container input:focus {
   font-size: 1rem;
   color: #000000;
   font-family: "Roboto", sans-serif;
 }
 
-#section-searcher .search-container .input-container input.input-search, #section-searcher .search-container .input-container input.input-search::placeholder, #section-searcher .search-container .input-container input.input-search:focus {
+#section-searcher .search-container .input-container input, #section-searcher .search-container .input-container input::placeholder, #section-searcher .search-container .input-container input:focus {
   font-size: 1rem;
   color: #000000;
   font-family: "Roboto", sans-serif;
 }
 
-#section-searcher .search-container .input-container input.input-search::-webkit-input-placeholder {
+#section-searcher .search-container .input-container input::-webkit-input-placeholder {
   color: #9cafc3;
 }
 
-#section-searcher .search-container .input-container input.input-search:-ms-input-placeholder {
+#section-searcher .search-container .input-container input:-ms-input-placeholder {
   color: #9cafc3;
 }
 
-#section-searcher .search-container .input-container input.input-search::-ms-input-placeholder {
+#section-searcher .search-container .input-container input::-ms-input-placeholder {
   color: #9cafc3;
 }
 
-#section-searcher .search-container .input-container input.input-search::placeholder {
+#section-searcher .search-container .input-container input::placeholder {
   color: #9cafc3;
 }
 
-#section-searcher .search-container .input-container input.input-search:focus {
+#section-searcher .search-container .input-container input:focus {
   outline: none;
 }
 
@@ -498,8 +498,24 @@ img.slider-arrow {
   background-color: #000000;
 }
 
-.dark #section-searcher div#search-container {
+.dark #section-searcher .search-container {
   border: 1px solid #ffffff;
+}
+
+.dark #section-searcher .input-container input, .dark #section-searcher .input-container input::-webkit-input-placeholder, .dark #section-searcher .input-container input:focus {
+  color: #ffffff;
+}
+
+.dark #section-searcher .input-container input, .dark #section-searcher .input-container input:-ms-input-placeholder, .dark #section-searcher .input-container input:focus {
+  color: #ffffff;
+}
+
+.dark #section-searcher .input-container input, .dark #section-searcher .input-container input::-ms-input-placeholder, .dark #section-searcher .input-container input:focus {
+  color: #ffffff;
+}
+
+.dark #section-searcher .input-container input, .dark #section-searcher .input-container input::placeholder, .dark #section-searcher .input-container input:focus {
+  color: #ffffff;
 }
 
 .dark button.btn-primary-ghost {

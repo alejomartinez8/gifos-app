@@ -1,46 +1,56 @@
 .dark {
-	background-color: $dark;
-	color: $white;
+  background-color: $dark;
+  color: $white;
 
-	ul#menu-container {
-		background-color: $black;
-	}
+  ul#menu-container {
+    background-color: $black;
+  }
 
-	#section-searcher {
-		div#search-container {
-			border: 1px solid $white;
-		}
-	}
+  #section-searcher {
+    .search-container {
+      border: 1px solid $white;
+    }
 
-	button.btn-primary-ghost {
-		border: 1px solid $white;
-		color: $white;
-	}
+    .input-container {
+      input {
+        &,
+        &::placeholder,
+        &:focus {
+          color: $white;
+        }
+      }
+    }
+  }
 
-	#section-trending-gifos {
-		background-color: $dark-trending;
-		h2,
-		p {
-			color: $white;
-		}
-	}
+  button.btn-primary-ghost {
+    border: 1px solid $white;
+    color: $white;
+  }
 
-	#footer {
-		color: $white;
-		a {
-			color: $white;
-		}
-	}
+  #section-trending-gifos {
+    background-color: $dark-trending;
+    h2,
+    p {
+      color: $white;
+    }
+  }
+
+  #footer {
+    color: $white;
+    a {
+      color: $white;
+    }
+  }
 }
 
 // desktop styles
 @media screen and (min-width: 768px) {
-	.dark {
-		ul#menu-container {
-			background-color: $dark;
-			a {
-				color: $white;
-			}
-		}
-	}
+  .dark {
+    ul#menu-container {
+      background-color: $dark;
+      a {
+        color: $white;
+      }
+    }
+  }
 }
