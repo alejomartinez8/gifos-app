@@ -107,6 +107,7 @@ body {
         background-color: transparent;
         margin-left: 55px;
 
+        &,
         &::placeholder,
         &:focus {
           font-size: 1rem;
@@ -123,7 +124,7 @@ body {
         }
       }
 
-      img#search-icon {
+      img.icon-search {
         cursor: pointer;
         margin-right: 20px;
       }
@@ -182,7 +183,8 @@ body {
   }
 }
 
-#section-gifos-result {
+#section-results {
+  display: none;
   text-align: center;
   > span {
     display: block;
@@ -306,17 +308,15 @@ div.modal {
   overflow-y: hidden;
 
   div.img-container {
+    display: flex;
+    flex-direction: column;
     img.close-icon {
       display: block;
       width: 14px;
-      position: relative;
-      bottom: 78px;
-      right: calc(-100% + 14px);
+      position: absolute;
+      top: 10%;
+      right: 10%;
       cursor: pointer;
-    }
-
-    img#image-modal {
-      width: 100%;
     }
 
     div.footer-img {

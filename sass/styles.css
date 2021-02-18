@@ -155,25 +155,25 @@ body {
   margin-left: 55px;
 }
 
-#section-searcher .search-container .input-container input.input-search::-webkit-input-placeholder, #section-searcher .search-container .input-container input.input-search:focus {
+#section-searcher .search-container .input-container input.input-search, #section-searcher .search-container .input-container input.input-search::-webkit-input-placeholder, #section-searcher .search-container .input-container input.input-search:focus {
   font-size: 1rem;
   color: #000000;
   font-family: "Roboto", sans-serif;
 }
 
-#section-searcher .search-container .input-container input.input-search:-ms-input-placeholder, #section-searcher .search-container .input-container input.input-search:focus {
+#section-searcher .search-container .input-container input.input-search, #section-searcher .search-container .input-container input.input-search:-ms-input-placeholder, #section-searcher .search-container .input-container input.input-search:focus {
   font-size: 1rem;
   color: #000000;
   font-family: "Roboto", sans-serif;
 }
 
-#section-searcher .search-container .input-container input.input-search::-ms-input-placeholder, #section-searcher .search-container .input-container input.input-search:focus {
+#section-searcher .search-container .input-container input.input-search, #section-searcher .search-container .input-container input.input-search::-ms-input-placeholder, #section-searcher .search-container .input-container input.input-search:focus {
   font-size: 1rem;
   color: #000000;
   font-family: "Roboto", sans-serif;
 }
 
-#section-searcher .search-container .input-container input.input-search::placeholder, #section-searcher .search-container .input-container input.input-search:focus {
+#section-searcher .search-container .input-container input.input-search, #section-searcher .search-container .input-container input.input-search::placeholder, #section-searcher .search-container .input-container input.input-search:focus {
   font-size: 1rem;
   color: #000000;
   font-family: "Roboto", sans-serif;
@@ -199,7 +199,7 @@ body {
   outline: none;
 }
 
-#section-searcher .search-container .input-container img#search-icon {
+#section-searcher .search-container .input-container img.icon-search {
   cursor: pointer;
   margin-right: 20px;
 }
@@ -262,11 +262,12 @@ body {
   line-height: 25px;
 }
 
-#section-gifos-result {
+#section-results {
+  display: none;
   text-align: center;
 }
 
-#section-gifos-result > span {
+#section-results > span {
   display: block;
   border-bottom: 1px solid #6b7989;
   width: 157px;
@@ -274,7 +275,7 @@ body {
   opacity: 0.5;
 }
 
-#section-gifos-result > h2 {
+#section-results > h2 {
   font-size: 25px;
   text-align: center;
   margin-top: 43px;
@@ -402,17 +403,23 @@ div.modal {
   overflow-y: hidden;
 }
 
+div.modal div.img-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
 div.modal div.img-container img.close-icon {
   display: block;
   width: 14px;
-  position: relative;
-  bottom: 78px;
-  right: calc(-100% + 14px);
+  position: absolute;
+  top: 10%;
+  right: 10%;
   cursor: pointer;
-}
-
-div.modal div.img-container img#image-modal {
-  width: 100%;
 }
 
 div.modal div.img-container div.footer-img {
@@ -627,9 +634,6 @@ img.slider-arrow {
   }
   div.modal {
     background-color: #ffffff;
-  }
-  div.modal div.img-container img.close-icon {
-    right: calc(-100% + 14px - 96px);
   }
   div.modal div.img-container img#image-modal {
     max-width: 695px;

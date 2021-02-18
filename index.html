@@ -43,7 +43,12 @@
               type="text"
               placeholder="Busca GIFOS y más"
             />
-            <img id="search-icon" src="./img/icon-search.svg" alt="search" />
+            <img
+              id="icon-search"
+              class="icon-search"
+              src="./img/icon-search.svg"
+              alt="search"
+            />
           </div>
           <span id="line-input-bottom"></span>
           <ul id="suggested-container" class="suggested-container"></ul>
@@ -53,50 +58,21 @@
         <h3>Trending:</h3>
         <p>Reactions, Entertainment, Sports, Stickers, Artists</p>
       </section>
-      <section id="section-gifos-result">
+      <!-- Section Results -->
+      <section id="section-results">
         <span></span>
         <h2 id="heading-gifos-result">Mascotas</h2>
 
         <div id="container-gifos-result" class="images-container">
-          <div class="img-container">
+          <!-- <div class="img-container">
             <img
               src="./img/images/2b53c755fcd0fca65cbcc2f85f28453e525574e5.png"
               alt=""
             />
-          </div>
-          <div class="img-container">
-            <img
-              src="./img/images/d44faf44becb6f2820b9f6009d619581a91fdf7c.png"
-              alt=""
-            />
-          </div>
-          <div class="img-container">
-            <img
-              src="./img/images/d44faf44becb6f2820b9f6009d619581a91fdf7c.png"
-              alt=""
-            />
-          </div>
-          <div class="img-container">
-            <img
-              src="./img/images/82557e14fba9407abf25ffade61a60c814294554.png"
-              alt=""
-            />
-          </div>
-          <div class="img-container">
-            <img
-              src="./img/images/03d5f83a7024b035e2450b4816426cd11a56c34d.png"
-              alt=""
-            />
-          </div>
-          <div class="img-container">
-            <img
-              src="./img/images/64da32bcc6808f07f3dda14fc45605426ec0bd3c.png"
-              alt=""
-            />
-          </div>
+          </div> -->
         </div>
 
-        <button class="btn-primary-ghost">VER MÁS</button>
+        <button id="btn-view-more" class="btn-primary-ghost">VER MÁS</button>
       </section>
       <section id="section-trending-gifos">
         <h2>Trending GIFOS</h2>
@@ -175,8 +151,8 @@
         />
         <div class="footer-img">
           <div class="text">
-            <p>User</p>
-            <p>Titulo GIFO</p>
+            <p id="modal-user">User</p>
+            <p id="modal-title">Titulo GIFO</p>
           </div>
           <div class="icons">
             <img src="./img/icon-fav.svg" alt="icon-fav" />

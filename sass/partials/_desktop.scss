@@ -128,10 +128,6 @@
     background-color: $white;
 
     div.img-container {
-      img.close-icon {
-        right: calc(-100% + 14px - 96px);
-      }
-
       img#image-modal {
         max-width: 695px;
         object-fit: cover;
