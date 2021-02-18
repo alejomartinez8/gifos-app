@@ -4,6 +4,7 @@ const sectionResults = document.getElementById("section-results");
 const resultContainer = document.getElementById("container-gifos-result");
 const headingResult = document.getElementById("heading-gifos-result");
 const buttonViewMore = document.getElementById("btn-view-more");
+let viewMoreCount = 0;
 
 const API_KEY = "4SBXaLwgUjTtP0BLoT3mnAk5FL86H0qQ";
 
@@ -13,7 +14,7 @@ async function getSuggestedWords(term) {
   ).then((response) => response.json());
 }
 
-async function getSearchedGifos(term, limit = 12, offset = 0) {
+async function getSearchedGifos(term, offset = 0, limit = 12) {
   return await fetch(
     `https://api.giphy.com/v1/gifs/search?api_key=${API_KEY}&q=${term}&limit=${limit}&offset=${offset}`
   ).then((response) => response.json());
@@ -52,10 +53,13 @@ inputSearch.addEventListener("input", async (e) => {
 });
 
 // Add Searched gifos
-async function addSearchedGifos(term, options = { viewMore: false }) {
+async function addGifosResult(term, options = { viewMore: false }) {
   try {
-    const searchedGifos = await getSearchedGifos(term);
-    // console.log(searchedGifos);
+    const searchedGifos = await getSearchedGifos(
+      term,
+      options.viewMore ? viewMoreCount * 12 : 0
+    );
+
     displayBlock(sectionResults);
     headingResult.textContent = inputSearch.value;
 
@@ -88,9 +92,10 @@ async function addSearchedGifos(term, options = { viewMore: false }) {
 
 iconSearch.addEventListener("click", () => {
   resultContainer.innerHTML = "";
-  addSearchedGifos(inputSearch.value);
+  addGifosResult(inputSearch.value);
 });
 
 buttonViewMore.addEventListener("click", () => {
-  addSearchedGifos(inputSearch.value, { viewMore: true });
+  viewMoreCount++;
+  addGifosResult(inputSearch.value, { viewMore: true });
 });
