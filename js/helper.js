@@ -24,7 +24,7 @@ function imgHover(elm, hover, unhover) {
   });
 }
 
-function createGifos(container, gifos) {∫
+function createGifos(container, gifos) {
   gifos.forEach((gifo) => {
     const imageContainer = document.createElement("div");
     imageContainer.classList.add("img-container");

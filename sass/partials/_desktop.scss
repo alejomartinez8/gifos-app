@@ -92,6 +92,25 @@
     }
   }
 
+  /**********************
+  /* Footer
+  /**********************/
+  #footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10%;
+
+    div {
+      &:first-child {
+        display: flex;
+        align-items: center;
+        > div {
+          margin: 1rem;
+        }
+      }
+    }
+  }
+
   div.modal {
     background-color: $white;
 
