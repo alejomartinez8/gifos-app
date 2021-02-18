@@ -4,12 +4,12 @@ const sectionResults = document.getElementById("section-results");
 const containerGifosResult = document.getElementById("container-gifos-result");
 const headingResult = document.getElementById("heading-gifos-result");
 const buttonViewMore = document.getElementById("btn-view-more");
+const suggestedContainer = document.getElementById("suggested-container");
+const lineInputBottom = document.getElementById("line-input-bottom");
 let viewMoreCount = 0;
 
 // Add Suggested Words to Searcher
 inputSearch.addEventListener("input", async (e) => {
-  const suggestedContainer = document.getElementById("suggested-container");
-  const lineInputBottom = document.getElementById("line-input-bottom");
   if (e.target.value.length > 1) {
     const suggestedWords = await getSuggestedWords(e.target.value);
     if (suggestedWords.data.length) {
@@ -29,16 +29,18 @@ inputSearch.addEventListener("input", async (e) => {
         });
       });
     } else {
-      displayNone(suggestedContainer);
-      displayNone(lineInputBottom);
-      suggestedContainer.innerHTML = "";
+      clearSearch();
     }
   } else {
-    displayNone(suggestedContainer);
-    displayNone(lineInputBottom);
-    suggestedContainer.innerHTML = "";
+    clearSearch();
   }
 });
+
+function clearSearch() {
+  displayNone(suggestedContainer);
+  displayNone(lineInputBottom);
+  suggestedContainer.innerHTML = "";
+}
 
 // Add gifos result to Section
 async function addGifosResult(term, options = { viewMore: false }) {
@@ -51,19 +53,20 @@ async function addGifosResult(term, options = { viewMore: false }) {
     displayBlock(sectionResults);
     headingResult.textContent = inputSearch.value;
 
-    searchedGifos.data.forEach((gifo) => {
-      // console.log(gifo);
-      const imageContainer = document.createElement("div");
-      imageContainer.classList.add("img-container");
+    createGifos(containerGifosResult, searchedGifos.data);
 
-      const img = document.createElement("img");
-      img.setAttribute("src", gifo.images?.downsized?.url);
-      img.setAttribute("alt", gifo.title);
+    // searchedGifos.data.forEach((gifo) => {
+    //   const imageContainer = document.createElement("div");
+    //   imageContainer.classList.add("img-container");
 
-      imageContainer.appendChild(img);
-      gifoHover(imageContainer, gifo);
-      containerGifosResult.appendChild(imageContainer);
-    });
+    //   const img = document.createElement("img");
+    //   img.setAttribute("src", gifo.images?.downsized?.url);
+    //   img.setAttribute("alt", gifo.title);
+
+    //   imageContainer.appendChild(img);
+    //   gifoHover(imageContainer, gifo);
+    //   containerGifosResult.appendChild(imageContainer);
+    // });
 
     if (!options.viewMore) {
       sectionResults.scrollIntoView({ behavior: "smooth" });

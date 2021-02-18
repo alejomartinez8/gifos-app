@@ -24,14 +24,13 @@ function imgHover(elm, hover, unhover) {
   });
 }
 
-function createGifos(container, gifos) {
-  container.innerHTML = "";
+function createGifos(container, gifos) {∫
   gifos.forEach((gifo) => {
     const imageContainer = document.createElement("div");
     imageContainer.classList.add("img-container");
 
     const img = document.createElement("img");
-    img.setAttribute("src", gifo.images?.fixed_width?.url);
+    img.setAttribute("src", gifo.images?.downsized?.url);
     img.setAttribute("alt", gifo.title);
 
     imageContainer.appendChild(img);

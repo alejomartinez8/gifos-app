@@ -17,6 +17,7 @@ async function addGifosTrending(limit, offset) {
       displayNone(buttonLeft);
     }
 
+    containerTrending.innerHTML = "";
     createGifos(containerTrending, trendingGifos.data);
   } catch (error) {
     console.error(error);
