@@ -16,16 +16,18 @@ inputSearch.addEventListener("input", async (e) => {
       displayBlock(suggestedContainer);
       displayBlock(lineInputBottom);
       suggestedContainer.innerHTML = "";
-      for (let i = 0; i < suggestedWords.data.length; i++) {
+      suggestedWords.data.forEach((word) => {
         const term = document.createElement("li");
-        term.innerText = suggestedWords.data[i]?.name;
+        term.innerText = word.name;
         term.tabIndex = 0;
         suggestedContainer.appendChild(term);
         term.addEventListener("click", () => {
           inputSearch.value = term.innerText;
           inputSearch.focus();
+          containerGifosResult.innerHTML = "";
+          addGifosResult(inputSearch.value);
         });
-      }
+      });
     } else {
       displayNone(suggestedContainer);
       displayNone(lineInputBottom);

@@ -330,10 +330,6 @@ body {
   height: auto;
 }
 
-.images-container div.img-container:nth-last-child(-n + 2) {
-  padding-bottom: 0px;
-}
-
 /**********************
 /* Section Trending
 ***********************/

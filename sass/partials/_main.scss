@@ -242,10 +242,6 @@ body {
       width: 100%;
       height: auto;
     }
-
-    &:nth-last-child(-n + 2) {
-      padding-bottom: 0px;
-    }
   }
 }
 
