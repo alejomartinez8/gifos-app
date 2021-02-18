@@ -101,12 +101,15 @@ function gifoHover(
 }
 
 function downloadURI(uri, name = "") {
-  var link = document.createElement("a");
-
-  link.setAttribute("download", name);
-  link.href = uri;
-  console.log(link);
-  document.body.appendChild(link);
-  link.click();
-  link.remove();
+  fetch(uri)
+    .then((response) => response.blob())
+    .then((blob) => {
+      const imgHref = window.URL.createObjectURL(new Blob([blob]));
+      var link = document.createElement("a");
+      link.setAttribute("download", name);
+      link.href = imgHref;
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+    });
 }
