@@ -72,19 +72,9 @@
         <h2>Trending GIFOS</h2>
         <p>Mira los últimos GIFOS de nuestra comunidad.</p>
         <div class="slider-trending-content">
-          <img
-            id="button-trending-left"
-            class="slider-arrow"
-            src="./img/button-slider-left.svg"
-            alt="button-slider-left"
-          />
+          <div id="button-trending-left" class="slider-arrow-left"></div>
           <div id="container-trending" class="container-trending"></div>
-          <img
-            id="button-trending-right"
-            class="slider-arrow"
-            src="./img/Button-Slider-right.svg"
-            alt="button-slider-right"
-          />
+          <div id="button-trending-right" class="slider-arrow-right"></div>
         </div>
       </section>
     </main>
@@ -109,11 +99,7 @@
     <div class="bg-primary h-5"></div>
     <!-- Modal -->
     <div id="modal" class="modal">
-      <img
-        class="slider-arrow"
-        src="./img/button-slider-left.svg"
-        alt="button-slider-left"
-      />
+      <div id="button-modal-left" class="slider-arrow-left"></div>
       <div class="img-container">
         <img
           id="close-modal"
@@ -132,22 +118,19 @@
             <p id="modal-title">Titulo GIFO</p>
           </div>
           <div class="icons">
-            <img src="./img/icon-fav.svg" alt="icon-fav" />
-            <img src="./img/icon-download.svg" alt="icon-download" />
+            <div class="icon-fav"></div>
+            <div class="icon-download"></div>
           </div>
         </div>
       </div>
-      <img
-        class="slider-arrow"
-        src="./img/Button-Slider-right.svg"
-        alt="button-slider-right"
-      />
+      <div id="button-modal-right" class="slider-arrow-right"></div>
     </div>
 
     <script src="./js/api.js"></script>
     <script src="./js/helper.js"></script>
     <script src="./js/menu.js"></script>
     <script src="./js/modal.js"></script>
+    <script src="./js/card.js"></script>
     <script src="./js/search.js"></script>
     <script src="./js/trending.js"></script>
   </body>

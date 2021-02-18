@@ -1,14 +1,22 @@
 @mixin monserrat-bold {
-	font-family: "Montserrat", sans-serif;
-	font-weight: 700;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
 }
 
 @mixin monserrat-meidum {
-	font-family: "Montserrat", sans-serif;
-	font-weight: 500;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
 }
 
 @mixin robot-bold {
-	font-family: "Roboto", sans-serif;
-	font-weight: 700;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+}
+
+@mixin div-icon($size) {
+  margin: 0 5px;
+  width: $size;
+  height: $size;
+  display: inline-block;
+  cursor: pointer;
 }

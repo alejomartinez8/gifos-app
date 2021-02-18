@@ -4,21 +4,22 @@ const buttonLeft = document.getElementById("button-trending-left");
 let offsetTrending = 0;
 
 async function addGifosTrending(limit, offset) {
-  console.log(limit, offset);
-
   try {
     const trendingGifos = await getTrendingGifos(limit, offset * 3);
-    console.log(trendingGifos);
 
     containerGifosTrending.innerHTML = "";
-    if (offsetTrending === 0) {
-      displayNone(buttonLeft);
+
+    if (window.matchMedia("(min-width:768px)").matches) {
+      if (offsetTrending === 0) {
+        displayNone(buttonLeft);
+      } else {
+        displayBlock(buttonLeft);
+      }
     } else {
-      displayBlock(buttonLeft);
+      displayNone(buttonLeft);
     }
 
     trendingGifos.data.forEach((gifo) => {
-      // console.log(gifo);
       const imageContainer = document.createElement("div");
       imageContainer.classList.add("img-container");
 

@@ -55,40 +55,6 @@
     }
   }
 
-  div.hover-img {
-    display: block;
-    position: absolute;
-    background-color: $primary;
-    opacity: 0.8;
-
-    div.icon-container {
-      position: absolute;
-      right: 0;
-      margin: 10px 5px;
-      > img {
-        margin: 0 5px;
-        cursor: pointer;
-      }
-    }
-    div.text-container {
-      position: absolute;
-      left: 18px;
-      bottom: 51px;
-      text-align: left;
-      p {
-        margin: 0;
-        color: white;
-        &:first-child {
-          font-size: 0.9375rem;
-          margin-bottom: 6px;
-        }
-        &:last-child {
-          @include robot-bold;
-        }
-      }
-    }
-  }
-
   .images-container {
     justify-content: center;
     div.img-container {
@@ -132,23 +98,11 @@
         max-width: 695px;
         object-fit: cover;
       }
-
-      div.footer-img {
-        div.icons {
-          img {
-            cursor: pointer;
-          }
-          img:last-child {
-            margin-left: 21px;
-          }
-        }
-      }
     }
   }
 
-  img.slider-arrow {
-    display: unset;
-    margin: 25px;
-    cursor: pointer;
+  div.slider-arrow-left,
+  div.slider-arrow-right {
+    display: block;
   }
 }

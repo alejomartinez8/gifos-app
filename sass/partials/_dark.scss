@@ -33,6 +33,21 @@
     p {
       color: $white;
     }
+    .slider-trending-content {
+      div.slider-arrow-right {
+        background: url("../../img/button-slider-right-md-noct.svg") no-repeat;
+        &:hover {
+          background: url("../../img/Button-Slider-right-hover.svg") no-repeat;
+        }
+      }
+
+      div.slider-arrow-left {
+        background: url("../../img/button-slider-left-md-noct.svg") no-repeat;
+        &:hover {
+          background: url("../../img/button-slider-left-hover.svg") no-repeat;
+        }
+      }
+    }
   }
 
   #footer {
