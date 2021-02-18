@@ -244,6 +244,9 @@ body {
   margin-right: 0.9125rem;
 }
 
+/**********************
+/* Section Keyword
+***********************/
 #section-keywords {
   text-align: center;
   padding-top: 31px;
@@ -262,6 +265,9 @@ body {
   line-height: 25px;
 }
 
+/**********************
+/* Section Results
+***********************/
 #section-results {
   display: none;
   text-align: center;
@@ -281,6 +287,9 @@ body {
   margin-top: 43px;
 }
 
+/**********************
+/* Section Favorites - My Gifos
+***********************/
 #section-favorites,
 #section-my-gifos {
   text-align: center;
@@ -340,6 +349,9 @@ div.hover-img {
   display: none;
 }
 
+/**********************
+/* Section Trending
+***********************/
 #section-trending-gifos {
   background-color: #f3f5f8;
   padding: 46px 0px 82px 0px;
@@ -353,21 +365,21 @@ div.hover-img {
   margin-bottom: 32px;
 }
 
-#section-trending-gifos div.slider-trending-content div.container-gifos-trending {
-  overflow: hidden;
+#section-trending-gifos div.slider-trending-content div.container-trending {
   overflow-x: auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-#section-trending-gifos div.slider-trending-content div.container-gifos-trending div.img-container {
+#section-trending-gifos div.slider-trending-content div.container-trending div.img-container {
   margin: 0 11px;
+  max-height: 187px;
 }
 
-#section-trending-gifos div.slider-trending-content div.container-gifos-trending div.img-container > img {
-  height: 187px;
-  width: 243px;
+#section-trending-gifos div.slider-trending-content div.container-trending div.img-container > img {
+  width: 100%;
+  height: 100%;
 }
 
 #footer {
@@ -386,6 +398,9 @@ div.hover-img {
   margin: 0 20px;
 }
 
+/**********************
+/* Modal
+***********************/
 div.modal {
   display: none;
   position: fixed;
@@ -621,16 +636,12 @@ img.slider-arrow {
         -ms-flex-align: center;
             align-items: center;
   }
-  #section-trending-gifos div.slider-trending-content div.container-gifos-trending {
-    overflow: unset;
+  #section-trending-gifos div.slider-trending-content div.container-trending {
     overflow-x: unset;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
   }
-  #section-trending-gifos div.slider-trending-content div.container-gifos-trending div.img-container > img {
-    width: 100%;
-    height: auto;
+  #section-trending-gifos div.slider-trending-content div.container-trending div.img-container {
+    max-width: 357px;
+    max-height: 275px;
   }
   div.modal {
     background-color: #ffffff;

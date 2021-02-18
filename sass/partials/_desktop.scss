@@ -109,16 +109,12 @@
       justify-content: center;
       align-items: center;
 
-      div.container-gifos-trending {
-        overflow: unset;
+      div.container-trending {
         overflow-x: unset;
-        display: flex;
 
         div.img-container {
-          > img {
-            width: 100%;
-            height: auto;
-          }
+          max-width: 357px;
+          max-height: 275px;
         }
       }
     }

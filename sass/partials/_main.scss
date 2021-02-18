@@ -76,6 +76,7 @@ body {
   }
 }
 
+// *********** Section Searcher *******
 #section-searcher {
   display: flex;
   flex-direction: column;
@@ -166,6 +167,9 @@ body {
   }
 }
 
+/**********************
+/* Section Keyword
+***********************/
 #section-keywords {
   text-align: center;
   padding-top: 31px;
@@ -183,6 +187,9 @@ body {
   }
 }
 
+/**********************
+/* Section Results
+***********************/
 #section-results {
   display: none;
   text-align: center;
@@ -201,6 +208,9 @@ body {
   }
 }
 
+/**********************
+/* Section Favorites - My Gifos
+***********************/
 #section-favorites,
 #section-my-gifos {
   text-align: center;
@@ -251,6 +261,9 @@ div.hover-img {
   display: none;
 }
 
+/**********************
+/* Section Trending
+***********************/
 #section-trending-gifos {
   background-color: $light;
   padding: 46px 0px 82px 0px;
@@ -263,22 +276,23 @@ div.hover-img {
   }
 
   div.slider-trending-content {
-    div.container-gifos-trending {
-      overflow: hidden;
+    div.container-trending {
       overflow-x: auto;
       display: flex;
 
       div.img-container {
         margin: 0 11px;
+        max-height: 187px;
         > img {
-          height: 187px;
-          width: 243px;
+          width: 100%;
+          height: 100%;
         }
       }
     }
   }
 }
 
+// Footer
 #footer {
   text-align: center;
   color: $black;
@@ -295,6 +309,9 @@ div.hover-img {
   }
 }
 
+/**********************
+/* Modal
+***********************/
 div.modal {
   display: none; // display:flex;
   position: fixed;
