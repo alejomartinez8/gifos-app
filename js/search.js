@@ -1,6 +1,4 @@
-const searchContainer = document.getElementById("search-container");
 const inputSearch = document.getElementById("input-search");
-const suggestedContainer = document.getElementById("suggested-container");
 
 const API_KEY = "4SBXaLwgUjTtP0BLoT3mnAk5FL86H0qQ";
 
@@ -13,23 +11,28 @@ async function getSuggestedWords(term) {
 }
 
 inputSearch.addEventListener("input", async (e) => {
+  const suggestedContainer = document.getElementById("suggested-container");
+  const lineInputBottom = document.getElementById("line-input-bottom");
   if (e.target.value.length > 1) {
     const suggestedWords = await getSuggestedWords(e.target.value);
     if (suggestedWords.data.length) {
-      suggestedContainer.style.display = "block";
+      displayBlock(suggestedContainer);
+      displayBlock(lineInputBottom);
       suggestedContainer.innerHTML = "";
-      for (let i = 0; (i < 4) & (i < suggestedWords.data.length); i++) {
+      for (let i = 0; i < suggestedWords.data.length; i++) {
         const term = document.createElement("li");
         term.innerText = suggestedWords.data[i]?.name;
         term.tabIndex = 0;
         suggestedContainer.appendChild(term);
       }
     } else {
-      suggestedContainer.style.display = "none";
+      displayNone(suggestedContainer);
+      displayNone(lineInputBottom);
       suggestedContainer.innerHTML = "";
     }
   } else {
-    suggestedContainer.style.display = "none";
+    displayNone(suggestedContainer);
+    displayNone(lineInputBottom);
     suggestedContainer.innerHTML = "";
   }
 });

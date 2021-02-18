@@ -92,11 +92,11 @@ body {
     border: 1px solid $primary;
     border-radius: 27px;
     margin: 0 20px;
+    max-height: 200px;
 
     .input-container {
       display: flex;
       align-items: center;
-      padding-left: 55px;
 
       input.input-search {
         margin: 0;
@@ -105,6 +105,7 @@ body {
         width: 100%;
         border: 0;
         background-color: transparent;
+        margin-left: 55px;
 
         &::placeholder,
         &:focus {
@@ -128,12 +129,22 @@ body {
       }
     }
 
+    > span {
+      display: none;
+      border-bottom: 1px solid #9cafc3;
+      margin: 0 23px;
+      opacity: 0.5;
+    }
+
     > ul {
       display: none;
       color: #9cafc3;
       margin-block-start: 0;
       padding-inline-start: 0;
-      margin: 0px 23px 18px 23px;
+      margin: 9px 23px 18px 23px;
+      overflow: hidden;
+      overflow-y: scroll;
+      height: 122px;
 
       li {
         display: flex;
@@ -149,16 +160,6 @@ body {
           width: 1.1875rem;
           margin-right: 0.9125rem;
         }
-      }
-
-      &::before {
-        content: "";
-        display: block;
-        border-bottom: 1px solid #9cafc3;
-        width: 100%;
-        margin: 0 auto;
-        margin-bottom: 9px;
-        opacity: 0.5;
       }
     }
   }

@@ -133,6 +133,7 @@ body {
   border: 1px solid #572ee5;
   border-radius: 27px;
   margin: 0 20px;
+  max-height: 200px;
 }
 
 #section-searcher .search-container .input-container {
@@ -142,7 +143,6 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding-left: 55px;
 }
 
 #section-searcher .search-container .input-container input.input-search {
@@ -152,6 +152,7 @@ body {
   width: 100%;
   border: 0;
   background-color: transparent;
+  margin-left: 55px;
 }
 
 #section-searcher .search-container .input-container input.input-search::-webkit-input-placeholder, #section-searcher .search-container .input-container input.input-search:focus {
@@ -203,6 +204,13 @@ body {
   margin-right: 20px;
 }
 
+#section-searcher .search-container > span {
+  display: none;
+  border-bottom: 1px solid #9cafc3;
+  margin: 0 23px;
+  opacity: 0.5;
+}
+
 #section-searcher .search-container > ul {
   display: none;
   color: #9cafc3;
@@ -210,7 +218,10 @@ body {
           margin-block-start: 0;
   -webkit-padding-start: 0;
           padding-inline-start: 0;
-  margin: 0px 23px 18px 23px;
+  margin: 9px 23px 18px 23px;
+  overflow: hidden;
+  overflow-y: scroll;
+  height: 122px;
 }
 
 #section-searcher .search-container > ul li {
@@ -231,16 +242,6 @@ body {
   display: inline-block;
   width: 1.1875rem;
   margin-right: 0.9125rem;
-}
-
-#section-searcher .search-container > ul::before {
-  content: "";
-  display: block;
-  border-bottom: 1px solid #9cafc3;
-  width: 100%;
-  margin: 0 auto;
-  margin-bottom: 9px;
-  opacity: 0.5;
 }
 
 #section-keywords {
