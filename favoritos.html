@@ -69,29 +69,33 @@
 					</div>
 				<button class="btn-primary-ghost">VER MÁS</button>
 			</section>
+<!-- Trending -->
 			<section id="section-trending-gifos">
 				<h2>Trending GIFOS</h2>
 				<p>Mira los últimos GIFOS de nuestra comunidad.</p>
-				<div class="gifos-images">
-					<img
+				<div class="slider-trending-content">
+				  <img
+					class="slider-arrow"
+					src="./img/button-slider-left.svg"
+					alt="button-slider-left"
+				  />
+				  <div id="container-gifos-trending" class="container-gifos-trending">
+					<!-- <div class="img-container">
+					  <img
 						src="./img/images/a89ac104638d206029569a1653bfcfcd8fe1c709.png"
 						alt="kitten"
-					/>
-					<img
-						src="./img/images/c92adcd934648f8932a7589ce881ae68b67ad56a.png"
-						alt="kitten"
-					/>
-					<img
-						src="./img/images/64da32bcc6808f07f3dda14fc45605426ec0bd3c.png"
-						alt=""
-					/>
-					<img
-						src="./img/images/82557e14fba9407abf25ffade61a60c814294554.png"
-						alt=""
-					/>
+					  />
+					</div> -->
+				  </div>
+				  <img
+					class="slider-arrow"
+					src="./img/Button-Slider-right.svg"
+					alt="button-slider-right"
+				  />
 				</div>
-			</section>
+			  </section>
 		</main>
+<!-- Footer -->
 		<footer id="footer">
 			<p>Compartir en:</p>
 			<div class="social-icons">
@@ -110,7 +114,7 @@
 			</p>
 		</footer>
 		<div class="bg-primary h-5"></div>
-
+<!-- Modal -->
 		<div id="modal" class="modal">
 			<img
 				class="slider-arrow"
@@ -147,9 +151,12 @@
 			/>
 		</div>
 
+
+		<script src="./js/api.js"></script>
 		<script src="./js/helper.js"></script>
 		<script src="./js/menu.js"></script>
 		<script src="./js/modal.js"></script>
+		<script src="./js/trending.js"></script>
 		<script src="./js/favorites.js"></script>
 	</body>
 </html>

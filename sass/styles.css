@@ -353,7 +353,7 @@ div.hover-img {
   margin-bottom: 32px;
 }
 
-#section-trending-gifos div.slider-trending-content div.gifos-images {
+#section-trending-gifos div.slider-trending-content div.container-gifos-trending {
   overflow: hidden;
   overflow-x: auto;
   display: -webkit-box;
@@ -361,11 +361,11 @@ div.hover-img {
   display: flex;
 }
 
-#section-trending-gifos div.slider-trending-content div.gifos-images div.img-container {
+#section-trending-gifos div.slider-trending-content div.container-gifos-trending div.img-container {
   margin: 0 11px;
 }
 
-#section-trending-gifos div.slider-trending-content div.gifos-images div.img-container > img {
+#section-trending-gifos div.slider-trending-content div.container-gifos-trending div.img-container > img {
   height: 187px;
   width: 243px;
 }
@@ -621,14 +621,14 @@ img.slider-arrow {
         -ms-flex-align: center;
             align-items: center;
   }
-  #section-trending-gifos div.slider-trending-content div.gifos-images {
+  #section-trending-gifos div.slider-trending-content div.container-gifos-trending {
     overflow: unset;
     overflow-x: unset;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
   }
-  #section-trending-gifos div.slider-trending-content div.gifos-images div.img-container > img {
+  #section-trending-gifos div.slider-trending-content div.container-gifos-trending div.img-container > img {
     width: 100%;
     height: auto;
   }

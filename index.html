@@ -62,7 +62,6 @@
       <section id="section-results">
         <span></span>
         <h2 id="heading-gifos-result">Mascotas</h2>
-
         <div id="container-gifos-result" class="images-container">
           <!-- <div class="img-container">
             <img
@@ -74,6 +73,7 @@
 
         <button id="btn-view-more" class="btn-primary-ghost">VER MÁS</button>
       </section>
+      <!-- Section Gifos Treding -->
       <section id="section-trending-gifos">
         <h2>Trending GIFOS</h2>
         <p>Mira los últimos GIFOS de nuestra comunidad.</p>
@@ -83,25 +83,13 @@
             src="./img/button-slider-left.svg"
             alt="button-slider-left"
           />
-          <div class="gifos-images">
-            <div class="img-container">
+          <div id="container-gifos-trending" class="container-gifos-trending">
+            <!-- <div class="img-container">
               <img
                 src="./img/images/a89ac104638d206029569a1653bfcfcd8fe1c709.png"
                 alt="kitten"
               />
-            </div>
-            <div class="img-container">
-              <img
-                src="./img/images/c92adcd934648f8932a7589ce881ae68b67ad56a.png"
-                alt="kitten"
-              />
-            </div>
-            <div class="img-container">
-              <img
-                src="./img/images/64da32bcc6808f07f3dda14fc45605426ec0bd3c.png"
-                alt=""
-              />
-            </div>
+            </div> -->
           </div>
           <img
             class="slider-arrow"
@@ -111,7 +99,7 @@
         </div>
       </section>
     </main>
-
+    <!-- Footer -->
     <footer id="footer">
       <p>Compartir en:</p>
       <div class="social-icons">
@@ -130,7 +118,7 @@
       </p>
     </footer>
     <div class="bg-primary h-5"></div>
-
+    <!-- Modal -->
     <div id="modal" class="modal">
       <img
         class="slider-arrow"
@@ -167,6 +155,7 @@
       />
     </div>
 
+    <script src="./js/api.js"></script>
     <script src="./js/search.js"></script>
     <script src="./js/helper.js"></script>
     <script src="./js/menu.js"></script>

@@ -1,13 +1,33 @@
-// Result Hover
-const gifosResult = document.querySelector("#container-gifos-result").children;
+const containerGifosTrending = document.getElementById(
+  "container-gifos-trending"
+);
 
-for (let i = 0; i < gifosResult.length; i++) {
-	gifoHover(gifosResult[i]);
+async function addGifosTrending() {
+  try {
+    const trendingGifos = await getTrendingGifos();
+    console.log(trendingGifos);
+
+    trendingGifos.data.forEach((gifo) => {
+      console.log(gifo);
+      const imageContainer = document.createElement("div");
+      imageContainer.classList.add("img-container");
+
+      const img = document.createElement("img");
+      img.setAttribute("src", gifo.images?.fixed_width?.url);
+      img.setAttribute("alt", gifo.title);
+
+      imageContainer.appendChild(img);
+      gifoHover(
+        imageContainer,
+        gifo.title,
+        gifo.username,
+        gifo.images?.original?.url
+      );
+      containerGifosTrending.appendChild(imageContainer);
+    });
+  } catch (error) {
+    console.error(error);
+  }
 }
 
-// Trending Hover
-const gifosTrending = document.querySelector(".gifos-images").children;
-
-for (let i = 0; i < gifosTrending.length; i++) {
-	gifoHover(gifosTrending[i]);
-}
+addGifosTrending();

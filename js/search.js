@@ -1,24 +1,10 @@
 const inputSearch = document.getElementById("input-search");
 const iconSearch = document.getElementById("icon-search");
 const sectionResults = document.getElementById("section-results");
-const resultContainer = document.getElementById("container-gifos-result");
+const containerGifosResult = document.getElementById("container-gifos-result");
 const headingResult = document.getElementById("heading-gifos-result");
 const buttonViewMore = document.getElementById("btn-view-more");
 let viewMoreCount = 0;
-
-const API_KEY = "4SBXaLwgUjTtP0BLoT3mnAk5FL86H0qQ";
-
-async function getSuggestedWords(term) {
-  return await fetch(
-    `https://api.giphy.com/v1/tags/related/${term}?api_key=${API_KEY}`
-  ).then((response) => response.json());
-}
-
-async function getSearchedGifos(term, offset = 0, limit = 12) {
-  return await fetch(
-    `https://api.giphy.com/v1/gifs/search?api_key=${API_KEY}&q=${term}&limit=${limit}&offset=${offset}`
-  ).then((response) => response.json());
-}
 
 // Add Suggested Words to Searcher
 inputSearch.addEventListener("input", async (e) => {
@@ -52,7 +38,7 @@ inputSearch.addEventListener("input", async (e) => {
   }
 });
 
-// Add Searched gifos
+// Add gifos result to Section
 async function addGifosResult(term, options = { viewMore: false }) {
   try {
     const searchedGifos = await getSearchedGifos(
@@ -64,7 +50,7 @@ async function addGifosResult(term, options = { viewMore: false }) {
     headingResult.textContent = inputSearch.value;
 
     searchedGifos.data.forEach((gifo) => {
-      console.log(gifo);
+      // console.log(gifo);
       const imageContainer = document.createElement("div");
       imageContainer.classList.add("img-container");
 
@@ -79,7 +65,7 @@ async function addGifosResult(term, options = { viewMore: false }) {
         gifo.username,
         gifo.images?.original?.url
       );
-      resultContainer.appendChild(imageContainer);
+      containerGifosResult.appendChild(imageContainer);
     });
 
     if (!options.viewMore) {
@@ -91,7 +77,7 @@ async function addGifosResult(term, options = { viewMore: false }) {
 }
 
 iconSearch.addEventListener("click", () => {
-  resultContainer.innerHTML = "";
+  containerGifosResult.innerHTML = "";
   addGifosResult(inputSearch.value);
 });
 

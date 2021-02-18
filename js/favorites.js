@@ -1,6 +1,6 @@
 const gifosFavorites = document.querySelector("#container-gifos-favorites")
-	.children;
+  .children;
 
 for (let i = 0; i < gifosFavorites.length; i++) {
-	gifoHover(gifosFavorites[i]);
+  gifoHover(gifosFavorites[i]);
 }
