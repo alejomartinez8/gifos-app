@@ -552,7 +552,7 @@ img.slider-arrow {
 @media screen and (min-width: 768px) {
   .topnav-container {
     height: 90px;
-    padding: 0 156px;
+    padding: 0 10%;
   }
   .topnav-container img#main-menu-button {
     display: none;
@@ -605,7 +605,7 @@ img.slider-arrow {
     right: 0;
     margin: 10px 5px;
   }
-  div.hover-img div.icon-container img {
+  div.hover-img div.icon-container > img {
     margin: 0 5px;
     cursor: pointer;
   }

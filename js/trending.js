@@ -8,7 +8,7 @@ async function addGifosTrending(limit, offset) {
 
   try {
     const trendingGifos = await getTrendingGifos(limit, offset * 3);
-    // console.log(trendingGifos);
+    console.log(trendingGifos);
 
     containerGifosTrending.innerHTML = "";
     if (offsetTrending === 0) {
@@ -41,13 +41,14 @@ async function addGifosTrending(limit, offset) {
 }
 
 function loadGifos() {
-  if (window.matchMedia("(min-width:767px)").matches) {
+  if (window.matchMedia("(min-width:768px)").matches) {
     addGifosTrending(3, 0);
   } else {
     addGifosTrending(10, 0);
   }
 }
 
+loadGifos();
 window.onresize = loadGifos;
 
 buttonLeft.addEventListener("click", () => {

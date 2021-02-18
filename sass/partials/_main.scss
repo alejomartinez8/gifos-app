@@ -234,10 +234,12 @@ body {
   div.img-container {
     flex-basis: 50%;
     padding: 12.5px 11.5px;
+
     > img {
       width: 100%;
       height: auto;
     }
+
     &:nth-last-child(-n + 2) {
       padding-bottom: 0px;
     }

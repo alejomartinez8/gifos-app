@@ -82,7 +82,7 @@ function gifoHover(
     });
 
     iconDownload.addEventListener("click", () => {
-      console.log("download", img); // TODO - call function
+      downloadURI(img.src);
     });
 
     iconExpand.addEventListener("click", () =>
@@ -100,12 +100,13 @@ function gifoHover(
   });
 }
 
-function setModalData(image, username, title) {
-  modalContainer.style.display = "flex";
-  const modalImage = document.getElementById("image-modal");
-  const modalUser = document.getElementById("modal-user");
-  const modalTitle = document.getElementById("modal-title");
-  setAttribute(modalImage, "src", image);
-  modalUser.innerText = username;
-  modalTitle.innerText = title;
+function downloadURI(uri, name = "") {
+  var link = document.createElement("a");
+
+  link.setAttribute("download", name);
+  link.href = uri;
+  console.log(link);
+  document.body.appendChild(link);
+  link.click();
+  link.remove();
 }
