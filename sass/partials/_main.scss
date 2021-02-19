@@ -51,6 +51,11 @@ body {
     opacity: 0.5;
   }
 
+  li {
+    &:last-child {
+      display: none;
+    }
+  }
   a {
     display: block;
     text-decoration: none;

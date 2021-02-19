@@ -9,7 +9,6 @@
     }
 
     ul {
-      display: block;
       position: unset;
       background-color: transparent;
       padding: 0;
@@ -17,7 +16,8 @@
       height: auto;
 
       &.close {
-        display: block;
+        display: flex;
+        align-items: center;
       }
     }
 
@@ -28,7 +28,7 @@
         display: none;
       }
 
-      a {
+      a.item-text {
         color: $primary;
         text-transform: uppercase;
         line-height: 1rem;
@@ -42,6 +42,23 @@
         &:active {
           color: $gray;
           border-bottom: 0;
+        }
+      }
+
+      &:last-child {
+        display: inline-block;
+      }
+
+      a.create-gifo-icon {
+        @include div-icon(54px);
+        background: url("../../img/button-crear-gifo.svg") no-repeat;
+
+        &:hover {
+          background: url("../../img/CTA-crear-gifo-hover.svg") no-repeat;
+        }
+
+        &:active {
+          background: url("../../img/CTA-crear-gifo-active.svg");
         }
       }
     }

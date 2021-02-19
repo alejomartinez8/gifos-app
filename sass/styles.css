@@ -89,6 +89,10 @@ body {
   opacity: 0.5;
 }
 
+.topnav-container li:last-child {
+  display: none;
+}
+
 .topnav-container a {
   display: block;
   text-decoration: none;
@@ -768,7 +772,6 @@ div.modal div.img-container div.footer-img div.icons > div {
     display: none;
   }
   .topnav-container ul {
-    display: block;
     position: unset;
     background-color: transparent;
     padding: 0;
@@ -776,7 +779,12 @@ div.modal div.img-container div.footer-img div.icons > div {
     height: auto;
   }
   .topnav-container ul.close {
-    display: block;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
   .topnav-container li {
     display: inline-block;
@@ -785,19 +793,36 @@ div.modal div.img-container div.footer-img div.icons > div {
   .topnav-container li::after {
     display: none;
   }
-  .topnav-container li a {
+  .topnav-container li a.item-text {
     color: #572ee5;
     text-transform: uppercase;
     line-height: 1rem;
     height: 1.2rem;
   }
-  .topnav-container li a:hover {
+  .topnav-container li a.item-text:hover {
     display: block;
     border-bottom: 2px solid #5ed7c6;
   }
-  .topnav-container li a:active {
+  .topnav-container li a.item-text:active {
     color: #6b7989;
     border-bottom: 0;
+  }
+  .topnav-container li:last-child {
+    display: inline-block;
+  }
+  .topnav-container li a.create-gifo-icon {
+    margin: 0 5px;
+    width: 54px;
+    height: 54px;
+    display: inline-block;
+    cursor: pointer;
+    background: url("../../img/button-crear-gifo.svg") no-repeat;
+  }
+  .topnav-container li a.create-gifo-icon:hover {
+    background: url("../../img/CTA-crear-gifo-hover.svg") no-repeat;
+  }
+  .topnav-container li a.create-gifo-icon:active {
+    background: url("../../img/CTA-crear-gifo-active.svg");
   }
   #section-header h1 {
     font-size: 40px;
