@@ -1,0 +1,58 @@
+#create-gifo {
+  .camera-container {
+    border: 1px solid $primary;
+    max-width: 688px;
+    height: 390px;
+    margin: 24px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    h2 {
+      color: $primary;
+    }
+
+    p {
+      color: $black;
+    }
+  }
+
+  .footer-create {
+    display: flex;
+    flex-direction: column;
+    .create-steps {
+      display: flex;
+      justify-content: center;
+      button {
+        width: 32px;
+        height: 32px;
+        border-radius: 32px;
+        border: 1px solid $primary;
+        background: transparent;
+        color: $primary;
+        margin: 0 13px;
+        cursor: pointer;
+
+        &:hover {
+          color: white;
+          background: $primary;
+        }
+      }
+    }
+
+    span {
+      height: 6.9px;
+      max-width: 795px;
+      width: 100%;
+      margin: 20px auto;
+      border: 1px solid $primary;
+      border-radius: 6.9px;
+      background-color: $primary;
+    }
+
+    button {
+      margin: 0 auto;
+    }
+  }
+}

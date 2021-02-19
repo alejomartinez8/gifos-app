@@ -503,6 +503,11 @@ button.btn-primary-ghost {
   cursor: pointer;
 }
 
+button.btn-primary-ghost:hover {
+  color: white;
+  background-color: #572ee5;
+}
+
 div.hover-img {
   display: none;
 }
@@ -761,6 +766,17 @@ div.modal div.img-container div.footer-img div.icons > div {
   .dark ul#menu-container a {
     color: #ffffff;
   }
+  .dark ul#menu-container a.create-gifo-icon {
+    margin: 0 5px;
+    width: 54px;
+    height: 54px;
+    display: inline-block;
+    cursor: pointer;
+    background: url("../../img/CTA-crar-gifo-modo-noc.svg") no-repeat;
+  }
+  .dark ul#menu-container a.create-gifo-icon:hover {
+    background: url("../../img/CTA-crear-gifo-hover-modo-noc.svg") no-repeat;
+  }
 }
 
 @media screen and (min-width: 768px) {
@@ -905,5 +921,82 @@ div.modal div.img-container div.footer-img div.icons > div {
   div.slider-arrow-right {
     display: block;
   }
+}
+
+#create-gifo .camera-container {
+  border: 1px solid #572ee5;
+  max-width: 688px;
+  height: 390px;
+  margin: 24px auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#create-gifo .camera-container h2 {
+  color: #572ee5;
+}
+
+#create-gifo .camera-container p {
+  color: #000000;
+}
+
+#create-gifo .footer-create {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#create-gifo .footer-create .create-steps {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#create-gifo .footer-create .create-steps button {
+  width: 32px;
+  height: 32px;
+  border-radius: 32px;
+  border: 1px solid #572ee5;
+  background: transparent;
+  color: #572ee5;
+  margin: 0 13px;
+  cursor: pointer;
+}
+
+#create-gifo .footer-create .create-steps button:hover {
+  color: white;
+  background: #572ee5;
+}
+
+#create-gifo .footer-create span {
+  height: 6.9px;
+  max-width: 795px;
+  width: 100%;
+  margin: 20px auto;
+  border: 1px solid #572ee5;
+  border-radius: 6.9px;
+  background-color: #572ee5;
+}
+
+#create-gifo .footer-create button {
+  margin: 0 auto;
 }
 /*# sourceMappingURL=styles.css.map */
