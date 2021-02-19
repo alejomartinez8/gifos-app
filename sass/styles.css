@@ -304,6 +304,31 @@ body {
   margin-top: 43px;
 }
 
+#section-results > div.images-container img.no-result-icon {
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+  max-width: 150px;
+}
+
+#section-results > div.images-container p.no-result-text {
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 22px;
+  color: #50e3c2;
+  text-align: center;
+  line-height: 25px;
+}
+
+#section-results button {
+  display: none;
+}
+
+#section-results button.active {
+  display: inline-block;
+}
+
 /**********************
 /* Section Favorites - My Gifos
 ***********************/
@@ -544,6 +569,7 @@ div.modal {
           align-items: center;
   padding: 0 28px;
   background: rgba(255, 255, 255, 0.9);
+  z-index: 1;
 }
 
 div.modal div.img-container {
@@ -554,8 +580,8 @@ div.modal div.img-container {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  max-height: 90%;
-  max-width: 90%;
+  max-height: 80%;
+  max-width: 80%;
 }
 
 div.modal div.img-container div.icon-close {
@@ -816,9 +842,9 @@ div.modal div.img-container div.footer-img div.icons > div {
     background-color: #ffffff;
   }
   div.modal div.img-container img#image-modal {
-    max-width: 695px;
-    -o-object-fit: cover;
-       object-fit: cover;
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
   }
   div.slider-arrow-left,
   div.slider-arrow-right {

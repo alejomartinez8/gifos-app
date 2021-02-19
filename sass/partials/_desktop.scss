@@ -116,8 +116,9 @@
 
     div.img-container {
       img#image-modal {
-        max-width: 695px;
-        object-fit: cover;
+        max-width: 100%;
+        max-height: 100%;
+        display: block;
       }
     }
   }

@@ -11,12 +11,13 @@ div.modal {
   align-items: center;
   padding: 0 28px;
   background: rgba(255, 255, 255, 0.9);
+  z-index: 1;
 
   div.img-container {
     display: flex;
     flex-direction: column;
-    max-height: 90%;
-    max-width: 90%;
+    max-height: 80%;
+    max-width: 80%;
 
     div.icon-close {
       @include div-icon(14px);

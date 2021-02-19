@@ -1,6 +1,7 @@
 const modalContainer = document.getElementById("modal");
 const buttonModalRight = document.getElementById("button-modal-right");
 const buttonModalLeft = document.getElementById("button-modal-left");
+const modalImageContainer = document.getElementById("modal-img-container");
 
 let offsetModal = 0;
 let gifoOptions = "";
@@ -9,13 +10,12 @@ function setModalData(gifo, options) {
   const { username, title, images } = gifo;
   gifoOptions = options;
 
-  const modalImageContainer = document.getElementById("modal-img-container");
   modalImageContainer.innerHTML = `
     <div id="close-modal" class="icon-close" role="button"></div>
     <img id="image-modal" src=${images?.original?.url}/>
     <div class="footer-img">
       <div class="text">
-        <p>${username}</p>
+        <p >${username}</p>
         <p>${title}</p>
       </div>
       <div class="icons">
@@ -34,6 +34,7 @@ function setModalData(gifo, options) {
   closeIcon.addEventListener("click", () => {
     modalContainer.style.display = "none";
     clearModal();
+    createGifos(containerFavorites, favorites, { type: "favorite" });
   });
 
   if (getFavorite(gifo)) {
@@ -78,9 +79,7 @@ async function addGifoToModal(offset, options) {
 }
 
 function clearModal() {
-  modalTitle.innerText = "";
-  modalUser.innerText = "";
-  setAttribute(modalImage, "src", "");
+  modalImageContainer.innerHTML = "";
 }
 
 buttonModalLeft.addEventListener("click", () => {

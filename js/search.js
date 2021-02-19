@@ -20,10 +20,26 @@ async function addGifosResult(term, options = { viewMore: false }) {
     displayBlock(sectionResults);
     headingResult.textContent = inputSearch.value;
 
-    createGifos(containerGifosResult, searchedGifos.data, {
-      type: "search",
-      search: term,
-    });
+    if (searchedGifos.data.length) {
+      createGifos(containerGifosResult, searchedGifos.data, {
+        type: "search",
+        search: term,
+      });
+
+      buttonViewMore.classList.add("active");
+    } else {
+      console.log("no results");
+      containerGifosResult.innerHTML = `
+        <img
+          class="no-result-icon"
+          src="./img/icon-busqueda-sin-resultado.svg"
+          alt="busqueda-sin-resultado"
+        />
+        <p class="no-result-text">Intenta con otra Búsqueda</p>
+      `;
+
+      buttonViewMore.classList.remove("active");
+    }
 
     if (!options.viewMore) {
       sectionResults.scrollIntoView({ behavior: "smooth" });
@@ -33,6 +49,9 @@ async function addGifosResult(term, options = { viewMore: false }) {
   }
 }
 
+/**
+ * Add Trending Searched Terms
+ */
 async function addTrendingSearchTerms() {
   const trendingTerms = document.getElementById("trending-terms");
   try {
@@ -59,7 +78,9 @@ async function addTrendingSearchTerms() {
 
 addTrendingSearchTerms();
 
-// Add Suggested Words to Searcher
+/**
+ * Add Suggested Words to Searcher
+ *  */
 inputSearch.addEventListener("input", async (e) => {
   if (e.target.value.length > 1) {
     iconSearch.classList.add("search");
