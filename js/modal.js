@@ -67,7 +67,7 @@ async function addGifoToModal(offset, options) {
       break;
 
     case "search":
-      gifo = await fetchSearchedGifos(options.search, offset, 1);
+      gifo = await fetchSeachGifs(options.search, offset, 1);
       gifo = gifo.data[0];
       break;
 

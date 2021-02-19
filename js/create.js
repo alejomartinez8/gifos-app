@@ -135,6 +135,7 @@ createButton.addEventListener("click", async () => {
         createButton.innerText = "GRABAR";
         stream = await getStreamAndRecord();
       });
+
       break;
 
     case "SUBIR GIFO":
@@ -144,12 +145,14 @@ createButton.addEventListener("click", async () => {
       try {
         const response = await uploadGif(formdata);
         console.log(response);
+        const gifo = await fetchGifById(response.data.id);
+        console.log(gifo);
+        storageMyGifo(gifo.data);
       } catch (error) {
         console.error(error);
       }
 
-      console.log(cameraContainer.children[0]);
-
+      // Replace Hover Div
       createLabel.removeEventListener("click", null);
       cameraContainer.removeChild(cameraContainer.children[0]);
       addHoverVideo("GIF subido con éxto", "success");

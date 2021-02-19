@@ -6,7 +6,7 @@ async function fetchSuggestedWords(term) {
   ).then((response) => response.json());
 }
 
-async function fetchSearchedGifos(term, offset = 0, limit = 12) {
+async function fetchSeachGifs(term, offset = 0, limit = 12) {
   return await fetch(
     `https://api.giphy.com/v1/gifs/search?api_key=${API_KEY}&q=${term}&limit=${limit}&offset=${offset}`
   ).then((response) => response.json());
@@ -34,5 +34,12 @@ async function uploadGif(formdata) {
   return await fetch(
     `https://upload.giphy.com/v1/gifs?api_key=${API_KEY}`,
     requestOptions
-  ).then((response) => response.text());
+  ).then((response) => response.json());
+}
+
+async function fetchGifById(id) {
+  console.log(id);
+  return await fetch(
+    `https://api.giphy.com/v1/gifs/${id}?api_key=${API_KEY}`
+  ).then((response) => response.json());
 }

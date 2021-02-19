@@ -226,6 +226,7 @@ body {
   }
 
   > div.images-container {
+    justify-content: center;
     img.no-result-icon {
       flex-basis: 100%;
       max-width: 150px;
@@ -252,7 +253,7 @@ body {
 /* Section Favorites - My Gifos
 ***********************/
 #section-favorites,
-#section-my-gifos {
+#section-mygifos {
   text-align: center;
 
   > img {

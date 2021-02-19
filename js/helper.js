@@ -1,6 +1,9 @@
 let favorites = localStorage.getItem("favorites");
 favorites = favorites ? JSON.parse(favorites) : [];
 
+let mygifos = localStorage.getItem("mygifos");
+mygifos = mygifos ? JSON.parse(mygifos) : [];
+
 // Functions
 function setAttribute(elm, att, val) {
   if (elm) elm.setAttribute(att, val);
@@ -25,12 +28,14 @@ function removeClass(elm, className) {
 function createGifos(container, gifos, options) {
   if (!container) return;
 
+  console.log(gifos);
+
   gifos.forEach((gifo) => {
     const imageContainer = document.createElement("div");
     imageContainer.classList.add("img-container");
 
     const img = document.createElement("img");
-    img.setAttribute("src", gifo.images?.preview_webp?.url);
+    img.setAttribute("src", gifo.images?.original?.url);
     img.setAttribute("alt", gifo.title);
 
     imageContainer.appendChild(img);
@@ -66,6 +71,15 @@ function toggleFavoriteGifo(gifo) {
 
 function getFavorite(gifo) {
   return favorites.find((fav) => fav.id === gifo.id);
+}
+
+function storageMyGifo(gifo) {
+  mygifos.push(gifo);
+  localStorage.setItem("mygifos", JSON.stringify(mygifos));
+}
+
+function getMyGifo(gifo) {
+  return mygifos.find((mygifo) => mygifo.id === gifo.id);
 }
 
 const SPINNER = `

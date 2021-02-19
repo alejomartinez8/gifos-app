@@ -308,6 +308,12 @@ body {
   margin-top: 43px;
 }
 
+#section-results > div.images-container {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
 #section-results > div.images-container img.no-result-icon {
   -ms-flex-preferred-size: 100%;
       flex-basis: 100%;
@@ -337,31 +343,31 @@ body {
 /* Section Favorites - My Gifos
 ***********************/
 #section-favorites,
-#section-my-gifos {
+#section-mygifos {
   text-align: center;
 }
 
 #section-favorites > img,
-#section-my-gifos > img {
+#section-mygifos > img {
   padding: 5px;
 }
 
 #section-favorites > h2,
-#section-my-gifos > h2 {
+#section-mygifos > h2 {
   font-size: 25px;
   margin-top: 7px;
   margin-bottom: 45px;
 }
 
 #section-favorites > div.images-container img.no-result-icon,
-#section-my-gifos > div.images-container img.no-result-icon {
+#section-mygifos > div.images-container img.no-result-icon {
   -ms-flex-preferred-size: 100%;
       flex-basis: 100%;
   max-width: 150px;
 }
 
 #section-favorites > div.images-container p.no-result-text,
-#section-my-gifos > div.images-container p.no-result-text {
+#section-mygifos > div.images-container p.no-result-text {
   -ms-flex-preferred-size: 100%;
       flex-basis: 100%;
   font-family: "Montserrat", sans-serif;
@@ -374,12 +380,12 @@ body {
 }
 
 #section-favorites button,
-#section-my-gifos button {
+#section-mygifos button {
   display: none;
 }
 
 #section-favorites button.active,
-#section-my-gifos button.active {
+#section-mygifos button.active {
   display: inline-block;
 }
 

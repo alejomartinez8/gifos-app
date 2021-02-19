@@ -12,7 +12,7 @@ let viewMoreCount = 0;
 // Add gifos result to Section
 async function addGifosResult(term, options = { viewMore: false }) {
   try {
-    const searchedGifos = await fetchSearchedGifos(
+    const searchedGifos = await fetchSeachGifs(
       term,
       options.viewMore ? viewMoreCount * 12 : 0
     );
