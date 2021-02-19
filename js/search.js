@@ -35,15 +35,18 @@ async function addTrendingSearchTerms() {
   try {
     const terms = await getTrendingSearchTerms();
 
-    terms.data.forEach((term) => {
+    terms.data.forEach((term, index) => {
+      const upperCaseTerm = term[0].toUpperCase() + term.slice(1);
       const linkTerm = document.createElement("span");
-      linkTerm.innerText = term;
+      linkTerm.innerText = upperCaseTerm;
       linkTerm.addEventListener("click", () => {
         containerGifosResult.innerHTML = "";
-        addGifosResult(term);
+        addGifosResult(upperCaseTerm);
       });
       trendingTerms.appendChild(linkTerm);
-      inputSearch.value = term;
+      if (index != terms.data.length - 1) trendingTerms.append(", ");
+
+      inputSearch.value = upperCaseTerm;
     });
   } catch (error) {
     console.error(error);
