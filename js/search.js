@@ -12,7 +12,7 @@ let viewMoreCount = 0;
 // Add gifos result to Section
 async function addGifosResult(term, options = { viewMore: false }) {
   try {
-    const searchedGifos = await getSearchedGifos(
+    const searchedGifos = await fetchSearchedGifos(
       term,
       options.viewMore ? viewMoreCount * 12 : 0
     );
@@ -20,7 +20,10 @@ async function addGifosResult(term, options = { viewMore: false }) {
     displayBlock(sectionResults);
     headingResult.textContent = inputSearch.value;
 
-    createGifos(containerGifosResult, searchedGifos.data);
+    createGifos(containerGifosResult, searchedGifos.data, {
+      type: "search",
+      search: term,
+    });
 
     if (!options.viewMore) {
       sectionResults.scrollIntoView({ behavior: "smooth" });
@@ -33,19 +36,21 @@ async function addGifosResult(term, options = { viewMore: false }) {
 async function addTrendingSearchTerms() {
   const trendingTerms = document.getElementById("trending-terms");
   try {
-    const terms = await getTrendingSearchTerms();
+    const terms = await fetchTrendingSearchTerms();
 
     terms.data.forEach((term, index) => {
-      const upperCaseTerm = term[0].toUpperCase() + term.slice(1);
-      const linkTerm = document.createElement("span");
-      linkTerm.innerText = upperCaseTerm;
-      linkTerm.addEventListener("click", () => {
-        containerGifosResult.innerHTML = "";
-        inputSearch.value = upperCaseTerm;
-        addGifosResult(upperCaseTerm);
-      });
-      trendingTerms.appendChild(linkTerm);
-      if (index != terms.data.length - 1) trendingTerms.append(", ");
+      if (index < 5) {
+        const upperCaseTerm = term[0].toUpperCase() + term.slice(1);
+        const linkTerm = document.createElement("span");
+        linkTerm.innerText = upperCaseTerm;
+        linkTerm.addEventListener("click", () => {
+          containerGifosResult.innerHTML = "";
+          inputSearch.value = upperCaseTerm;
+          addGifosResult(upperCaseTerm);
+        });
+        trendingTerms.appendChild(linkTerm);
+        if (index !== 4) trendingTerms.append(", ");
+      }
     });
   } catch (error) {
     console.error(error);
@@ -57,7 +62,7 @@ addTrendingSearchTerms();
 // Add Suggested Words to Searcher
 inputSearch.addEventListener("input", async (e) => {
   if (e.target.value.length > 1) {
-    const suggestedWords = await getSuggestedWords(e.target.value);
+    const suggestedWords = await fetchSuggestedWords(e.target.value);
     if (suggestedWords.data.length) {
       displayBlock(suggestedContainer);
       displayBlock(lineInputBottom);

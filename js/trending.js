@@ -1,27 +1,36 @@
 const containerTrending = document.getElementById("container-trending");
 const buttonRight = document.getElementById("button-trending-right");
 const buttonLeft = document.getElementById("button-trending-left");
+
 let offsetTrending = 0;
+let trendingGifos = [];
 
 async function addGifosTrending(limit, offset) {
-  try {
-    const trendingGifos = await getTrendingGifos(limit, offset * 3);
+  const lenghtGifos = trendingGifos[0] ? trendingGifos.length : 0;
 
-    if (window.matchMedia("(min-width:768px)").matches) {
-      if (offsetTrending === 0) {
-        displayNone(buttonLeft);
-      } else {
-        displayBlock(buttonLeft);
-      }
-    } else {
-      displayNone(buttonLeft);
-    }
-
-    containerTrending.innerHTML = "";
-    createGifos(containerTrending, trendingGifos.data);
-  } catch (error) {
-    console.error(error);
+  if (offset + limit > lenghtGifos) {
+    const newGifos = await fetchTrendingGifos(10, lenghtGifos);
+    trendingGifos = trendingGifos.concat(newGifos.data);
   }
+
+  const gifosToShow = [];
+
+  for (let i = 0; i < limit; i++) {
+    gifosToShow[i] = trendingGifos[i + offset];
+  }
+
+  if (window.matchMedia("(min-width:768px)").matches) {
+    if (offset === 0) {
+      displayNone(buttonLeft);
+    } else {
+      displayBlock(buttonLeft);
+    }
+  } else {
+    displayNone(buttonLeft);
+  }
+
+  containerTrending.innerHTML = "";
+  createGifos(containerTrending, gifosToShow, { type: "trending" });
 }
 
 function loadGifos() {

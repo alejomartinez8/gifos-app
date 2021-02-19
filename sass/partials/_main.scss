@@ -239,10 +239,12 @@ body {
   div.img-container {
     flex-basis: 50%;
     padding: 12.5px 11.5px;
+    width: 156px;
+    height: 120px;
 
     > img {
       width: 100%;
-      height: auto;
+      height: 100%;
     }
   }
 }

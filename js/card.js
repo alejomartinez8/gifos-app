@@ -1,4 +1,4 @@
-function gifoHover(imgContainer, gifo) {
+function gifoHover(imgContainer, gifo, options) {
   const img = imgContainer.firstElementChild;
 
   const { title, username, images } = gifo;
@@ -47,7 +47,7 @@ function gifoHover(imgContainer, gifo) {
         downloadURI(images?.original?.url);
       });
 
-      iconExpand.addEventListener("click", () => setModalData(gifo));
+      iconExpand.addEventListener("click", () => setModalData(gifo, options));
     });
 
     imgContainer.addEventListener("mouseleave", () => {

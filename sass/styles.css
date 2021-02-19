@@ -324,11 +324,13 @@ body {
   -ms-flex-preferred-size: 50%;
       flex-basis: 50%;
   padding: 12.5px 11.5px;
+  width: 156px;
+  height: 120px;
 }
 
 .images-container div.img-container > img {
   width: 100%;
-  height: auto;
+  height: 100%;
 }
 
 /**********************
