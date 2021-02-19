@@ -6,6 +6,8 @@ const headingResult = document.getElementById("heading-gifos-result");
 const buttonViewMore = document.getElementById("btn-view-more");
 const suggestedContainer = document.getElementById("suggested-container");
 const lineInputBottom = document.getElementById("line-input-bottom");
+const sectionTrendingTerms = document.getElementById("section-trending-terms");
+const imageHeader = document.getElementById("img-header");
 
 let viewMoreCount = 0;
 
@@ -26,7 +28,7 @@ async function addGifosResult(term, options = { viewMore: false }) {
         search: term,
       });
 
-      buttonViewMore.classList.add("active");
+      addClass(buttonViewMore, "active");
     } else {
       console.log("no results");
       containerGifosResult.innerHTML = `
@@ -39,6 +41,7 @@ async function addGifosResult(term, options = { viewMore: false }) {
       `;
 
       buttonViewMore.classList.remove("active");
+      sectionTrendingTerms.classList.remove("hide");
     }
 
     if (!options.viewMore) {
@@ -83,11 +86,15 @@ addTrendingSearchTerms();
  *  */
 inputSearch.addEventListener("input", async (e) => {
   if (e.target.value.length > 1) {
-    iconSearch.classList.add("search");
+    addClass(iconSearch, "search");
+    addClass(imageHeader, "hidden");
+    addClass(sectionTrendingTerms, "hidden");
+
     const suggestedWords = await fetchSuggestedWords(e.target.value);
     if (suggestedWords.data.length) {
       displayBlock(suggestedContainer);
       displayBlock(lineInputBottom);
+
       suggestedContainer.innerHTML = "";
       suggestedWords.data.forEach((word) => {
         const term = document.createElement("li");
@@ -121,6 +128,8 @@ function clearSearch() {
   displayNone(lineInputBottom);
   suggestedContainer.innerHTML = "";
   inputSearch.removeEventListener("click", null);
+  removeClass(sectionTrendingTerms, "hidden");
+  removeClass(imageHeader, "hidden");
 }
 
 inputSearch.addEventListener("keydown", (e) => {

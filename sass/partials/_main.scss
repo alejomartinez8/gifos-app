@@ -88,10 +88,15 @@ body {
   position: relative;
   max-width: 551px;
   margin: 0 auto;
+  margin-bottom: 2rem;
 
   img.img-header {
     padding: 31px 51px 0px 51px;
     width: 100%;
+
+    &.hidden {
+      display: none;
+    }
   }
 
   .search-container {
@@ -202,6 +207,10 @@ body {
     line-height: 25px;
 
     cursor: pointer;
+  }
+
+  &.hidden {
+    display: none;
   }
 }
 

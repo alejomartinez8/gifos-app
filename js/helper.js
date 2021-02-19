@@ -28,8 +28,6 @@ function removeClass(elm, className) {
 function createGifos(container, gifos, options) {
   if (!container) return;
 
-  console.log(gifos);
-
   gifos.forEach((gifo) => {
     const imageContainer = document.createElement("div");
     imageContainer.classList.add("img-container");

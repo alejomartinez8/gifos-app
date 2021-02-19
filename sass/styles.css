@@ -126,11 +126,16 @@ body {
   position: relative;
   max-width: 551px;
   margin: 0 auto;
+  margin-bottom: 2rem;
 }
 
 #section-searcher img.img-header {
   padding: 31px 51px 0px 51px;
   width: 100%;
+}
+
+#section-searcher img.img-header.hidden {
+  display: none;
 }
 
 #section-searcher .search-container {
@@ -284,6 +289,10 @@ body {
   text-align: center;
   line-height: 25px;
   cursor: pointer;
+}
+
+#section-trending-terms.hidden {
+  display: none;
 }
 
 /**********************
