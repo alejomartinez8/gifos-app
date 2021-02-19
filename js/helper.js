@@ -14,14 +14,12 @@ function displayNone(elm) {
   elm.style.display = "none";
 }
 
-function imgHover(elm, hover, unhover) {
-  elm.addEventListener("mouseenter", () => {
-    setAttribute(elm, "src", hover);
-  });
+function addClass(elm, className) {
+  elm.classList.add(className);
+}
 
-  elm.addEventListener("mouseleave", () => {
-    setAttribute(elm, "src", unhover);
-  });
+function removeClass(elm, className) {
+  elm.classList.remove(className);
 }
 
 function createGifos(container, gifos, options) {

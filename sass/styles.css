@@ -941,6 +941,7 @@ div.modal div.img-container div.footer-img div.icons > div {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  padding: 20px;
 }
 
 #create-gifo .camera-container h2 {
@@ -949,6 +950,11 @@ div.modal div.img-container div.footer-img div.icons > div {
 
 #create-gifo .camera-container p {
   color: #000000;
+}
+
+#create-gifo .camera-container video {
+  width: 100%;
+  height: 100%;
 }
 
 #create-gifo .footer-create {
@@ -968,9 +974,21 @@ div.modal div.img-container div.footer-img div.icons > div {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-#create-gifo .footer-create .create-steps button {
+#create-gifo .footer-create .create-steps div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   width: 32px;
   height: 32px;
   border-radius: 32px;
@@ -978,12 +996,24 @@ div.modal div.img-container div.footer-img div.icons > div {
   background: transparent;
   color: #572ee5;
   margin: 0 13px;
-  cursor: pointer;
+  text-align: center;
+  font-size: 18px;
 }
 
-#create-gifo .footer-create .create-steps button:hover {
+#create-gifo .footer-create .create-steps div.activate {
   color: white;
   background: #572ee5;
+}
+
+@media screen and (min-width: 768px) {
+  #create-gifo .footer-create .create-steps h3 {
+    display: none;
+    position: absolute;
+    right: 15%;
+  }
+  #create-gifo .footer-create .create-steps h3.active {
+    display: block;
+  }
 }
 
 #create-gifo .footer-create span {
@@ -998,5 +1028,9 @@ div.modal div.img-container div.footer-img div.icons > div {
 
 #create-gifo .footer-create button {
   margin: 0 auto;
+}
+
+#create-gifo .footer-create button.hidden {
+  display: none;
 }
 /*# sourceMappingURL=styles.css.map */
