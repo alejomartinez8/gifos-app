@@ -35,21 +35,11 @@ async function addGifoToModal(offset, options) {
       break;
 
     case "search":
-      gifoToShow = await fetchSearchedGifos(options.search, offsetModal, 1);
+      gifoToShow = await fetchSearchedGifos(options.search, offset, 1);
       break;
 
     case "favorite":
       break;
-  }
-
-  if (window.matchMedia("(min-width:768px)").matches) {
-    if (offset === 0) {
-      displayNone(buttonModalLeft);
-    } else {
-      displayBlock(buttonModalLeft);
-    }
-  } else {
-    displayNone(buttonModalLeft);
   }
 
   setModalData(gifoToShow.data[0], options);
