@@ -259,6 +259,29 @@ body {
     margin-top: 7px;
     margin-bottom: 45px;
   }
+
+  > div.images-container {
+    img.no-result-icon {
+      flex-basis: 100%;
+      max-width: 150px;
+    }
+    p.no-result-text {
+      flex-basis: 100%;
+      @include monserrat-bold;
+      font-size: 22px;
+      color: #50e3c2;
+      text-align: center;
+      line-height: 25px;
+      padding: 0 10%;
+    }
+  }
+
+  button {
+    display: none;
+    &.active {
+      display: inline-block;
+    }
+  }
 }
 
 /**********************

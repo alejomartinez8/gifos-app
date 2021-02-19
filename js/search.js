@@ -124,7 +124,6 @@ function clearSearch() {
 }
 
 inputSearch.addEventListener("keydown", (e) => {
-  console.log(e.key);
   switch (e.key) {
     case "Enter":
       if (inputSearch.value) {
