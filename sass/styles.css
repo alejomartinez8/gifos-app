@@ -558,13 +558,17 @@ div.modal div.img-container {
   max-width: 90%;
 }
 
-div.modal div.img-container img.close-icon {
-  display: block;
+div.modal div.img-container div.icon-close {
+  margin: 0 5px;
   width: 14px;
+  height: 14px;
+  display: inline-block;
+  cursor: pointer;
+  display: block;
   position: absolute;
   top: 10%;
   right: 10%;
-  cursor: pointer;
+  background: url(../../img/close.svg) no-repeat;
 }
 
 div.modal div.img-container div.footer-img {

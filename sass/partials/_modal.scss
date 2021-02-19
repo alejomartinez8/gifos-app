@@ -18,13 +18,13 @@ div.modal {
     max-height: 90%;
     max-width: 90%;
 
-    img.close-icon {
+    div.icon-close {
+      @include div-icon(14px);
       display: block;
-      width: 14px;
       position: absolute;
       top: 10%;
       right: 10%;
-      cursor: pointer;
+      background: url(../../img/close.svg) no-repeat;
     }
 
     div.footer-img {

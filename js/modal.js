@@ -1,48 +1,80 @@
 const modalContainer = document.getElementById("modal");
 const buttonModalRight = document.getElementById("button-modal-right");
 const buttonModalLeft = document.getElementById("button-modal-left");
-const modalImage = document.getElementById("image-modal");
-const modalUser = document.getElementById("modal-user");
-const modalTitle = document.getElementById("modal-title");
-const closeModalIcon = document.getElementById("close-modal");
 
 let offsetModal = 0;
 let gifoOptions = "";
-
-closeModalIcon.addEventListener("click", () => {
-  modalContainer.style.display = "none";
-});
 
 function setModalData(gifo, options) {
   const { username, title, images } = gifo;
   gifoOptions = options;
 
+  const modalImageContainer = document.getElementById("modal-img-container");
+  modalImageContainer.innerHTML = `
+    <div id="close-modal" class="icon-close" role="button"></div>
+    <img id="image-modal" src=${images?.original?.url}/>
+    <div class="footer-img">
+      <div class="text">
+        <p>${username}</p>
+        <p>${title}</p>
+      </div>
+      <div class="icons">
+        <div class="icon-fav"></div>
+        <div class="icon-download"></div>
+      </div>
+    </div>
+  `;
+
+  console.log(modalImageContainer);
+
+  const closeIcon = modalImageContainer.children[0];
+  const favoriteIcon = modalImageContainer.children[2].children[1].children[0];
+  const downloadIcon = modalImageContainer.children[2].children[1].children[1];
+
+  closeIcon.addEventListener("click", () => {
+    modalContainer.style.display = "none";
+    clearModal();
+  });
+
+  if (getFavorite(gifo)) {
+    favoriteIcon.classList.add("saved");
+  }
+
+  favoriteIcon.addEventListener("click", () => {
+    if (getFavorite(gifo)) {
+      favoriteIcon.classList.remove("saved");
+    } else {
+      favoriteIcon.classList.add("saved");
+    }
+    toggleFavoriteGifo(gifo);
+  });
+
+  downloadIcon.addEventListener("click", () => {
+    downloadURI(images?.original?.url);
+  });
+
   modalContainer.style.display = "flex";
-  setAttribute(modalImage, "src", images?.original?.url);
-  modalUser.innerText = username;
-  modalTitle.innerText = title;
 }
 
 async function addGifoToModal(offset, options) {
-  let gifoToShow = {
-    data: [],
-  };
-  console.log(options);
+  let gifo;
 
   switch (options.type) {
     case "trending":
-      gifoToShow = await fetchTrendingGifos(1, offset);
+      gifo = await fetchTrendingGifos(1, offset);
+      gifo = gifo.data[0];
       break;
 
     case "search":
-      gifoToShow = await fetchSearchedGifos(options.search, offset, 1);
+      gifo = await fetchSearchedGifos(options.search, offset, 1);
+      gifo = gifo.data[0];
       break;
 
     case "favorite":
       break;
   }
 
-  setModalData(gifoToShow.data[0], options);
+  setModalData(gifo, options);
 }
 
 function clearModal() {
