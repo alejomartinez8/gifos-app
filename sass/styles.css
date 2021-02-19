@@ -1,3 +1,6 @@
+/**********************
+* Colors
+**********************/
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 .bg-primary {
@@ -532,6 +535,9 @@ div.slider-arrow-right {
   display: none;
 }
 
+/*********************
+* Card
+*********************/
 div.hover-img {
   display: block;
   position: absolute;
@@ -698,6 +704,9 @@ div.modal div.img-container div.footer-img div.icons > div {
   opacity: 0.5;
 }
 
+/********************
+* Dark Theme
+*********************/
 .dark {
   background-color: #37383c;
   color: #ffffff;
@@ -772,6 +781,10 @@ div.modal div.img-container div.footer-img div.icons > div {
 
 .dark #footer a {
   color: #ffffff;
+}
+
+.dark #create-gifo .camera-container {
+  border: 1px solid #ffffff;
 }
 
 @media screen and (min-width: 768px) {
@@ -938,6 +951,9 @@ div.modal div.img-container div.footer-img div.icons > div {
   }
 }
 
+/*********************
+* Create gifos
+**********************/
 #create-gifo .camera-container {
   border: 1px solid #572ee5;
   max-width: 688px;
@@ -1095,6 +1111,9 @@ div.modal div.img-container div.footer-img div.icons > div {
   background: url("../../img/ok.svg") no-repeat;
 }
 
+/***********************
+* Spinner
+***********************/
 .sk-fading-circle {
   margin: 100px auto;
   width: 40px;

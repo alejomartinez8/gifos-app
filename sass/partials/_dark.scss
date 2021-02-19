@@ -67,6 +67,12 @@
       color: $white;
     }
   }
+
+  #create-gifo {
+    .camera-container {
+      border: 1px solid $white;
+    }
+  }
 }
 
 // desktop styles
