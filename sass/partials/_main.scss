@@ -170,7 +170,7 @@ body {
 /**********************
 /* Section Keyword
 ***********************/
-#section-keywords {
+#section-trending-terms {
   text-align: center;
   padding-top: 31px;
   padding-bottom: 35px;
@@ -179,11 +179,13 @@ body {
     font-size: 1rem;
   }
 
-  p {
+  span {
     @include monserrat-meidum;
-    font-size: 0.875rem;
-    margin: 0 75px;
+    font-size: 1rem;
+    text-align: center;
     line-height: 25px;
+    margin: 0 0.5rem;
+    cursor: pointer;
   }
 }
 

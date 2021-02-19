@@ -6,7 +6,51 @@ const headingResult = document.getElementById("heading-gifos-result");
 const buttonViewMore = document.getElementById("btn-view-more");
 const suggestedContainer = document.getElementById("suggested-container");
 const lineInputBottom = document.getElementById("line-input-bottom");
+
 let viewMoreCount = 0;
+
+// Add gifos result to Section
+async function addGifosResult(term, options = { viewMore: false }) {
+  try {
+    const searchedGifos = await getSearchedGifos(
+      term,
+      options.viewMore ? viewMoreCount * 12 : 0
+    );
+
+    displayBlock(sectionResults);
+    headingResult.textContent = inputSearch.value;
+
+    createGifos(containerGifosResult, searchedGifos.data);
+
+    if (!options.viewMore) {
+      sectionResults.scrollIntoView({ behavior: "smooth" });
+    }
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+async function addTrendingSearchTerms() {
+  const trendingTerms = document.getElementById("trending-terms");
+  try {
+    const terms = await getTrendingSearchTerms();
+
+    terms.data.forEach((term) => {
+      const linkTerm = document.createElement("span");
+      linkTerm.innerText = term;
+      linkTerm.addEventListener("click", () => {
+        containerGifosResult.innerHTML = "";
+        addGifosResult(term);
+      });
+      trendingTerms.appendChild(linkTerm);
+      inputSearch.value = term;
+    });
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+addTrendingSearchTerms();
 
 // Add Suggested Words to Searcher
 inputSearch.addEventListener("input", async (e) => {
@@ -40,40 +84,6 @@ function clearSearch() {
   displayNone(suggestedContainer);
   displayNone(lineInputBottom);
   suggestedContainer.innerHTML = "";
-}
-
-// Add gifos result to Section
-async function addGifosResult(term, options = { viewMore: false }) {
-  try {
-    const searchedGifos = await getSearchedGifos(
-      term,
-      options.viewMore ? viewMoreCount * 12 : 0
-    );
-
-    displayBlock(sectionResults);
-    headingResult.textContent = inputSearch.value;
-
-    createGifos(containerGifosResult, searchedGifos.data);
-
-    // searchedGifos.data.forEach((gifo) => {
-    //   const imageContainer = document.createElement("div");
-    //   imageContainer.classList.add("img-container");
-
-    //   const img = document.createElement("img");
-    //   img.setAttribute("src", gifo.images?.downsized?.url);
-    //   img.setAttribute("alt", gifo.title);
-
-    //   imageContainer.appendChild(img);
-    //   gifoHover(imageContainer, gifo);
-    //   containerGifosResult.appendChild(imageContainer);
-    // });
-
-    if (!options.viewMore) {
-      sectionResults.scrollIntoView({ behavior: "smooth" });
-    }
-  } catch (error) {
-    console.error(error);
-  }
 }
 
 iconSearch.addEventListener("click", () => {

@@ -247,22 +247,24 @@ body {
 /**********************
 /* Section Keyword
 ***********************/
-#section-keywords {
+#section-trending-terms {
   text-align: center;
   padding-top: 31px;
   padding-bottom: 35px;
 }
 
-#section-keywords h3 {
+#section-trending-terms h3 {
   font-size: 1rem;
 }
 
-#section-keywords p {
+#section-trending-terms span {
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
-  font-size: 0.875rem;
-  margin: 0 75px;
+  font-size: 1rem;
+  text-align: center;
   line-height: 25px;
+  margin: 0 0.5rem;
+  cursor: pointer;
 }
 
 /**********************

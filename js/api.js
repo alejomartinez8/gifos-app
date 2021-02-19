@@ -17,3 +17,9 @@ async function getTrendingGifos(limit = 3, offset = 0) {
     `https://api.giphy.com/v1/gifs/trending?api_key=${API_KEY}&limit=${limit}&offset=${offset}`
   ).then((response) => response.json());
 }
+
+async function getTrendingSearchTerms() {
+  return await fetch(
+    `https://api.giphy.com/v1/trending/searches?api_key=${API_KEY}`
+  ).then((response) => response.json());
+}
