@@ -73,12 +73,18 @@ inputSearch.addEventListener("input", async (e) => {
         term.innerText = word.name;
         term.tabIndex = 0;
         suggestedContainer.appendChild(term);
+
         term.addEventListener("click", () => {
           inputSearch.value = term.innerText;
           inputSearch.focus();
           containerGifosResult.innerHTML = "";
           addGifosResult(inputSearch.value);
         });
+      });
+
+      iconSearch.addEventListener("click", () => {
+        inputSearch.value = "";
+        clearSearch();
       });
     } else {
       clearSearch();
@@ -93,11 +99,27 @@ function clearSearch() {
   displayNone(suggestedContainer);
   displayNone(lineInputBottom);
   suggestedContainer.innerHTML = "";
+  inputSearch.removeEventListener("click", null);
 }
 
-iconSearch.addEventListener("click", () => {
-  containerGifosResult.innerHTML = "";
-  addGifosResult(inputSearch.value);
+inputSearch.addEventListener("keydown", (e) => {
+  console.log(e.key);
+  switch (e.key) {
+    case "Enter":
+      if (inputSearch.value) {
+        containerGifosResult.innerHTML = "";
+        addGifosResult(inputSearch.value);
+      }
+      break;
+
+    case "Escape":
+      inputSearch.value = "";
+      clearSearch();
+      break;
+
+    default:
+      break;
+  }
 });
 
 buttonViewMore.addEventListener("click", () => {
