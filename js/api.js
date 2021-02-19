@@ -23,3 +23,16 @@ async function fetchTrendingSearchTerms() {
     `https://api.giphy.com/v1/trending/searches?api_key=${API_KEY}`
   ).then((response) => response.json());
 }
+
+async function uploadGif(formdata) {
+  var requestOptions = {
+    method: "POST",
+    body: formdata,
+    redirect: "follow",
+  };
+
+  return await fetch(
+    `https://upload.giphy.com/v1/gifs?api_key=${API_KEY}`,
+    requestOptions
+  ).then((response) => response.text());
+}

@@ -9,9 +9,12 @@ let stream;
 let recorder;
 let video;
 
+let timer;
 let hours = "00";
 let minutes = "00";
 let seconds = "00";
+
+let formdata;
 
 async function getStreamAndRecord() {
   cameraContainer.innerHTML = `
@@ -66,13 +69,27 @@ function chronometer() {
   createLabel.textContent = `${hours}:${minutes}:${seconds}`;
 }
 
-createButton.addEventListener("click", async () => {
-  let chronometerTimer;
+function addHoverVideo() {
+  const divHover = document.createElement("div");
+  addClass(divHover, "div-hover-create");
+  divHover.innerHTML = `
+    ${SPINNER}
+    <h2>Estamos Subiendo tu Gifo</h2>
+  `;
 
+  console.log(divHover);
+
+  divHover.style.width = `${video.offsetWidth}px`;
+  divHover.style.height = `${video.offsetHeight}px`;
+
+  cameraContainer.insertBefore(divHover, video);
+}
+
+createButton.addEventListener("click", async () => {
   switch (createButton.innerText) {
     case "COMENZAR":
       stream = await getStreamAndRecord();
-      console.log(stream);
+      addHoverVideo();
       break;
 
     case "GRABAR":
@@ -91,25 +108,32 @@ createButton.addEventListener("click", async () => {
       recorder.startRecording();
       createButton.innerText = "FINALIZAR";
       addClass(createLabel, "active");
-      chronometerTimer = setInterval(chronometer, 1000);
+      timer = setInterval(chronometer, 1000);
 
       break;
 
     case "FINALIZAR":
+      console.log("stop");
       await recorder.stopRecording();
       await video.pause();
-      clearInterval(chronometerTimer);
-      let blob = await recorder.getBlob();
+      clearInterval(timer);
+      // let blob = await recorder.getBlob();
       // invokeSaveAsDialog(blob);
-      let form = new FormData();
-      form.append("file", recorder.getBlob(), "myGif.gif");
-      console.log(form.get("file"));
+      formdata = new FormData();
+      formdata.append("file", recorder.getBlob(), "myGif.gif");
 
       createButton.innerText = "SUBIR";
       break;
 
     case "SUBIR":
-      console.log(subiendo);
+      console.log("subiendo");
+
+      try {
+        const response = await uploadGif(formdata);
+        console.log(response);
+      } catch (error) {
+        console.error(error);
+      }
       break;
 
     default:
