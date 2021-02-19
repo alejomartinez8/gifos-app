@@ -71,6 +71,21 @@
   #create-gifo {
     .camera-container {
       border: 1px solid $white;
+      h2 {
+        color: $secondary;
+      }
+      p {
+        color: $white;
+      }
+    }
+
+    .footer-create {
+      .create-steps {
+        div.step-icon {
+          border: 1px solid $white;
+          color: $white;
+        }
+      }
     }
   }
 }

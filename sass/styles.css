@@ -787,6 +787,19 @@ div.modal div.img-container div.footer-img div.icons > div {
   border: 1px solid #ffffff;
 }
 
+.dark #create-gifo .camera-container h2 {
+  color: #5ed7c6;
+}
+
+.dark #create-gifo .camera-container p {
+  color: #ffffff;
+}
+
+.dark #create-gifo .footer-create .create-steps div.step-icon {
+  border: 1px solid #ffffff;
+  color: #ffffff;
+}
+
 @media screen and (min-width: 768px) {
   .dark ul#menu-container {
     background-color: #37383c;
@@ -954,6 +967,10 @@ div.modal div.img-container div.footer-img div.icons > div {
 /*********************
 * Create gifos
 **********************/
+#create-gifo {
+  margin: 0 2rem;
+}
+
 #create-gifo .camera-container {
   border: 1px solid #572ee5;
   max-width: 688px;
