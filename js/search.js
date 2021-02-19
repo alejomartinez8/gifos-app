@@ -114,22 +114,20 @@ inputSearch.addEventListener("input", async (e) => {
         inputSearch.value = "";
         clearSearch();
       });
-    } else {
-      clearSearch();
     }
   } else {
-    iconSearch.classList.remove("search");
     clearSearch();
   }
 });
 
 function clearSearch() {
-  displayNone(suggestedContainer);
-  displayNone(lineInputBottom);
   suggestedContainer.innerHTML = "";
   inputSearch.removeEventListener("click", null);
+  displayNone(suggestedContainer);
+  displayNone(lineInputBottom);
   removeClass(sectionTrendingTerms, "hidden");
   removeClass(imageHeader, "hidden");
+  removeClass(iconSearch, "search");
 }
 
 inputSearch.addEventListener("keydown", (e) => {
