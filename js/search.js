@@ -62,6 +62,7 @@ addTrendingSearchTerms();
 // Add Suggested Words to Searcher
 inputSearch.addEventListener("input", async (e) => {
   if (e.target.value.length > 1) {
+    iconSearch.classList.add("search");
     const suggestedWords = await fetchSuggestedWords(e.target.value);
     if (suggestedWords.data.length) {
       displayBlock(suggestedContainer);
@@ -83,6 +84,7 @@ inputSearch.addEventListener("input", async (e) => {
       clearSearch();
     }
   } else {
+    iconSearch.classList.remove("search");
     clearSearch();
   }
 });

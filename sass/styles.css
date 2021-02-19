@@ -199,9 +199,25 @@ body {
   outline: none;
 }
 
-#section-searcher .search-container .input-container img.icon-search {
+#section-searcher .search-container .input-container input::before {
+  content: url("../../img/icon-search-grey.svg");
+  display: inline-block;
+}
+
+#section-searcher .search-container .input-container div.icon-search {
+  margin: 0 5px;
+  width: 20px;
+  height: 20px;
+  display: inline-block;
   cursor: pointer;
+  width: 25px;
   margin-right: 20px;
+  background: url("../../img/icon-search.svg") no-repeat;
+}
+
+#section-searcher .search-container .input-container div.icon-search.search {
+  background: url("../../img/close.svg") no-repeat;
+  height: 15px;
 }
 
 #section-searcher .search-container > span {
@@ -625,6 +641,15 @@ div.modal div.img-container div.footer-img div.icons > div {
 
 .dark #section-searcher .input-container input, .dark #section-searcher .input-container input::placeholder, .dark #section-searcher .input-container input:focus {
   color: #ffffff;
+}
+
+.dark #section-searcher .input-container div.icon-search {
+  background: url("../../img/icon-search-mod-noc.svg") no-repeat;
+}
+
+.dark #section-searcher .input-container div.icon-search.search {
+  background: url("../../img/close-modo-noct.svg") no-repeat;
+  height: 15px;
 }
 
 .dark button.btn-primary-ghost {

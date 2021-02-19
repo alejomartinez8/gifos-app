@@ -19,6 +19,14 @@
           color: $white;
         }
       }
+
+      div.icon-search {
+        background: url("../../img/icon-search-mod-noc.svg") no-repeat;
+        &.search {
+          background: url("../../img/close-modo-noct.svg") no-repeat;
+          height: 15px;
+        }
+      }
     }
   }
 

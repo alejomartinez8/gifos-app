@@ -123,11 +123,22 @@ body {
         &:focus {
           outline: none;
         }
+
+        &::before {
+          content: url("../../img/icon-search-grey.svg");
+          display: inline-block;
+        }
       }
 
-      img.icon-search {
-        cursor: pointer;
+      div.icon-search {
+        @include div-icon(20px);
+        width: 25px;
         margin-right: 20px;
+        background: url("../../img/icon-search.svg") no-repeat;
+        &.search {
+          background: url("../../img/close.svg") no-repeat;
+          height: 15px;
+        }
       }
     }
 
