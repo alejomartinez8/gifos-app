@@ -23,6 +23,11 @@
       background-color: $primary;
       opacity: 0.8;
       z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
       h2 {
         color: $white;
         text-align: center;
@@ -46,7 +51,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      div {
+      div.step-icon {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -75,6 +80,16 @@
           &.active {
             display: block;
           }
+
+          &.hover:hover {
+            cursor: pointer;
+            &:after {
+              content: "";
+              display: block;
+              border-bottom: 2px solid $secondary;
+              width: 100%;
+            }
+          }
         }
       }
     }
@@ -97,4 +112,12 @@
       }
     }
   }
+}
+
+.icon-success {
+  margin: 0 5px;
+  width: 18px;
+  height: 13px;
+  display: inline-block;
+  background: url("../../img/ok.svg") no-repeat;
 }

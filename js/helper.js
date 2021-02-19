@@ -84,3 +84,20 @@ const SPINNER = `
   <div class="sk-circle12 sk-circle"></div>
 </div>
 `;
+
+const SUCCESS = `
+  <div class="icon-success"></div>
+`;
+
+const getIcon = (type) => {
+  switch (type) {
+    case "spinner":
+      return SPINNER;
+
+    case "success":
+      return SUCCESS;
+
+    default:
+      break;
+  }
+};

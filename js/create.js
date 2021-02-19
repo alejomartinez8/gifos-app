@@ -8,13 +8,12 @@ const createLabel = document.getElementById("create-label");
 let stream;
 let recorder;
 let video;
+let formdata;
 
 let timer;
 let hours = "00";
 let minutes = "00";
 let seconds = "00";
-
-let formdata;
 
 async function getStreamAndRecord() {
   cameraContainer.innerHTML = `
@@ -69,15 +68,16 @@ function chronometer() {
   createLabel.textContent = `${hours}:${minutes}:${seconds}`;
 }
 
-function addHoverVideo() {
+function addHoverVideo(text, iconType = false) {
   const divHover = document.createElement("div");
+
+  const icon = getIcon(iconType);
+
   addClass(divHover, "div-hover-create");
   divHover.innerHTML = `
-    ${SPINNER}
-    <h2>Estamos Subiendo tu Gifo</h2>
+    ${icon}
+    <h2>${text}</h2>
   `;
-
-  console.log(divHover);
 
   divHover.style.width = `${video.offsetWidth}px`;
   divHover.style.height = `${video.offsetHeight}px`;
@@ -85,11 +85,14 @@ function addHoverVideo() {
   cameraContainer.insertBefore(divHover, video);
 }
 
+function removeHoverVideo() {
+  cameraContainer.firstChild = "";
+}
+
 createButton.addEventListener("click", async () => {
   switch (createButton.innerText) {
     case "COMENZAR":
       stream = await getStreamAndRecord();
-      addHoverVideo();
       break;
 
     case "GRABAR":
@@ -117,16 +120,26 @@ createButton.addEventListener("click", async () => {
       await recorder.stopRecording();
       await video.pause();
       clearInterval(timer);
-      // let blob = await recorder.getBlob();
-      // invokeSaveAsDialog(blob);
+
       formdata = new FormData();
       formdata.append("file", recorder.getBlob(), "myGif.gif");
 
-      createButton.innerText = "SUBIR";
+      createLabel.innerText = "REPETIR CAPTURA";
+      createLabel.classList.add("hover");
+      createButton.innerText = "SUBIR GIFO";
+
+      createLabel.addEventListener("click", async () => {
+        console.log("repetir");
+        createLabel.innerText = "";
+        createLabel.classList.remove("hover");
+        createButton.innerText = "GRABAR";
+        stream = await getStreamAndRecord();
+      });
       break;
 
-    case "SUBIR":
+    case "SUBIR GIFO":
       console.log("subiendo");
+      addHoverVideo("Estamos Subiendo tu Gifo", "spinner");
 
       try {
         const response = await uploadGif(formdata);
@@ -134,6 +147,14 @@ createButton.addEventListener("click", async () => {
       } catch (error) {
         console.error(error);
       }
+
+      console.log(cameraContainer.children[0]);
+
+      createLabel.removeEventListener("click", null);
+      cameraContainer.removeChild(cameraContainer.children[0]);
+      addHoverVideo("GIF subido con éxto", "success");
+
+      createButton.innerText = "COMENZAR";
       break;
 
     default:

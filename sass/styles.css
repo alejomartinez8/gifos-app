@@ -957,6 +957,19 @@ div.modal div.img-container div.footer-img div.icons > div {
   background-color: #572ee5;
   opacity: 0.8;
   z-index: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 #create-gifo .camera-container div.div-hover-create h2 {
@@ -995,7 +1008,7 @@ div.modal div.img-container div.footer-img div.icons > div {
           align-items: center;
 }
 
-#create-gifo .footer-create .create-steps div {
+#create-gifo .footer-create .create-steps div.step-icon {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1016,7 +1029,7 @@ div.modal div.img-container div.footer-img div.icons > div {
   font-size: 18px;
 }
 
-#create-gifo .footer-create .create-steps div.activate {
+#create-gifo .footer-create .create-steps div.step-icon.activate {
   color: white;
   background: #572ee5;
 }
@@ -1029,6 +1042,15 @@ div.modal div.img-container div.footer-img div.icons > div {
   }
   #create-gifo .footer-create .create-steps h3.active {
     display: block;
+  }
+  #create-gifo .footer-create .create-steps h3.hover:hover {
+    cursor: pointer;
+  }
+  #create-gifo .footer-create .create-steps h3.hover:hover:after {
+    content: "";
+    display: block;
+    border-bottom: 2px solid #5ed7c6;
+    width: 100%;
   }
 }
 
@@ -1048,6 +1070,14 @@ div.modal div.img-container div.footer-img div.icons > div {
 
 #create-gifo .footer-create button.hidden {
   display: none;
+}
+
+.icon-success {
+  margin: 0 5px;
+  width: 18px;
+  height: 13px;
+  display: inline-block;
+  background: url("../../img/ok.svg") no-repeat;
 }
 
 .sk-fading-circle {
