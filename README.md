@@ -1,4 +1,11 @@
 # project-gifos-acamica
 Project GIFOS Acamica - HMTL - CSS - JS
 
-Demo: https://alejomartinez8.github.io/project-gifos-acamica/
+# Techonologies
+
+* HTML
+* CSS
+* Vanilla JavaScript
+* RecordRTC 
+
+Demo: https://gifos-am.netlify.app/
