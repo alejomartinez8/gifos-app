@@ -41,12 +41,11 @@ async function addTrendingSearchTerms() {
       linkTerm.innerText = upperCaseTerm;
       linkTerm.addEventListener("click", () => {
         containerGifosResult.innerHTML = "";
+        inputSearch.value = upperCaseTerm;
         addGifosResult(upperCaseTerm);
       });
       trendingTerms.appendChild(linkTerm);
       if (index != terms.data.length - 1) trendingTerms.append(", ");
-
-      inputSearch.value = upperCaseTerm;
     });
   } catch (error) {
     console.error(error);
