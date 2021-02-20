@@ -131,9 +131,6 @@ function addPagination(container, count, offset, total, callBack) {
   const totalPages = Math.ceil(total / count);
   const firstPage = smallestMultipleFive(actualPage);
 
-  console.log(count, offset, total);
-  console.log(actualPage, totalPages);
-
   const paginationDiv = document.createElement("div");
   paginationDiv.classList.add("pagination-container");
 

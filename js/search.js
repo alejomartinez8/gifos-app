@@ -68,7 +68,6 @@ async function addGifosResult(term, offset) {
         offset,
         total_count,
         (pageClicked) => {
-          console.log({ pageClicked });
           addGifosResult(term, pageClicked * 12);
         }
       );
