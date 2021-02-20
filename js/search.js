@@ -60,18 +60,20 @@ async function addGifosResult(term, offset) {
         search: term,
       });
 
-      const { count, offset, total_count } = searchedGifos.pagination;
+      const { offset, total_count } = searchedGifos.pagination;
 
       addPagination(
         containerGifosResult,
-        count,
+        12,
         offset,
         total_count,
         (pageClicked) => {
-          addGifosResult(term, pageClicked * count);
+          console.log({ pageClicked });
+          addGifosResult(term, pageClicked * 12);
         }
       );
     } else {
+      // Not gifs found
       containerGifosResult.innerHTML = `
         <img
           class="no-result-icon"
@@ -87,7 +89,7 @@ async function addGifosResult(term, offset) {
 }
 
 /**********************************
- * Add Suggested Words to Searcher
+ * Add Suggested words to Searcher
  **********************************/
 inputSearch.addEventListener("input", async (e) => {
   if (e.target.value.length > 1) {

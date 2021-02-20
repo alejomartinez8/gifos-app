@@ -128,10 +128,11 @@ const getIcon = (type) => {
 
 function addPagination(container, count, offset, total, callBack) {
   const actualPage = offset / count;
-  const totalPages = total / count;
+  const totalPages = Math.ceil(total / count);
   const firstPage = smallestMultipleFive(actualPage);
 
-  console.log(actualPage, firstPage);
+  console.log(count, offset, total);
+  console.log(actualPage, totalPages);
 
   const paginationDiv = document.createElement("div");
   paginationDiv.classList.add("pagination-container");
