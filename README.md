@@ -4,7 +4,7 @@ Project GIFOS Acamica - HMTL - CSS - JS
 ## Technologies
 
 * HTML
-* CSS
+* CSS / SCSS
 * Vanilla JavaScript
 * RecordRTC 
 
