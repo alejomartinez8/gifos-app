@@ -1,62 +1,23 @@
 const inputSearch = document.getElementById("input-search");
 const iconSearch = document.getElementById("icon-search");
-const sectionResults = document.getElementById("section-results");
-const containerGifosResult = document.getElementById("container-gifos-result");
-const headingResult = document.getElementById("heading-gifos-result");
-const buttonViewMore = document.getElementById("btn-view-more");
+
 const suggestedContainer = document.getElementById("suggested-container");
-const lineInputBottom = document.getElementById("line-input-bottom");
-const sectionTrendingTerms = document.getElementById("section-trending-terms");
 const imageHeader = document.getElementById("img-header");
 
+const sectionTrendingTerms = document.getElementById("section-trending-terms");
+const lineInputBottom = document.getElementById("line-input-bottom");
+const sectionResults = document.getElementById("section-results");
+const containerGifosResult = document.getElementById("container-gifos-result");
+
 let viewMoreCount = 0;
+let pagOffset = 0;
 
-// Add gifos result to Section
-async function addGifosResult(term, options = { viewMore: false }) {
-  try {
-    const searchedGifos = await fetchSeachGifs(
-      term,
-      options.viewMore ? viewMoreCount * 12 : 0
-    );
-
-    displayBlock(sectionResults);
-    headingResult.textContent = inputSearch.value;
-
-    if (searchedGifos.data.length) {
-      createGifos(containerGifosResult, searchedGifos.data, {
-        type: "search",
-        search: term,
-      });
-
-      addClass(buttonViewMore, "active");
-    } else {
-      console.log("no results");
-      containerGifosResult.innerHTML = `
-        <img
-          class="no-result-icon"
-          src="./img/icon-busqueda-sin-resultado.svg"
-          alt="busqueda-sin-resultado"
-        />
-        <p class="no-result-text">Intenta con otra Búsqueda</p>
-      `;
-
-      buttonViewMore.classList.remove("active");
-      sectionTrendingTerms.classList.remove("hide");
-    }
-
-    if (!options.viewMore) {
-      sectionResults.scrollIntoView({ behavior: "smooth" });
-    }
-  } catch (error) {
-    console.error(error);
-  }
-}
-
-/**
+/*******************************
  * Add Trending Searched Terms
- */
+ *******************************/
 async function addTrendingSearchTerms() {
-  const trendingTerms = document.getElementById("trending-terms");
+  const paragraph = document.getElementById("trending-terms");
+
   try {
     const terms = await fetchTrendingSearchTerms();
 
@@ -68,10 +29,10 @@ async function addTrendingSearchTerms() {
         linkTerm.addEventListener("click", () => {
           containerGifosResult.innerHTML = "";
           inputSearch.value = upperCaseTerm;
-          addGifosResult(upperCaseTerm);
+          addGifosResult(upperCaseTerm, 0);
         });
-        trendingTerms.appendChild(linkTerm);
-        if (index !== 4) trendingTerms.append(", ");
+        paragraph.appendChild(linkTerm);
+        if (index !== 4) paragraph.append(", ");
       }
     });
   } catch (error) {
@@ -81,9 +42,52 @@ async function addTrendingSearchTerms() {
 
 addTrendingSearchTerms();
 
-/**
+/*******************************
+ * Add Gifs Results
+ *******************************/
+async function addGifosResult(term, offset) {
+  try {
+    const searchedGifos = await fetchSeachGifs(term, offset);
+    const headingResult = document.getElementById("heading-gifos-result");
+
+    showElement(sectionResults);
+    headingResult.textContent = term;
+    containerGifosResult.innerHTML = "";
+
+    if (searchedGifos.data.length) {
+      createGifos(containerGifosResult, searchedGifos.data, {
+        type: "search",
+        search: term,
+      });
+
+      const { count, offset, total_count } = searchedGifos.pagination;
+      addPagination(
+        containerGifosResult,
+        count,
+        offset,
+        total_count,
+        (pageClicked) => {
+          addGifosResult(term, pageClicked * count);
+        }
+      );
+    } else {
+      containerGifosResult.innerHTML = `
+        <img
+          class="no-result-icon"
+          src="./img/icon-busqueda-sin-resultado.svg"
+          alt="busqueda-sin-resultado"
+        />
+        <p class="no-result-text">Intenta con otra Búsqueda</p>
+      `;
+    }
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+/**********************************
  * Add Suggested Words to Searcher
- *  */
+ **********************************/
 inputSearch.addEventListener("input", async (e) => {
   if (e.target.value.length > 1) {
     addClass(iconSearch, "search");
@@ -147,9 +151,4 @@ inputSearch.addEventListener("keydown", (e) => {
     default:
       break;
   }
-});
-
-buttonViewMore.addEventListener("click", () => {
-  viewMoreCount++;
-  addGifosResult(inputSearch.value, { viewMore: true });
 });

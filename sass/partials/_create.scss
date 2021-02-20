@@ -37,10 +37,6 @@
         color: $white;
         text-align: center;
       }
-
-      &.hidden {
-        display: none;
-      }
     }
 
     video {
@@ -89,10 +85,6 @@
 
     button {
       margin: 0 auto;
-
-      &.hidden {
-        display: none;
-      }
     }
   }
 }

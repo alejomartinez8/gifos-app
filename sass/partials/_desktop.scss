@@ -1,5 +1,6 @@
-// Desktop Version
+/*********** Desktop Version *************/
 @media screen and (min-width: 768px) {
+  /****** Topnav Desktop ******/
   .topnav-container {
     height: 90px;
     padding: 0 10%;
@@ -68,6 +69,7 @@
     }
   }
 
+  /*** Section Header Desktop ****/
   #section-header {
     h1 {
       font-size: 40px;
@@ -144,11 +146,24 @@
     }
   }
 
-  div.slider-arrow-left,
+  /***** Slider button ****/
   div.slider-arrow-right {
-    display: block;
+    @include div-icon(40px);
+    background: url("../../img/Button-Slider-right.svg") no-repeat;
+    &:hover {
+      background: url("../../img/Button-Slider-right-hover.svg") no-repeat;
+    }
   }
 
+  div.slider-arrow-left {
+    @include div-icon(40px);
+    background: url("../../img/button-slider-left.svg") no-repeat;
+    &:hover {
+      background: url("../../img/button-slider-left-hover.svg") no-repeat;
+    }
+  }
+
+  /***** Create Page *****/
   .footer-create {
     .create-steps {
       h3 {

@@ -25,17 +25,26 @@ function removeClass(elm, className) {
   elm.classList.remove(className);
 }
 
+function hiddenElement(elm) {
+  elm.classList.add("hidden");
+}
+
+function showElement(elm) {
+  elm.classList.remove("hidden");
+}
+
 function createGifos(container, gifos, options) {
   if (!container) return;
 
   gifos.forEach((gifo) => {
     const imageContainer = document.createElement("div");
     imageContainer.classList.add("img-container");
-
     const img = document.createElement("img");
     img.setAttribute(
       "src",
-      options.original ? gifo.images.original.url : gifo.images.preview_webp.url
+      gifo.images?.preview_webp?.url
+        ? gifo.images.preview_webp.url
+        : gifo.images.original.url
     );
     img.setAttribute("alt", gifo.title);
 
@@ -116,3 +125,39 @@ const getIcon = (type) => {
       break;
   }
 };
+
+function addPagination(container, count, offset, total, callBack) {
+  const totalPages = total / count;
+  const actualPage = offset / count;
+
+  const paginationDiv = document.createElement("div");
+  paginationDiv.classList.add("pagination-container");
+
+  if (actualPage !== 0) {
+    const backButton = document.createElement("div");
+    backButton.innerText = "<";
+    paginationDiv.appendChild(backButton);
+    backButton.addEventListener("click", () => callBack(actualPage - 1));
+  }
+
+  for (
+    let page = actualPage;
+    (page < actualPage + 5) & (page < totalPages);
+    page++
+  ) {
+    const pageDiv = document.createElement("div");
+    pageDiv.innerText = page + 1;
+    if (page === actualPage) pageDiv.classList.add("active");
+    pageDiv.addEventListener("click", () => callBack(page));
+    paginationDiv.appendChild(pageDiv);
+  }
+
+  if (actualPage < totalPages - 5) {
+    const nextButton = document.createElement("div");
+    nextButton.innerText = ">";
+    paginationDiv.appendChild(nextButton);
+    nextButton.addEventListener("click", () => callBack(actualPage + 1));
+  }
+
+  container.appendChild(paginationDiv);
+}

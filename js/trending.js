@@ -4,6 +4,7 @@ const buttonLeft = document.getElementById("button-trending-left");
 
 let offsetTrending = 0;
 let trendingGifos = [];
+let offsetScroll = 0;
 
 async function addGifosTrending(limit, offset) {
   const lenghtGifos = trendingGifos[0] ? trendingGifos.length : 0;
@@ -52,4 +53,8 @@ buttonLeft.addEventListener("click", () => {
 buttonRight.addEventListener("click", () => {
   offsetTrending++;
   addGifosTrending(3, offsetTrending);
+});
+
+containerTrending.addEventListener("scroll", (e) => {
+  console.log(parseInt(e.target.scrollLeft / 200) % 3);
 });

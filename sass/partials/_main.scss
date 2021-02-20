@@ -93,10 +93,6 @@ body {
   img.img-header {
     padding: 31px 51px 0px 51px;
     width: 100%;
-
-    &.hidden {
-      display: none;
-    }
   }
 
   .search-container {
@@ -201,25 +197,23 @@ body {
   }
 
   span {
-    @include monserrat-meidum;
+    @include monserrat-medium;
     font-size: 1rem;
     text-align: center;
     line-height: 25px;
 
     cursor: pointer;
   }
-
-  &.hidden {
-    display: none;
-  }
 }
 
 /**********************
-/* Section Results
+/* Section Favorites - My Gifos
 ***********************/
-#section-results {
-  display: none;
+#section-results,
+#section-favorites,
+#section-mygifos {
   text-align: center;
+
   > span {
     display: block;
     border-bottom: 1px solid $gray;
@@ -227,43 +221,6 @@ body {
     margin: 0 auto;
     opacity: 0.5;
   }
-
-  > h2 {
-    font-size: 25px;
-    text-align: center;
-    margin-top: 43px;
-  }
-
-  > div.images-container {
-    justify-content: center;
-    img.no-result-icon {
-      flex-basis: 100%;
-      max-width: 150px;
-    }
-    p.no-result-text {
-      flex-basis: 100%;
-      @include monserrat-bold;
-      font-size: 22px;
-      color: #50e3c2;
-      text-align: center;
-      line-height: 25px;
-    }
-  }
-
-  button {
-    display: none;
-    &.active {
-      display: inline-block;
-    }
-  }
-}
-
-/**********************
-/* Section Favorites - My Gifos
-***********************/
-#section-favorites,
-#section-mygifos {
-  text-align: center;
 
   > img {
     padding: 5px;
@@ -335,7 +292,7 @@ body {
     margin-bottom: 32px;
   }
 
-  div.slider-trending-content {
+  .slider-trending-content {
     div.container-trending {
       overflow: hidden;
       overflow-x: auto;
@@ -375,20 +332,11 @@ body {
 /**********************
 /* Others
 ***********************/
-div.slider-arrow-right {
-  @include div-icon(40px);
-  background: url("../../img/Button-Slider-right.svg") no-repeat;
-  &:hover {
-    background: url("../../img/Button-Slider-right-hover.svg") no-repeat;
-  }
-}
 
-div.slider-arrow-left {
-  @include div-icon(40px);
-  background: url("../../img/button-slider-left.svg") no-repeat;
-  &:hover {
-    background: url("../../img/button-slider-left-hover.svg") no-repeat;
-  }
+/***** Slider button ****/
+div.slider-arrow-left,
+div.slider-arrow-right {
+  display: none;
 }
 
 button.btn-primary-ghost {
@@ -415,5 +363,9 @@ div.hover-img {
 
 div.slider-arrow-left,
 div.slider-arrow-right {
+  display: none;
+}
+
+.hidden {
   display: none;
 }

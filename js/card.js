@@ -4,11 +4,14 @@ function gifoHover(imgContainer, gifo, options) {
   const { title, username, images } = gifo;
 
   if (window.matchMedia("(max-width:768px").matches) {
+    // Mobile
     img.addEventListener("click", () => setModalData(gifo));
   } else {
+    // Desktop
     imgContainer.addEventListener("mouseenter", () => {
       const divHover = document.createElement("div");
       divHover.classList.add("hover-img");
+
       divHover.innerHTML = `
         <div class="icon-container">
             <div class="icon-fav"></div>
