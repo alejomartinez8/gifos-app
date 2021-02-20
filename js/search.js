@@ -61,6 +61,7 @@ async function addGifosResult(term, offset) {
       });
 
       const { count, offset, total_count } = searchedGifos.pagination;
+
       addPagination(
         containerGifosResult,
         count,

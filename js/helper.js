@@ -127,22 +127,29 @@ const getIcon = (type) => {
 };
 
 function addPagination(container, count, offset, total, callBack) {
-  const totalPages = total / count;
   const actualPage = offset / count;
+  const totalPages = total / count;
+  const firstPage = smallestMultipleFive(actualPage);
+
+  console.log(actualPage, firstPage);
 
   const paginationDiv = document.createElement("div");
   paginationDiv.classList.add("pagination-container");
 
-  if (actualPage !== 0) {
+  if (actualPage > 4) {
     const backButton = document.createElement("div");
     backButton.innerText = "<";
     paginationDiv.appendChild(backButton);
-    backButton.addEventListener("click", () => callBack(actualPage - 1));
+    backButton.addEventListener(
+      "click",
+      () => callBack(actualPage - 1),
+      smallestMultipleFive(actualPage)
+    );
   }
 
   for (
-    let page = actualPage;
-    (page < actualPage + 5) & (page < totalPages);
+    let page = firstPage;
+    (page < firstPage + 5) & (page < totalPages);
     page++
   ) {
     const pageDiv = document.createElement("div");
@@ -152,6 +159,8 @@ function addPagination(container, count, offset, total, callBack) {
     paginationDiv.appendChild(pageDiv);
   }
 
+  //[0 1 2 3 4] [5 6 7 8 9] [10 11 12 13 14]
+
   if (actualPage < totalPages - 5) {
     const nextButton = document.createElement("div");
     nextButton.innerText = ">";
@@ -160,4 +169,8 @@ function addPagination(container, count, offset, total, callBack) {
   }
 
   container.appendChild(paginationDiv);
+}
+
+function smallestMultipleFive(number) {
+  return number - (number % 5);
 }
