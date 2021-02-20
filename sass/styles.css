@@ -845,9 +845,12 @@ div.modal div.img-container div.footer-img div.icons > div {
   }
   .topnav-container li {
     display: inline-block;
-    margin: 0 25px;
+    margin: 0 1rem;
   }
   .topnav-container li::after {
+    display: none;
+  }
+  .topnav-container li.mobile {
     display: none;
   }
   .topnav-container li a.item-text {
@@ -961,6 +964,23 @@ div.modal div.img-container div.footer-img div.icons > div {
   div.slider-arrow-left,
   div.slider-arrow-right {
     display: block;
+  }
+  .footer-create .create-steps h3 {
+    display: none;
+    position: relative;
+    left: 15%;
+  }
+  .footer-create .create-steps h3.active {
+    display: block;
+  }
+  .footer-create .create-steps h3.hover:hover {
+    cursor: pointer;
+  }
+  .footer-create .create-steps h3.hover:hover:after {
+    content: "";
+    display: block;
+    border-bottom: 2px solid #5ed7c6;
+    width: 100%;
   }
 }
 
@@ -1080,26 +1100,6 @@ div.modal div.img-container div.footer-img div.icons > div {
 #create-gifo .footer-create .create-steps div.step-icon.activate {
   color: white;
   background: #572ee5;
-}
-
-@media screen and (min-width: 768px) {
-  #create-gifo .footer-create .create-steps h3 {
-    display: none;
-    position: absolute;
-    right: 15%;
-  }
-  #create-gifo .footer-create .create-steps h3.active {
-    display: block;
-  }
-  #create-gifo .footer-create .create-steps h3.hover:hover {
-    cursor: pointer;
-  }
-  #create-gifo .footer-create .create-steps h3.hover:hover:after {
-    content: "";
-    display: block;
-    border-bottom: 2px solid #5ed7c6;
-    width: 100%;
-  }
 }
 
 #create-gifo .footer-create span {

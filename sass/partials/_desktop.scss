@@ -23,8 +23,12 @@
 
     li {
       display: inline-block;
-      margin: 0 25px;
+      margin: 0 1rem;
       &::after {
+        display: none;
+      }
+
+      &.mobile {
         display: none;
       }
 
@@ -143,5 +147,29 @@
   div.slider-arrow-left,
   div.slider-arrow-right {
     display: block;
+  }
+
+  .footer-create {
+    .create-steps {
+      h3 {
+        display: none;
+        position: relative;
+        left: 15%;
+
+        &.active {
+          display: block;
+        }
+
+        &.hover:hover {
+          cursor: pointer;
+          &:after {
+            content: "";
+            display: block;
+            border-bottom: 2px solid $secondary;
+            width: 100%;
+          }
+        }
+      }
+    }
   }
 }

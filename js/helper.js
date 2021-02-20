@@ -33,7 +33,10 @@ function createGifos(container, gifos, options) {
     imageContainer.classList.add("img-container");
 
     const img = document.createElement("img");
-    img.setAttribute("src", gifo.images?.original?.url);
+    img.setAttribute(
+      "src",
+      options.original ? gifo.images.original.url : gifo.images.preview_webp.url
+    );
     img.setAttribute("alt", gifo.title);
 
     imageContainer.appendChild(img);

@@ -4,7 +4,7 @@ const buttonViewMore = document.getElementById("btn-view-more");
 console.log(mygifos);
 
 if (mygifos.length) {
-  createGifos(containerMyGifos, mygifos, { type: "mygifo" });
+  createGifos(containerMyGifos, mygifos, { type: "mygifo", original: true });
 } else {
   containerMyGifos.innerHTML = `
     <img
