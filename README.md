@@ -8,4 +8,4 @@ Project GIFOS Acamica - HMTL - CSS - JS
 * Vanilla JavaScript
 * RecordRTC 
 
-Demo: [https://gifos-am.netlify.app/](https://gifos-am.netlify.app){:target="_blank"}
+Demo: [https://gifos-am.netlify.app/](https://gifos-am.netlify.app)
