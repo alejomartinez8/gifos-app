@@ -27,9 +27,8 @@ async function addTrendingSearchTerms() {
         const linkTerm = document.createElement("span");
         linkTerm.innerText = upperCaseTerm;
         linkTerm.addEventListener("click", () => {
-          containerGifosResult.innerHTML = "";
-          inputSearch.value = upperCaseTerm;
           addGifosResult(upperCaseTerm, 0);
+          sectionResults.scrollIntoView({ behavior: "smooth" });
         });
         paragraph.appendChild(linkTerm);
         if (index !== 4) paragraph.append(", ");
@@ -142,6 +141,7 @@ inputSearch.addEventListener("keydown", (e) => {
       if (inputSearch.value) {
         containerGifosResult.innerHTML = "";
         addGifosResult(inputSearch.value);
+        sectionResults.scrollIntoView({ behavior: "smooth" });
       }
       break;
 
