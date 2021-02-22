@@ -27,7 +27,7 @@ function loadGifos() {
 }
 
 loadGifos();
-// window.onresize = loadGifos;
+window.onresize = loadGifos;
 
 buttonLeft.addEventListener("click", () => {
   if (offsetTrending) offsetTrending--;
@@ -45,7 +45,6 @@ containerTrending.addEventListener("scroll", (e) => {
   const scrollPosition = parseInt(
     e.target.scrollLeft / (window.innerWidth * 0.5)
   );
-  console.log(scrollPosition, lastScrollPosition);
   if (scrollPosition > lastScrollPosition) {
     lastScrollPosition = scrollPosition;
     offsetTrending += 3;
