@@ -42,7 +42,10 @@ buttonRight.addEventListener("click", () => {
 let lastScrollPosition = 0;
 
 containerTrending.addEventListener("scroll", (e) => {
-  const scrollPosition = parseInt(e.target.scrollLeft / window.innerWidth);
+  const scrollPosition = parseInt(
+    e.target.scrollLeft / (window.innerWidth * 0.5)
+  );
+  console.log(scrollPosition, lastScrollPosition);
   if (scrollPosition > lastScrollPosition) {
     lastScrollPosition = scrollPosition;
     offsetTrending += 3;
