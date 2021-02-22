@@ -407,6 +407,10 @@ body {
   display: flex;
 }
 
+#section-trending-gifos .slider-trending-content div.container-trending::-webkit-scrollbar {
+  display: none;
+}
+
 #section-trending-gifos .slider-trending-content div.container-trending div.img-container {
   margin: 0 11px;
 }

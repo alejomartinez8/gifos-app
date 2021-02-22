@@ -3,24 +3,14 @@ const buttonRight = document.getElementById("button-trending-right");
 const buttonLeft = document.getElementById("button-trending-left");
 
 let offsetTrending = 0;
-let trendingGifos = [];
-let offsetScroll = 0;
 
 async function addGifosTrending(limit, offset) {
-  const lenghtGifos = trendingGifos[0] ? trendingGifos.length : 0;
-
-  if (offset + limit > lenghtGifos) {
-    const newGifos = await fetchTrendingGifos(10, lenghtGifos);
-    trendingGifos = trendingGifos.concat(newGifos.data);
-  }
-
-  const gifosToShow = [];
-
-  for (let i = 0; i < limit; i++) {
-    gifosToShow[i] = trendingGifos[i + offset];
-  }
+  const newGifos = await fetchTrendingGifos(limit, offset);
 
   if (window.matchMedia("(min-width:768px)").matches) {
+    containerTrending.innerHTML = "";
+    createGifos(containerTrending, newGifos.data, { type: "trending" });
+
     if (offset === 0) {
       displayNone(buttonLeft);
     } else {
@@ -28,22 +18,16 @@ async function addGifosTrending(limit, offset) {
     }
   } else {
     displayNone(buttonLeft);
+    createGifos(containerTrending, newGifos.data, { type: "trending" });
   }
-
-  containerTrending.innerHTML = "";
-  createGifos(containerTrending, gifosToShow, { type: "trending" });
 }
 
 function loadGifos() {
-  if (window.matchMedia("(min-width:768px)").matches) {
-    addGifosTrending(3, 0);
-  } else {
-    addGifosTrending(10, 0);
-  }
+  addGifosTrending(3, 0);
 }
 
 loadGifos();
-window.onresize = loadGifos;
+// window.onresize = loadGifos;
 
 buttonLeft.addEventListener("click", () => {
   if (offsetTrending) offsetTrending--;
@@ -55,6 +39,13 @@ buttonRight.addEventListener("click", () => {
   addGifosTrending(3, offsetTrending);
 });
 
+let lastScrollPosition = 0;
+
 containerTrending.addEventListener("scroll", (e) => {
-  console.log(parseInt(e.target.scrollLeft / 200) % 3);
+  const scrollPosition = parseInt(e.target.scrollLeft / window.innerWidth);
+  if (scrollPosition > lastScrollPosition) {
+    lastScrollPosition = scrollPosition;
+    offsetTrending += 3;
+    addGifosTrending(3, offsetTrending);
+  }
 });
