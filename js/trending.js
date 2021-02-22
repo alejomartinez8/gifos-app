@@ -47,7 +47,7 @@ containerTrending.addEventListener("scroll", (e) => {
   );
   if (scrollPosition > lastScrollPosition) {
     lastScrollPosition = scrollPosition;
-    offsetTrending += 3;
-    addGifosTrending(3, offsetTrending);
+    offsetTrending++;
+    addGifosTrending(1, offsetTrending);
   }
 });
