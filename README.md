@@ -1,5 +1,5 @@
-# project-gifos-acamica
-Project GIFOS Acamica - HMTL - CSS - JS
+# project-gifos
+Project GIFOS - HMTL - CSS - JS
 
 ## Technologies
 
